@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenUniverse</title>
+
+  <style>
+    @font-face {
+      font-family: 'BrunoAceSC-Regular';
+      src: url("fonts/BrunoAceSC-Regular.ttf");
+    }
+
+    @font-face {
+      font-family: RobotoRegular;
+      src: url("fonts/roboto/Roboto-Regular.ttf");
+    }
+
+    @font-face {
+      font-family: RobotoThin;
+      src: url("fonts/roboto/Roboto-Thin.ttf");
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: RobotoRegular;
+      font-size: 1.1rem;
+      background-color: #eff;
+      overflow-x: hidden;
+    }
+    h1, h2 {
+      text-align: left;
+    }
+
+    section {
+      padding: 1rem;
+    }
+
+    .section-wrapper {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: stretch;
+      min-height: 400px;
+      padding: 0;
+    }
+
+    .section-wrapper.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .section-wrapper img {
+      height: 100%;
+      width: 300px;
+      min-height: max-content;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .section-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .section-header {
+      KKKheight: 20rem;
+      padding-top: 1rem;
+      padding-bottom: 0;
+      min-height: max-content;
+      color: white;
+      background-color: #050b28;
+      background-image: url("img/umberto-FewHpO4VC9Y-unsplash.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .section-header .section-wrapper {
+      flex-direction: column;
+    }
+
+    .section-header h1 {
+      font-family: 'BrunoAceSC-Regular';
+      font-size: 3rem;
+      line-height: 3rem;
+      margin-top: 1.5rem;
+      margin-bottom: -2rem;
+    }
+
+    h2 {
+      font-family: RobotoThin;
+      font-size: 2rem;
+      margin: 0;
+      margin-bottom: 0;
+    }
+
+    .section-1 {
+      background-color: #eeeeee;
+      color: #000;
+    }
+
+    .section-2 {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .section-3 {
+      background-color: #004049;
+      color: #fff;
+    }
+
+    .section-4 {
+      background-color: #050b28;
+      color: #fff;
+    }
+
+    .section-5 {
+      background-color: #00A2AA;
+      color: #000;
+    }
+
+    .section-6 {
+      background-color: #eeeeee;
+      color: #000;
+    }
+
+    .section-footer {
+      background-color: #050b28;
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .section-cookies {
+      background-color: #1be7ff;
+      color: #000;
+      text-align: center;
+      padding: .6rem;
+    }
+ 
+    .break-point {
+  display: none;
+}
+
+@media (max-width: 768px) {
+      .break-point {
+        display: block;
+        content: "";
+        height: 0;
+      }
+      .section-header {
+        min-height: 100vh;
+      }
+      .section-header h1,
+      .section-header h2 {
+        text-align: center;
+      }
+      .section-wrapper,
+      .section-wrapper.reverse {
+        flex-direction: column !important;
+        text-align: center;
+        text-align: justify
+      }
+
+      .section-wrapper img {
+        width: 100%;
+        max-height: 300px;
+      }
+    }
+
+    /* CSS */
+    .button-82-pushable {
+      position: relative;
+      border: none;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      outline-offset: 4px;
+      transition: filter 250ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+
+      width: fit-content;
+      align-self: flex-end;
+      margin-top: -1rem;
+      margin-bottom: 1rem;
+      text-decoration: none;
+    }
+
+    .button-82-shadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background: hsl(0deg 0% 0% / 0.25);
+      will-change: transform;
+      transform: translateY(2px);
+      transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+    }
+
+    .button-82-edge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background: linear-gradient(to left,
+          hsl(340deg 100% 16%) 0%,
+          hsl(340deg 100% 32%) 8%,
+          hsl(340deg 100% 32%) 92%,
+          hsl(340deg 100% 16%) 100%);
+    }
+
+    .button-82-front {
+      display: block;
+      position: relative;
+      padding: 12px 27px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      color: white;
+      background: hsl(345deg 100% 47%);
+      will-change: transform;
+      transform: translateY(-4px);
+      transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+    }
+
+    @media (min-width: 768px) {
+      .button-82-front {
+        font-size: 1.25rem;
+        padding: 12px 42px;
+      }
+    }
+
+    .button-82-pushable:hover {
+      filter: brightness(110%);
+      -webkit-filter: brightness(110%);
+    }
+
+    .button-82-pushable:hover .button-82-front {
+      transform: translateY(-6px);
+      transition:
+        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+    }
+
+    .button-82-pushable:active .button-82-front {
+      transform: translateY(-2px);
+      transition: transform 34ms;
+    }
+
+    .button-82-pushable:hover .button-82-shadow {
+      transform: translateY(4px);
+      transition:
+        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+    }
+
+    .button-82-pushable:active .button-82-shadow {
+      transform: translateY(1px);
+      transition: transform 34ms;
+    }
+
+    .button-82-pushable:focus:not(:focus-visible) {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section-header">
+    <div class="section-wrapper">
+      <h1>Open<wbr>Universe</h1>
+      <h2>There are no boundaries</h2>
+
+      <p>
+        <strong>OpenUniverse</strong> is the open source REO (Reactive Event Orchestration) platform that unifies your
+        environment.
+        Empower your infrastructure with a code-first approach to event-driven cross-system workflows.
+        Define triggers and responses as code, connect with diverse technologies, and support language-agnostic event
+        sources and actions. Built for real-time coordination across modern distributed architecture.
+      </p>
+      <a class="button-82-pushable" role="button" target="_blank" href="index (copy).html">
+        <span class="button-82-shadow"></span>
+        <span class="button-82-edge"></span>
+        <strong class="button-82-front text">
+          Start Now!
+        </strong>
+      </a>
+    </div>
+  </section>
+
+  <section class="section-1">
+    <div class="section-wrapper">
+      <img src="img/kseniia-ilinykh-ni1NYB6nXjo-unsplash.jpg" alt="Connect" />
+      <div class="section-text">
+        <h2>Connect Anything</h2>
+        <p>
+          Works seamlessly across platforms, clouds, and systems. Connect to cloud services, on-prem systems, APIs,
+          message queues, databases, or custom endpoints. The platform speaks your language and adapts to your ecosystem
+          — no need to conform to a rigid stack.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-2">
+    <div class="section-wrapper reverse">
+      <img src="img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg" alt="Reactive" />
+      <div class="section-text">
+        <h2>Reactive by Design</h2>
+        <p>
+          Engineered for real-time execution and scalable throughput. Event flows are processed as they happen. The
+          platform supports asynchronous triggers, backpressure handling, and distributed execution to meet the demands
+          of fast-moving systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-3">
+    <div class="section-wrapper">
+      <img src="img/umberto-FewHpO4VC9Y-unsplash.jpg" alt="DevOps" />
+      <div class="section-text">
+        <h2>Built for DevOps & Platform Teams</h2>
+        <p>
+          Empower your engineers to automate safely and consistently. With GitOps support, audit trails, policy
+          integration, and modular architecture, teams can build reliable automation without sacrificing control or
+          visibility.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-4">
+    <div class="section-wrapper reverse">
+      <img src="img/thisisengineering-zdBOU0faYK4-unsplash.jpg" alt="As Code" />
+      <div class="section-text">
+        <h2>Everything As Code</h2>
+        <p>
+          Define triggers, workflows, and conditions declaratively. Write, version, and audit your entire orchestration
+          logic using standard development tools. From simple alerts to complex multi-step responses, everything is
+          stored and deployed as code — enabling consistent, automated, and reviewable operations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-5">
+    <div class="section-wrapper">
+      <img src="img/hassaan-here-shOu5mubuiY-unsplash.jpg" alt="Extensible" />
+      <div class="section-text">
+        <h2>Language-Agnostic & Extensible</h2>
+        <p>
+          Bring your own tools, scripts, and runtimes. Use any language or executable interface to build event sources,
+          processors, or responders. Whether it's a shell script, Python program, or compiled binary — if it runs, it
+          integrates.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-6">
+    <div class="section-wrapper">
+      <img src="img/hassaan-here-shOu5mubuiY-unsplash.jpg" alt="Extensible" />
+      <div class="section-text">
+        <h2>MIT License</h2>
+        <p>
+          The MIT License provides freedom to use, modify, and integrate the software in any project — open source or
+          commercial. With no copyleft, legal barriers, or hidden constraints, it enables building, scaling, and
+          innovation on flexible terms. </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-footer">
+    <p>© 2025 OpenUniverse. <span class="break-point"></span>From chaos to harmony.</p>
+  </section>
+  <section class="section-cookies">
+    This webpage does not use cookies.
+  </section>
+</body>
+
+</html>

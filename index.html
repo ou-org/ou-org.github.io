@@ -24,15 +24,13 @@
 
     html,
     body {
+      height: 100%;
       margin: 0;
       padding: 0;
       font-family: RobotoRegular;
       font-size: 1.1rem;
       background-color: #eff;
       overflow-x: hidden;
-    }
-    h1, h2 {
-      text-align: left;
     }
 
     section {
@@ -46,7 +44,6 @@
       flex-direction: row;
       gap: 2rem;
       align-items: stretch;
-      min-height: 400px;
       padding: 0;
     }
 
@@ -70,7 +67,7 @@
     }
 
     .section-header {
-      KKKheight: 20rem;
+
       padding-top: 1rem;
       padding-bottom: 0;
       min-height: max-content;
@@ -86,21 +83,43 @@
       flex-direction: column;
     }
 
-    .section-header h1 {
-      font-family: 'BrunoAceSC-Regular';
-      font-weight: bold;
-      font-size: 3rem;
-      line-height: 3rem;
+    .section-header .product-name-0 {
       margin-top: 1.5rem;
       margin-bottom: -2rem;
     }
 
+    .slogan {
+      font-weight: bold;
+      font-family: RobotoThin;
+      text-align: left;
+    }
+
+    .slogan-0 {
+      font-size: 2.45rem;
+      line-height: 2.5rem;
+    }
+
+    .slogan-1 {
+      font-size: 1.07rem;
+      line-height: 1.85rem;
+    }
+
     .product-name {
       font-family: 'BrunoAceSC-Regular';
-      font-size: 1rem;
-      line-height: 1rem;
       font-weight: bold;
     }
+
+
+    .product-name-0 {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+
+    .product-name-1 {
+      font-size: 1.3rem;
+      line-height: 1.3rem;
+    }
+
     h2 {
       font-family: RobotoThin;
       font-size: 2rem;
@@ -118,72 +137,30 @@
       color: #fff;
     }
 
+
     .section-3 {
+      background-color: #f7ede2;
+      color: #000;
+    }
+
+    .section-4 {
       background-color: #004049;
       color: #fff;
     }
 
-    .section-4 {
-      background-color: #050b28;
-      color: #fff;
-    }
-
     .section-5 {
-      background-color: #00A2AA;
+      background-color: #cae9ff;
       color: #000;
     }
 
     .section-6 {
-      background-color: #eeeeee;
+      background-color: #EEDEDD;
       color: #000;
     }
 
     .section-footer {
       background-color: #050b28;
       color: #fff;
-      text-align: center;
-      padding: 3rem 1rem;
-      background-image: url("img/galina-nelyubova-h-Ij-IDnc00-unsplash.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .section-cookies {
-      background-color: #1be7ff;
-      color: #000;
-      text-align: center;
-      padding: .6rem;
-    }
- 
-    .break-point {
-  display: none;
-}
-
-@media (max-width: 768px) {
-      .break-point {
-        display: block;
-        content: "";
-        height: 0;
-      }
-      .section-header {
-        min-height: 100vh;
-      }
-      .section-header h1,
-      .section-header h2 {
-        text-align: center;
-      }
-      .section-wrapper,
-      .section-wrapper.reverse {
-        flex-direction: column !important;
-        text-align: center;
-        text-align: justify
-      }
-
-      .section-wrapper img {
-        width: 100%;
-        max-height: 300px;
-      }
     }
 
     /* CSS */
@@ -201,8 +178,8 @@
 
       width: fit-content;
       align-self: flex-end;
-      margin-top: -1rem;
-      margin-bottom: 1rem;
+      margin-top: -2rem;
+      margin-bottom: 2.5rem;
       text-decoration: none;
     }
 
@@ -237,7 +214,6 @@
     .button-82-front {
       display: block;
       position: relative;
-      padding: 12px 27px;
       border-radius: 12px;
       font-size: 1.1rem;
       color: white;
@@ -247,17 +223,15 @@
       transition:
         transform 600ms cubic-bezier(.3, .7, .4, 1);
     }
-.button-82-front  {
-     font-family: 'BrunoAceSC-Regular';
-font-weight: bold;
+
+    .button-82-front {
+      font-family: 'RobotoThin'
+        font-weight: bold;
       font-size: 3rem;
-      line-height: 2rem;
-}
-    @media (min-width: 768px) {
-      .button-82-front {
-        font-size: 1.25rem;
-        padding: 12px 42px;
-      }
+      line-height: 3rem;
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 8px 32px;
     }
 
     .button-82-pushable:hover {
@@ -290,17 +264,106 @@ font-weight: bold;
     .button-82-pushable:focus:not(:focus-visible) {
       outline: none;
     }
+
+
+    /******************************************************************************************/
+    .footer {
+      background-color: #111;
+      color: #ccc;
+      padding: 40px 20px;
+      font-size: .8rem;
+    }
+
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+
+    .footer-column-logo {
+      flex: 1 1 300px;
+      min-width: 300px;
+      margin-top: 15px;
+      color: #fff;
+    }
+
+    .footer-column {
+      flex: 1 1 150px;
+      min-width: 150px;
+    }
+
+    .footer-column h3 {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column li {
+      margin-bottom: 8px;
+    }
+
+    .footer-column a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer-column a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+
+
+
+    @media (max-width: 768px) {
+      .section-header {
+        min-height: 100vh;
+      }
+
+      .button-82-pushable {
+        margin: auto;
+        margin-top: 2rem;
+      }
+
+      .section-header .product-name-0,
+      .section-header .slogan-0 {
+        text-align: center;
+      }
+
+      .section-wrapper,
+      .section-wrapper.reverse {
+        flex-direction: column !important;
+        text-align: center;
+        text-align: justify
+      }
+
+      .section-wrapper img {
+        width: 100%;
+        max-height: 300px;
+      }
+    }
   </style>
 </head>
 
 <body>
   <section class="section-header">
     <div class="section-wrapper">
-      <h1>Open<wbr>Universe</h1>
-      <h2>There are no boundaries</h2>
+      <span class="product-name product-name-0">Open<wbr>Universe</span>
+      <div class="slogan slogan-0">There are no boundaries</div>
 
       <p>
-        <span class="product-name">OpenUniverse</span> is the open source REO (Reactive Event Orchestration) platform that unifies your
+        <span class="product-name">Open<wbr>Universe</span> is the open source REO (Reactive Event Orchestration)
+        platform
+        that unifies your
         environment.
         Empower your infrastructure with a code-first approach to event-driven cross-system workflows.
         Define triggers and responses as code, connect with diverse technologies, and support language-agnostic event
@@ -374,7 +437,7 @@ font-weight: bold;
 
   <section class="section-5">
     <div class="section-wrapper">
-      <img src="img/hassaan-here-shOu5mubuiY-unsplash.jpg" alt="Extensible" />
+      <img src="img/galina-nelyubova-h-Ij-IDnc00-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>Language-Agnostic & Extensible</h2>
         <p>
@@ -387,7 +450,7 @@ font-weight: bold;
   </section>
 
   <section class="section-6">
-    <div class="section-wrapper">
+    <div class="section-wrapper reverse">
       <img src="img/hassaan-here-shOu5mubuiY-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>MIT License</h2>
@@ -400,10 +463,57 @@ font-weight: bold;
   </section>
 
   <section class="section-footer">
-    <p>© 2025 <span class="product-name">OpenUniverse</span>. <span class="break-point"></span>From chaos to harmony.</p>
-  </section>
-  <section class="section-cookies">
-    This webpage does not use cookies.
+    <div class="section-wrapper">
+
+      <footer class="footer">
+        <div class="footer-columns">
+          <div class="footer-column-logo">
+            <div class="product-name product-name-1">Open<wbr>Universe</div>
+            <div class="slogan slogan-1">From chaos to harmony</div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Product</h3>
+            <ul>
+              <li><a href="/features">Features</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+              <li><a href="/roadmap">Roadmap</a></li>
+              <li><a href="/changelog">Changelog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Developers</h3>
+            <ul>
+              <li><a href="/docs">Documentation</a></li>
+              <li><a href="https://github.com/your-org">GitHub</a></li>
+              <li><a href="/api">API Reference</a></li>
+              <li><a href="/status">System Status</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Community</h3>
+            <ul>
+              <li><a href="/community">Get Involved</a></li>
+              <li><a href="https://discord.gg/yourproject">Discord</a></li>
+              <li><a href="https://twitter.com/yourproject">Twitter</a></li>
+              <li><a href="/contribute">Contributing</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Legal</h3>
+            <ul>
+              <li><a href="/terms">Terms of Service</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/license">License</a></li>
+              <li><a href="/security">Security</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
   </section>
 </body>
 

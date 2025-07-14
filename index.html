@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OpenUniverse</title>
+  <link rel="icon" type="image/png" href="img/ou.png">
 
   <style>
     @font-face {
@@ -82,11 +83,14 @@
       padding-bottom: 0;
       min-height: max-content;
       color: white;
-      background-color: #050b28;
-      background-image: url("img/umberto-FewHpO4VC9Y-unsplash.jpg");
+      background-color: #023e8a;
+      background: 
+  linear-gradient(to bottom, #03045e, transparent 20%, transparent 60%, #0096c7),
+  #023e8a;
+      /* background-image: url("img/umberto-FewHpO4VC9Y-unsplash.jpg");
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
+      background-repeat: no-repeat; */
     }
 
     .section-header .section-wrapper {
@@ -106,7 +110,7 @@
 
     .slogan-0 {
       font-size: 2.45rem;
-      line-height: 2.5rem;
+      line-height: 3rem;
     }
 
     .slogan-1 {
@@ -117,8 +121,11 @@
     .product-name {
       font-family: 'BrunoAceSC-Regular';
       font-weight: bold;
+      text-decoration: none;
+      user-select: none;
+      cursor: pointer;
+      color: inherit;
     }
-
 
     .product-name-0 {
       font-size: 3rem;
@@ -139,7 +146,7 @@
 
     .section-footer {
       background-color: #050b28;
-      color: #fff;
+      color: #ccc;
     }
 
     /* CSS */
@@ -162,82 +169,27 @@
       text-decoration: none;
     }
 
-    .button-82-shadow {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      background: hsl(0deg 0% 0% / 0.25);
-      will-change: transform;
-      transform: translateY(2px);
-      transition:
-        transform 600ms cubic-bezier(.3, .7, .4, 1);
-    }
-
-    .button-82-edge {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 12px;
-      background: linear-gradient(to left,
-          hsl(340deg 100% 16%) 0%,
-          hsl(340deg 100% 32%) 8%,
-          hsl(340deg 100% 32%) 92%,
-          hsl(340deg 100% 16%) 100%);
-    }
 
     .button-82-front {
       display: block;
       position: relative;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      color: white;
-      background: hsl(345deg 100% 47%);
-      will-change: transform;
-      transform: translateY(-4px);
-      transition:
-        transform 600ms cubic-bezier(.3, .7, .4, 1);
+      border-radius: 3px;
+      color: black;
+      background: #fff;
     }
 
     .button-82-front {
-      font-family: 'RobotoThin'
+      font-family: 'RobotoThin';
         font-weight: bold;
-      font-size: 3rem;
+        font-size: 1.5rem;
       line-height: 3rem;
       text-align: center;
-      font-size: 1.5rem;
       padding: 8px 32px;
     }
 
     .button-82-pushable:hover {
       filter: brightness(110%);
       -webkit-filter: brightness(110%);
-    }
-
-    .button-82-pushable:hover .button-82-front {
-      transform: translateY(-6px);
-      transition:
-        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-    }
-
-    .button-82-pushable:active .button-82-front {
-      transform: translateY(-2px);
-      transition: transform 34ms;
-    }
-
-    .button-82-pushable:hover .button-82-shadow {
-      transform: translateY(4px);
-      transition:
-        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-    }
-
-    .button-82-pushable:active .button-82-shadow {
-      transform: translateY(1px);
-      transition: transform 34ms;
     }
 
     .button-82-pushable:focus:not(:focus-visible) {
@@ -247,36 +199,33 @@
 
     /******************************************************************************************/
     .footer {
-      background-color: #111;
-      color: #ccc;
-      padding: 40px 20px;
-      font-size: .8rem;
-    }
-
-    .footer-columns {
+      width: 100%;
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+      KKKflex-wrap: wrap;
+      font-size: .8rem;
+      margin-bottom: 2rem;
       justify-content: space-between;
+      gap: 4rem;
     }
 
     .footer-column-logo {
-      flex: 1 1 300px;
-      min-width: 300px;
+      text-wrap: nowrap;
       margin-top: 15px;
       color: #fff;
+      flex-grow: 1;
     }
 
-    .footer-column {
-      flex: 1 1 150px;
-      min-width: 150px;
+    .footer-column .qr {
+      margin-top: 15px;
+      max-width: 118px;
+      height: auto;
+      border: 1px solid transparent;
+      border-radius: 4px;
     }
 
     .footer-column h3 {
       color: #fff;
-      font-size: 16px;
+      font-size: 16px;https://github.com/your-org
       margin-bottom: 12px;
     }
 
@@ -288,6 +237,7 @@
 
     .footer-column li {
       margin-bottom: 8px;
+      text-wrap: nowrap;
     }
 
     .footer-column a {
@@ -306,11 +256,15 @@
     @media (max-width: 768px) {
       .section-header {
         min-height: 100vh;
+        max-height: 100vh;
       }
 
+      .footer {
+        flex-wrap: wrap;
+    }
       .button-82-pushable {
         margin: auto;
-        margin-top: 2rem;
+        margin-top: 1rem;
       }
 
       .section-header .product-name-0,
@@ -336,11 +290,11 @@
 <body>
   <section class="section-header">
     <div class="section-wrapper">
-      <span class="product-name product-name-0">Open<wbr>Universe</span>
+      <a class="product-name product-name-0" href="index.html">Open<wbr>Universe</a>
       <div class="slogan slogan-0">There are no boundaries</div>
 
       <p>
-        <span class="product-name">Open<wbr>Universe</span> is the open source REO (Reactive Event Orchestration)
+        <a class="product-name" href="index.html">Open<wbr>Universe</a> is the open source REO (Reactive Event Orchestration)
         platform
         that unifies your
         environment.
@@ -348,7 +302,7 @@
         Define triggers and responses as code, connect with diverse technologies, and support language-agnostic event
         sources and actions. Built for real-time coordination across modern distributed architecture.
       </p>
-      <a class="button-82-pushable" role="button" target="_blank" href="index (copy).html">
+      <a class="button-82-pushable" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
         <span class="button-82-shadow"></span>
         <span class="button-82-edge"></span>
         <strong class="button-82-front text">
@@ -445,9 +399,8 @@
     <div class="section-wrapper">
 
       <footer class="footer">
-        <div class="footer-columns">
           <div class="footer-column-logo">
-            <div class="product-name product-name-1">Open<wbr>Universe</div>
+            <a class="product-name product-name-1" href="index.html">Open<wbr>Universe</a>
             <div class="slogan slogan-1">From chaos to harmony</div>
           </div>
 
@@ -490,7 +443,10 @@
               <li><a href="/security">Security</a></li>
             </ul>
           </div>
-        </div>
+
+          <div class="footer-column">
+            <img class="qr" src="img/qr.svg" alt="OpenUniverse cite QR-code">
+          </div>
       </footer>
     </div>
   </section>

@@ -29,9 +29,23 @@
       margin: 0;
       padding: 0;
       font-family: RobotoRegular;
-      font-size: 1.1rem;
+      font-size: 1rem;
       background-color: #eff;
       overflow-x: hidden;
+    }
+
+    i {
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     section {
@@ -63,6 +77,8 @@
     }
 
     .section-wrapper img {
+    margin-top: -1rem;;
+    margin-bottom: -1rem;;
       height: 100%;
       width: 300px;
       min-height: max-content;
@@ -78,27 +94,33 @@
     }
 
     .section-header {
-
-      padding-top: 1rem;
       padding-bottom: 0;
       min-height: max-content;
       color: white;
       background-color: #023e8a;
       background:
-        linear-gradient(to bottom, #03045e, transparent 20%, transparent 60%, #0096c7),
+        linear-gradient(to bottom, #000, transparent 40%, transparent 60%, #fff),
         #023e8a;
-      /* background-image: url("img/umberto-FewHpO4VC9Y-unsplash.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat; */
     }
 
     .section-header .section-wrapper {
       flex-direction: column;
     }
+    
+    .github-logo {
+      margin-bottom: -1rem;
+      max-height: 0;
+      align-self: flex-end;
+    }
+
+    .github-logo img {
+      min-height: 20px;
+      max-height: 20px;
+      height: 20px;
+      width: auto;
+    }
 
     .section-header .product-name-0 {
-      margin-top: 1.5rem;
       margin-bottom: -2rem;
     }
 
@@ -123,7 +145,6 @@
       font-weight: bold;
       text-decoration: none;
       user-select: none;
-      cursor: pointer;
       color: inherit;
     }
 
@@ -131,7 +152,7 @@
       font-size: 3rem;
       line-height: 3rem;
     }
-
+    
     .product-name-1 {
       font-size: 1.3rem;
       line-height: 1.3rem;
@@ -145,6 +166,7 @@
     }
 
     .section-footer {
+      border-top: 1px solid #fff;
       background-color: #050b28;
       color: #ccc;
     }
@@ -165,8 +187,8 @@
       width: fit-content;
       align-self: flex-end;
       margin-top: -2rem;
-      margin-bottom: 2.5rem;
-      text-decoration: none;
+      margin-bottom: 2rem;
+      text-decoration: none !important;
     }
 
 
@@ -199,7 +221,7 @@
       width: 100%;
       display: flex;
       font-size: .8rem;
-      margin-bottom: 2rem;
+      margin-bottom: 5rem;
       justify-content: space-between;
       gap: 4rem;
     }
@@ -220,10 +242,11 @@
     }
 
     .footer-column h3 {
-      color: #fff;
+      text-transform: uppercase;
+      color: #eee;
+      font-weight: bold;
       font-size: 16px;
-      https: //github.com/your-org
-        margin-bottom: 12px;
+      margin-bottom: 12px;
     }
 
     .footer-column ul {
@@ -239,16 +262,11 @@
 
     .footer-column a {
       color: #ccc;
-      text-decoration: none;
     }
 
     .footer-column a:hover {
       text-decoration: underline;
-      color: #fff;
     }
-
-
-
 
     @media (max-width: 768px) {
       .section-header {
@@ -258,6 +276,10 @@
 
       .footer {
         flex-wrap: wrap;
+      }
+
+      .footer-column-logo {
+        width: 100%;
       }
 
       .button-82-pushable {
@@ -288,15 +310,14 @@
 <body>
   <section class="section-header">
     <div class="section-wrapper">
-      <a class="product-name product-name-0" href="index.html">Open<wbr>Universe</a>
+      <a class="github-logo" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
+        <img src="img/github-logo.svg" alt="GitHub Logo">
+      </a>
+      <div class="product-name product-name-0" href="index.html">Open<wbr>Universe</div>
       <div class="slogan slogan-0">There are no boundaries</div>
-
       <p>
         <a class="product-name" href="index.html">Open<wbr>Universe</a> is the open source REO (Reactive Event
-        Orchestration)
-        platform
-        that unifies your
-        environment.
+        Orchestration) platform that unifies your environment.
         Empower your infrastructure with a code-first approach to event-driven cross-system workflows.
         Define triggers and responses as code, connect with diverse technologies, and support language-agnostic event
         sources and actions. Built for real-time coordination across modern distributed architecture.
@@ -310,7 +331,7 @@
       </a>
     </div>
   </section>
-
+  
   <section class="gray-no">
     <div class="section-wrapper">
       <img src="img/kseniia-ilinykh-ni1NYB6nXjo-unsplash.jpg" alt="Connect" />
@@ -383,13 +404,67 @@
 
   <section class="gray-yes">
     <div class="section-wrapper reverse">
+      <img src="img/bitan-sarkar-3dva77qVGds-unsplash.jpg" alt="Extensible" />
+      <div class="section-text">
+        <h2>Composable Infrastructure</h2>
+        <p>
+          Design your infrastructure like building with blocks — intuitive, modular, and endlessly flexible. Define
+          every component as code, integrate any system at any scale, and use your preferred tools and languages. Build
+          fast, evolve freely, and stay in control.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gray-no">
+    <div class="section-wrapper">
+      <img src="img/conny-schneider-xuTJZ7uD7PI-unsplash.jpg" alt="Extensible" />
+      <div class="section-text">
+        <h2>Behind the Insights</h2>
+        <p>
+          <a href="https://doi.org/10.1016/j.infsof.2019.01.006" target="_blank">
+            <i>A Scalable, event-driven
+              architecture for designing interactions across heterogeneous devices in
+              smart environments</i></a>
+          <br>
+          Ovidiu-Andrei Schipor, Radu-Daniel Vatavu, Jean Vanderdonckt
+          <br>
+          Information and Software Technology, Vol. 109 (2019), 43–59, <nobr>ISSN: 0950-5849</nobr>
+        </p>
+
+        <p>
+          <a href="https://doi.org/10.61841/turcomat.v11i1.14928" target="_blank"><i>The Power of Event-Driven
+              Architecture: Enabling RealTime Systems and Scalable Solutions</i></a>
+          <br>
+          Adisheshu Reddy Kommera
+          <br>
+          Turkish Journal of Computer and Mathematics Education, Vol. 11 (2020), 1740-1751, <nobr>ISSN:
+            3048-4855</nobr>
+        </p>
+
+        <p>
+          <a href="https://doi.org/10.30574/ijsra.2021.4.1.0166" target="_blank"><i>Exploring event-driven architecture
+              in microservices- patterns, pitfalls and best practices</i></a>
+          <br>
+          Chavan, Ashwin
+          <br>
+          International Journal of Science and Research Archive, Vol. 4 (2021), 229-249, <nobr>ISSN: 2582-8185</nobr>
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="gray-yes">
+    <div class="section-wrapper reverse">
       <img src="img/hassaan-here-shOu5mubuiY-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>MIT License</h2>
         <p>
-          The MIT License provides freedom to use, modify, and integrate the software in any project — open source or
+          The <a href="https://github.com/ou-org/OpenUniverse/blob/main/LICENSE" target="_blank">MIT License</a> provides freedom to use, modify, and integrate the software in any project — open source or
           commercial. With no copyleft, legal barriers, or hidden constraints, it enables building, scaling, and
-          innovation on flexible terms. </p>
+          innovation on flexible terms.
+        </p>
       </div>
     </div>
   </section>
@@ -399,7 +474,7 @@
 
       <footer class="footer">
         <div class="footer-column-logo">
-          <a class="product-name product-name-1" href="index.html">Open<wbr>Universe</a>
+          <div class="product-name product-name-1">Open<wbr>Universe</div>
           <div class="slogan slogan-1">From chaos to harmony</div>
         </div>
 
@@ -407,7 +482,7 @@
           <h3>Product</h3>
           <ul>
             <li><a href="/features">Features</a></li>
-            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/pricing">Build Guide</a></li>
             <li><a href="/roadmap">Roadmap</a></li>
             <li><a href="/changelog">Changelog</a></li>
           </ul>
@@ -416,8 +491,8 @@
         <div class="footer-column">
           <h3>Developers</h3>
           <ul>
-            <li><a href="/docs">Documentation</a></li>
-            <li><a href="https://github.com/your-org">GitHub</a></li>
+            <li><a href="https://github.com/ou-org/OpenUniverse/README.md">Documentation</a></li>
+            <li><a href="https://github.com/ou-org/OpenUniverse">GitHub</a></li>
             <li><a href="/api">API Reference</a></li>
             <li><a href="/status">System Status</a></li>
           </ul>
@@ -438,14 +513,14 @@
           <ul>
             <li><a href="/terms">Terms of Service</a></li>
             <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/license">License</a></li>
+            <li><a href="https://github.com/ou-org/OpenUniverse/blob/main/LICENSE">License</a></li>
             <li><a href="/security">Security</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
           <a href="index.html" title="https://ou-org.github.io">
-          <img class="qr" src="img/qr.svg" alt="OpenUniverse site QR-code">
+            <img class="qr" src="img/qr.svg" alt="OpenUniverse site QR-code">
           </a>
         </div>
       </footer>

@@ -108,12 +108,13 @@
     }
     
     .github-logo {
-      margin-bottom: -1rem;
+      margin-top: 1rem;
       max-height: 0;
       align-self: flex-end;
     }
 
     .github-logo img {
+      padding-bottom: 1.2rem;
       min-height: 20px;
       max-height: 20px;
       height: 20px;
@@ -136,8 +137,8 @@
     }
 
     .slogan-1 {
-      font-size: 1.07rem;
-      line-height: 1.85rem;
+      font-size: 1rem;
+      line-height: 1rem;
     }
 
     .product-name {
@@ -154,8 +155,8 @@
     }
     
     .product-name-1 {
-      font-size: 1.3rem;
-      line-height: 1.3rem;
+      font-size: 1.22rem;
+      padding-bottom: .2rem;
     }
 
     h2 {
@@ -221,31 +222,33 @@
       width: 100%;
       display: flex;
       font-size: .8rem;
+      padding-top: 2rem;
       margin-bottom: 5rem;
       justify-content: space-between;
-      gap: 4rem;
+      gap: 1.2rem;
     }
-
+    
     .footer-column-logo {
+      margin-top: -5px;
       text-wrap: nowrap;
-      margin-top: 15px;
       color: #fff;
       flex-grow: 1;
     }
 
     .footer-column .qr {
-      margin-top: 15px;
+      display: block;
+      margin-top: 0;
       max-width: 118px;
       height: auto;
       border: 1px solid transparent;
       border-radius: 4px;
     }
 
-    .footer-column h3 {
-      text-transform: uppercase;
-      color: #eee;
+    .footer-column-header {
+      color: #fff;
       font-weight: bold;
       font-size: 16px;
+      line-height: 16px;
       margin-bottom: 12px;
     }
 
@@ -473,13 +476,13 @@
     <div class="section-wrapper">
 
       <footer class="footer">
-        <div class="footer-column-logo">
-          <div class="product-name product-name-1">Open<wbr>Universe</div>
+        <div class="footer-column footer-column-logo">
+          <div class="product-name product-name-1">OpenUniverse</div>
           <div class="slogan slogan-1">From chaos to harmony</div>
         </div>
 
         <div class="footer-column">
-          <h3>Product</h3>
+          <div class="footer-column-header">Product</div>
           <ul>
             <li><a href="/features">Features</a></li>
             <li><a href="/pricing">Build Guide</a></li>
@@ -489,7 +492,7 @@
         </div>
 
         <div class="footer-column">
-          <h3>Developers</h3>
+          <div class="footer-column-header">Developers</div>
           <ul>
             <li><a href="https://github.com/ou-org/OpenUniverse/README.md">Documentation</a></li>
             <li><a href="https://github.com/ou-org/OpenUniverse">GitHub</a></li>
@@ -499,7 +502,7 @@
         </div>
 
         <div class="footer-column">
-          <h3>Community</h3>
+          <div class="footer-column-header">Community</div>
           <ul>
             <li><a href="/community">Get Involved</a></li>
             <li><a href="https://discord.gg/yourproject">Discord</a></li>
@@ -509,7 +512,7 @@
         </div>
 
         <div class="footer-column">
-          <h3>Legal</h3>
+          <div class="footer-column-header">Legal</div>
           <ul>
             <li><a href="/terms">Terms of Service</a></li>
             <li><a href="/privacy">Privacy Policy</a></li>
@@ -518,7 +521,7 @@
           </ul>
         </div>
 
-        <div class="footer-column">
+        <div class="footer-column qr">
           <a href="index.html" title="https://ou-org.github.io">
             <img class="qr" src="img/qr.svg" alt="OpenUniverse site QR-code">
           </a>

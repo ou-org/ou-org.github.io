@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OpenUniverse</title>
-  <link rel="icon" type="image/png" href="img/ou.png">
+  <link rel="icon" type="image/png" href="img/icon/ou.png">
 
   <style>
     @font-face {
@@ -77,8 +77,10 @@
     }
 
     .section-wrapper img {
-    margin-top: -1rem;;
-    margin-bottom: -1rem;;
+      margin-top: -1rem;
+      ;
+      margin-bottom: -1rem;
+      ;
       height: 100%;
       width: 300px;
       min-height: max-content;
@@ -106,7 +108,7 @@
     .section-header .section-wrapper {
       flex-direction: column;
     }
-    
+
     .github-logo {
       margin-top: 1rem;
       max-height: 0;
@@ -136,11 +138,6 @@
       line-height: 3rem;
     }
 
-    .slogan-1 {
-      font-size: 1rem;
-      line-height: 1rem;
-    }
-
     .product-name {
       font-family: 'BrunoAceSC-Regular';
       font-weight: bold;
@@ -153,11 +150,6 @@
       font-size: 3rem;
       line-height: 3rem;
     }
-    
-    .product-name-1 {
-      font-size: 1.22rem;
-      padding-bottom: .2rem;
-    }
 
     h2 {
       font-family: RobotoThin;
@@ -167,7 +159,7 @@
     }
 
     .section-footer {
-      border-top: 1px solid #fff;
+      border-top: 1rem solid #fff;
       background-color: #050b28;
       color: #ccc;
     }
@@ -227,12 +219,31 @@
       justify-content: space-between;
       gap: 1.2rem;
     }
-    
+
+    .logo-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .logo-row-top {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
+
+    .logo-row-bottom {
+      font-size: 1.24rem;
+      line-height: 1rem;
+    }
+
     .footer-column-logo {
-      margin-top: -5px;
+      display: flex;
+      flex-direction: column;
       text-wrap: nowrap;
       color: #fff;
-      flex-grow: 1;
+      gap: .3rem;
+      height: fit-content;
+      margin-top: -.38rem;
     }
 
     .footer-column .qr {
@@ -334,7 +345,7 @@
       </a>
     </div>
   </section>
-  
+
   <section class="gray-no">
     <div class="section-wrapper">
       <img src="img/kseniia-ilinykh-ni1NYB6nXjo-unsplash.jpg" alt="Connect" />
@@ -430,8 +441,7 @@
               architecture for designing interactions across heterogeneous devices in
               smart environments</i></a>
           <br>
-          Ovidiu-Andrei Schipor, Radu-Daniel Vatavu, Jean Vanderdonckt
-          <br>
+          Ovidiu-Andrei Schipor, Radu-Daniel Vatavu, Jean Vanderdonckt.
           Information and Software Technology, Vol. 109 (2019), 43–59, <nobr>ISSN: 0950-5849</nobr>
         </p>
 
@@ -439,8 +449,7 @@
           <a href="https://doi.org/10.61841/turcomat.v11i1.14928" target="_blank"><i>The Power of Event-Driven
               Architecture: Enabling RealTime Systems and Scalable Solutions</i></a>
           <br>
-          Adisheshu Reddy Kommera
-          <br>
+          Adisheshu Reddy Kommera.
           Turkish Journal of Computer and Mathematics Education, Vol. 11 (2020), 1740-1751, <nobr>ISSN:
             3048-4855</nobr>
         </p>
@@ -449,8 +458,7 @@
           <a href="https://doi.org/10.30574/ijsra.2021.4.1.0166" target="_blank"><i>Exploring event-driven architecture
               in microservices- patterns, pitfalls and best practices</i></a>
           <br>
-          Chavan, Ashwin
-          <br>
+          Chavan, Ashwin.
           International Journal of Science and Research Archive, Vol. 4 (2021), 229-249, <nobr>ISSN: 2582-8185</nobr>
         </p>
 
@@ -464,7 +472,8 @@
       <div class="section-text">
         <h2>MIT License</h2>
         <p>
-          The <a href="https://github.com/ou-org/OpenUniverse/blob/main/LICENSE" target="_blank">MIT License</a> provides freedom to use, modify, and integrate the software in any project — open source or
+          The <a href="https://github.com/ou-org/OpenUniverse/blob/main/LICENSE" target="_blank">MIT License</a>
+          provides freedom to use, modify, and integrate the software in any project — open source or
           commercial. With no copyleft, legal barriers, or hidden constraints, it enables building, scaling, and
           innovation on flexible terms.
         </p>
@@ -476,9 +485,10 @@
     <div class="section-wrapper">
 
       <footer class="footer">
+
         <div class="footer-column footer-column-logo">
-          <div class="product-name product-name-1">OpenUniverse</div>
-          <div class="slogan slogan-1">From chaos to harmony</div>
+            <div class="product-name logo-row-top">OpenUniverse</div>
+            <div class="slogan logo-row-bottom">From chaos to harmony</div>
         </div>
 
         <div class="footer-column">

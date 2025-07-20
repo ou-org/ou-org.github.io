@@ -5,8 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OpenUniverse</title>
-  <!--<a href="https://www.freepik.com/author/lorddreamsss/icons">Icon by dreamicons</a>.-->
-  <link rel="icon" type="image/png" href="img/aliens.svg">
+  <!--<a href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.-->
+  <link rel="icon" type="image/png" href="img/mars_11829841.png">
 
   <style>
     @font-face {
@@ -38,7 +38,7 @@
     i {
       font-family: Georgia, 'Times New Roman', Times, serif;
       font-style: italic;
-      font-size: 1.1rem;
+      font-size: 1.13rem;
     }
 
     a {
@@ -105,7 +105,7 @@
       color: white;
       background-color: #023e8a;
       background:
-        linear-gradient(to bottom, #000, transparent 40%, transparent 60%, #fff),
+        linear-gradient(to bottom, #000, transparent 90%, transparent 10%),
         #023e8a;
     }
 
@@ -163,7 +163,6 @@
     }
 
     .section-footer {
-      KKKborder-top: 1rem solid #fff;
       background-color: #000;
       color: #ccc;
     }
@@ -217,6 +216,7 @@
     .footer {
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       font-size: .8rem;
       padding-top: 2rem;
       margin-bottom: 1rem;
@@ -312,13 +312,16 @@
       .section-wrapper,
       .section-wrapper.reverse {
         flex-direction: column !important;
-        KKKtext-align: center;
         text-align: justify
       }
 
       .section-wrapper img {
         width: 100%;
         max-height: 300px;
+      }
+
+      .mars {
+        display: none;
       }
     }
 
@@ -342,6 +345,10 @@
       height: auto;
     }
 
+    .first-side-image {
+      margin-top: 0 !important;
+    }
+
     .last-side-image {
       margin-bottom: 0 !important;
     }
@@ -350,6 +357,12 @@
       font-size: .8rem;
       padding-bottom: 2.5rem;
       text-align: left;
+    }
+
+    .mars {
+      padding-top: 1.8rem;
+      max-width: 10rem;
+      max-height: 10rem;
     }
   </style>
 </head>
@@ -382,7 +395,7 @@
   <section class="gray-no">
     <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
-      <img src="img/kseniia-ilinykh-ni1NYB6nXjo-unsplash.jpg" alt="Connect" />
+      <img src="img/kseniia-ilinykh-ni1NYB6nXjo-unsplash.jpg" class="first-side-image" alt="Connect" />
       <div class="section-text">
         <h2>Connect Anything</h2>
         <p>
@@ -400,7 +413,7 @@
       <img src="img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg" alt="Reactive" />
       <div class="section-text">
         <div class="bg-icon">
-          <!--<a href="https://www.freepik.com/author/lorddreamsss/icons">Icon by dreamicons</a>.-->
+          <!--<a href="https://www.freepik.com/icon/alien_8152466">Alien Icon by dreamicons</a>. <a href="https://www.freepik.com/author/lorddreamsss/icons">Icon by dreamicons</a>.-->
           <img src="img/aliens.svg" alt="OU Logo">
         </div>
         <h2>Reactive by Design</h2>
@@ -469,14 +482,27 @@
       </div>
     </div>
   </section>
-
   <section class="gray-no">
     <div class="section-wrapper">
+      <img src="img/bitan-sarkar-3dva77qVGds-unsplash.jpg" alt="Extensible" />
+      <div class="section-text">
+        <h2>AI Free, Verifiable by Design</h2>
+        <p>
+          Every outcome is deterministic, transparent, and cryptographically verifiable.
+          No AI-driven ambiguity—just open logic, signed data, and reproducible processes.
+          Designed for those who demand proof over promises.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gray-yes">
+    <div class="section-wrapper reverse">
       <!--Photo by <a href="https://unsplash.com/@choys_">Conny Schneider</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img src="img/conny-schneider-xuTJZ7uD7PI-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>Behind the Insights</h2>
-<p>
+        <p>
         <div>
           [1] <a href="https://doi.org/10.1016/j.infsof.2019.01.006" target="_blank">
             <i>A Scalable, event-driven
@@ -497,20 +523,22 @@
         </div>
         <br>
         <div>
-          [3] <a href="https://doi.org/10.30574/ijsra.2021.4.1.0166" target="_blank"><i>Exploring event-driven architecture
+          [3] <a href="https://doi.org/10.30574/ijsra.2021.4.1.0166" target="_blank"><i>Exploring event-driven
+              architecture
               in microservices- patterns, pitfalls and best practices</i></a>
           <br>
           Chavan, Ashwin.
           International Journal of Science and Research Archive, Vol. 4 (2021), 229-249, <nobr>ISSN: 2582-8185</nobr>
         </div>
-</p>
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="gray-yes">
-    <div class="section-wrapper reverse">
-      <img src="img/hassaan-here-shOu5mubuiY-unsplash.jpg" class="last-side-image" alt="Extensible" />
+  <section class="gray-no">
+    <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham Dhage</a> on <a href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.-->
+      <img src="img/shubham-dhage-5ZHsI64p-Ws-unsplash.jpg" class="last-side-image" alt="Extensible" />
       <div class="section-text">
         <h2>MIT License</h2>
         <p>
@@ -525,7 +553,7 @@
 
   <section class="section-footer">
     <div class="section-wrapper">
-
+      <img src="img/mars_11829841.png" class="mars">
       <footer class="footer">
 
         <div class="footer-column footer-column-logo">
@@ -572,22 +600,34 @@
             <li><a href="/security">Security</a></li>
           </ul>
         </div>
-
+<!--
         <div class="footer-column qr">
           <a href="index.html" title="https://ou-org.github.io">
             <img class="qr" src="img/qr.svg" alt="OpenUniverse site QR-code">
           </a>
         </div>
+-->
       </footer>
     </div>
   </section>
   <section class="section-footer">
     <div class="section-wrapper">
       <div class="credit-footer">
-        <b>Acknowledgments and Attributions:</b> <a href="https://www.freepik.com/author/lorddreamsss/icons">Icon by
-          dreamicons</a>. Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a
-          href="https://unsplash.com/">Unsplash</a>. Photo by <a href="https://unsplash.com/@umby">Umberto</a> on <a
-          href="https://unsplash.com/">Unsplash</a>. Photo by <a href="https://unsplash.com/@choys_">Conny Schneider</a> on <a href="https://unsplash.com/">Unsplash</a>. Photo by <a href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a href="https://unsplash.com/">Unsplash</a>.
+        <b>Acknowledgments and Attributions:</b>
+        <a
+          href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars
+          Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.
+        <a href="https://www.freepik.com/icon/alien_8152466">Alien Icon by dreamicons</a>. <a
+          href="https://www.freepik.com/author/lorddreamsss/icons">Icon by dreamicons</a>.
+        Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a
+          href="https://unsplash.com/">Unsplash</a>.
+        Photo by <a href="https://unsplash.com/@umby">Umberto</a> on <a href="https://unsplash.com/">Unsplash</a>. Photo
+        by <a href="https://unsplash.com/@choys_">Conny Schneider</a> on <a href="https://unsplash.com/">Unsplash</a>.
+        Photo by <a href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a href="https://unsplash.com/">Unsplash</a>.
+        Photo by <a
+          href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham
+          Dhage</a> on <a
+          href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.
       </div>
     </div>
   </section>

@@ -5,7 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OpenUniverse</title>
-  <link rel="icon" type="image/png" href="img/icon/ou.png">
+  <!--<a href="https://www.freepik.com/author/lorddreamsss/icons">Icon by dreamicons</a>.-->
+  <link rel="icon" type="image/png" href="img/aliens.svg">
 
   <style>
     @font-face {
@@ -78,9 +79,7 @@
 
     .section-wrapper img {
       margin-top: -1rem;
-      ;
       margin-bottom: -1rem;
-      ;
       height: 100%;
       width: 300px;
       min-height: max-content;
@@ -89,6 +88,10 @@
     }
 
     .section-text {
+      position: relative;
+      z-index: 1;
+
+
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -159,8 +162,8 @@
     }
 
     .section-footer {
-      border-top: 1rem solid #fff;
-      background-color: #050b28;
+      KKKborder-top: 1rem solid #fff;
+      background-color: #000;
       color: #ccc;
     }
 
@@ -215,15 +218,9 @@
       display: flex;
       font-size: .8rem;
       padding-top: 2rem;
-      margin-bottom: 5rem;
+      margin-bottom: 1rem;
       justify-content: space-between;
       gap: 1.2rem;
-    }
-
-    .logo-col {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
     .logo-row-top {
@@ -283,6 +280,10 @@
     }
 
     @media (max-width: 768px) {
+      .bg-icon img {
+        display: none;
+      }
+
       .section-header {
         min-height: 100vh;
         max-height: 100vh;
@@ -294,6 +295,7 @@
 
       .footer-column-logo {
         width: 100%;
+        padding-bottom: 1.5rem;
       }
 
       .button-82-pushable {
@@ -309,7 +311,7 @@
       .section-wrapper,
       .section-wrapper.reverse {
         flex-direction: column !important;
-        text-align: center;
+        KKKtext-align: center;
         text-align: justify
       }
 
@@ -317,6 +319,36 @@
         width: 100%;
         max-height: 300px;
       }
+    }
+
+    .bg-icon {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      pointer-events: none;
+      z-index: 0;
+      /* Behind content */
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.025;
+      /* Make it subtle */
+    }
+
+    .bg-icon img {
+      width: 1000px;
+      height: auto;
+    }
+
+    .last-side-image {
+      margin-bottom: .5rem !important;
+    }
+
+    .credit-footer {
+      font-size: .8rem;
+      padding-bottom: 2.5rem;
+      text-align: left;
     }
   </style>
 </head>
@@ -348,6 +380,7 @@
 
   <section class="gray-no">
     <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img src="img/kseniia-ilinykh-ni1NYB6nXjo-unsplash.jpg" alt="Connect" />
       <div class="section-text">
         <h2>Connect Anything</h2>
@@ -362,8 +395,13 @@
 
   <section class="gray-yes">
     <div class="section-wrapper reverse">
+      <!--Photo by <a href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img src="img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg" alt="Reactive" />
       <div class="section-text">
+        <div class="bg-icon">
+          <!--<a href="https://www.freepik.com/author/lorddreamsss/icons">Icon by dreamicons</a>.-->
+          <img src="img/aliens.svg" alt="OU Logo">
+        </div>
         <h2>Reactive by Design</h2>
         <p>
           Engineered for real-time execution and scalable throughput. Event flows are processed as they happen. The
@@ -376,6 +414,7 @@
 
   <section class="gray-no">
     <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@umby">Umberto</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img src="img/umberto-FewHpO4VC9Y-unsplash.jpg" alt="DevOps" />
       <div class="section-text">
         <h2>Built for DevOps & Platform Teams</h2>
@@ -432,6 +471,7 @@
 
   <section class="gray-no">
     <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@choys_">Conny Schneider</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img src="img/conny-schneider-xuTJZ7uD7PI-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>Behind the Insights</h2>
@@ -468,7 +508,7 @@
 
   <section class="gray-yes">
     <div class="section-wrapper reverse">
-      <img src="img/hassaan-here-shOu5mubuiY-unsplash.jpg" alt="Extensible" />
+      <img src="img/hassaan-here-shOu5mubuiY-unsplash.jpg" class="last-side-image" alt="Extensible" />
       <div class="section-text">
         <h2>MIT License</h2>
         <p>
@@ -487,8 +527,8 @@
       <footer class="footer">
 
         <div class="footer-column footer-column-logo">
-            <div class="product-name logo-row-top">OpenUniverse</div>
-            <div class="slogan logo-row-bottom">From chaos to harmony</div>
+          <div class="product-name logo-row-top">OpenUniverse</div>
+          <div class="slogan logo-row-bottom">From chaos to harmony</div>
         </div>
 
         <div class="footer-column">
@@ -537,6 +577,16 @@
           </a>
         </div>
       </footer>
+    </div>
+  </section>
+  <section class="section-footer">
+    <div class="section-wrapper">
+      <div class="credit-footer">
+        <b>Acknowledgments and Attributions:</b> <a href="https://www.freepik.com/author/lorddreamsss/icons">Icon by
+          dreamicons</a>. Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a
+          href="https://unsplash.com/">Unsplash</a>. Photo by <a href="https://unsplash.com/@umby">Umberto</a> on <a
+          href="https://unsplash.com/">Unsplash</a>. Photo by <a href="https://unsplash.com/@choys_">Conny Schneider</a> on <a href="https://unsplash.com/">Unsplash</a>. Photo by <a href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a href="https://unsplash.com/">Unsplash</a>.
+      </div>
     </div>
   </section>
 </body>

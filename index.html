@@ -382,10 +382,11 @@
         Define triggers and responses as code, connect with diverse technologies, and support language-agnostic event
         sources and actions. Built for real-time coordination across modern distributed architecture.
       </p>
-      <a class="button-82-pushable" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
+      <a id="startButton" class="button-82-pushable" role="button" target="_blank"
+        href="https://github.com/ou-org/OpenUniverse">
         <span class="button-82-shadow"></span>
         <span class="button-82-edge"></span>
-        <strong class="button-82-front text">
+        <strong id="startButtonText" class="button-82-front text">
           REMOVE BEFORE FLIGHT!
         </strong>
       </a>
@@ -510,14 +511,14 @@
           <br>
           Ovidiu-Andrei Schipor, Radu-Daniel Vatavu, Jean Vanderdonckt.
           Information and Software Technology, Vol. 109 (2019), 43–59, <nobr>ISSN: 0950-5849</nobr>
-        <br><br>
+          <br><br>
           [2] <a href="https://doi.org/10.61841/turcomat.v11i1.14928" target="_blank"><i>The Power of Event-Driven
               Architecture: Enabling RealTime Systems and Scalable Solutions</i></a>
           <br>
           Adisheshu Reddy Kommera.
           Turkish Journal of Computer and Mathematics Education, Vol. 11 (2020), 1740-1751, <nobr>ISSN:
             3048-4855</nobr>
-        <br><br>
+          <br><br>
           [3] <a href="https://doi.org/10.30574/ijsra.2021.4.1.0166" target="_blank"><i>Exploring event-driven
               architecture
               in microservices- patterns, pitfalls and best practices</i></a>
@@ -626,5 +627,29 @@
     </div>
   </section>
 </body>
+<script>
+  const button = document.getElementById('startButton');
+  const buttonText = document.getElementById('startButtonText');
+
+  if (sessionStorage.getItem('startClicked') === 'true') {
+    modifyButton(buttonText);
+  } else {
+    function handleFirstClick(event) {
+      event.preventDefault(); // block redirect on first click
+      modifyButton(buttonText);
+      sessionStorage.setItem('startClicked', 'true');
+      button.removeEventListener('click', handleFirstClick); // remove listener after use
+    }
+
+    button.addEventListener('click', handleFirstClick);
+  }
+
+  function modifyButton(buttonText) {
+    buttonText.textContent = 'Get Started';
+    buttonText.style.background = '#2a9d8f';
+    buttonText.style.borderRadius = '100px';
+  }
+
+</script>
 
 </html>

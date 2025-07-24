@@ -31,7 +31,7 @@
       padding: 0;
       font-family: RobotoRegular;
       font-size: 1rem;
-      background-color: #eff;
+      background-color: #000;
       overflow-x: hidden;
     }
 
@@ -69,16 +69,14 @@
     }
 
     .gray-yes {
-      background-color: #fafafa;
-      color: #000;
+      background-color: #f9f9f9;
     }
 
     .gray-no {
-      background-color: #f4f4f4;
-      color: #000;
+      background-color: #fff;
     }
 
-    .section-wrapper img {
+    .side-img {
       margin-top: -1rem;
       margin-bottom: -1rem;
       height: 100%;
@@ -103,10 +101,7 @@
       padding-bottom: 0;
       min-height: max-content;
       color: white;
-      background-color: #023e8a;
-      background:
-        linear-gradient(to bottom, #000, transparent 90%, transparent 10%),
-        #023e8a;
+      background: linear-gradient(-25deg, #7BA0BE 30%, #FD3C84 100%);
     }
 
     .section-header .section-wrapper {
@@ -198,15 +193,6 @@
       margin-top: -.38rem;
     }
 
-    .footer-column .qr {
-      display: block;
-      margin-top: 0;
-      max-width: 118px;
-      height: auto;
-      border: 1px solid transparent;
-      border-radius: 4px;
-    }
-
     .footer-column-header {
       color: #fff;
       font-weight: bold;
@@ -235,7 +221,7 @@
     }
 
     @media (max-width: 768px) {
-      .bg-icon img {
+      .bg-icon {
         display: none;
       }
 
@@ -270,10 +256,17 @@
       .section-wrapper,
       .section-wrapper.reverse {
         flex-direction: column !important;
+      }
+      .gray-no, .gray-yes {
+        background-color: #fff;
+      }
+      
+      .section-wrapper p,
+      .section-wrapper.reverse p {
         text-align: justify
       }
 
-      .section-wrapper img {
+      .side-img {
         width: 100%;
         max-height: 300px;
       }
@@ -284,30 +277,24 @@
     }
 
     .bg-icon {
+      margin-left: 25rem;
+      width: 26rem;
+      height: 26rem;
       position: absolute;
-      width: 100%;
-      height: auto;
       pointer-events: none;
       z-index: 0;
-      /* Behind content */
-      display: flex;
-      align-content: center;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.025;
-      /* Make it subtle */
+      opacity: 0.035;
+      transform-origin: center;
+      background-image: url("img/glucose_8205747.svg");
+      background-size: contain;
+      background-position: center;
     }
 
-    .bg-icon img {
-      width: 1000px;
-      height: auto;
-    }
-
-    .first-side-image {
+    .side-img-first {
       margin-top: 0 !important;
     }
 
-    .last-side-image {
+    .side-img-last {
       margin-bottom: 0 !important;
     }
 
@@ -338,7 +325,7 @@
       text-decoration: none !important;
       user-select: none;
     }
-    
+
     .button-start {
       align-self: flex-end;
       margin-bottom: 3rem;
@@ -348,8 +335,7 @@
       justify-self: flex-end;
       margin-bottom: 1rem;
     }
-
-</style>
+  </style>
 </head>
 
 <body>
@@ -367,16 +353,16 @@
         Define triggers and responses as code, connect with diverse technologies, and support language-agnostic event
         sources and actions. Built for real-time coordination across modern distributed architecture.
       </p>
-        <a class="button button-start" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">        
-          Get Started
-        </a>
+      <a class="button button-start" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
+        Get Started
+      </a>
     </div>
   </section>
 
   <section class="gray-no">
     <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
-      <img src="img/kseniia-ilinykh-ni1NYB6nXjo-unsplash.jpg" class="first-side-image" alt="Connect" />
+      <img class="side-img" src="img/kseniia-ilinykh-ni1NYB6nXjo-unsplash.jpg" alt="Connect" />
       <div class="section-text">
         <h2>Connect Anything</h2>
         <p>
@@ -391,12 +377,8 @@
   <section class="gray-yes">
     <div class="section-wrapper reverse">
       <!--Photo by <a href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
-      <img src="img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg" alt="Reactive" />
+      <img class="side-img" src="img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg" alt="Reactive" />
       <div class="section-text">
-        <div class="bg-icon">
-          <!--<a href="https://www.freepik.com/icon/alien_8152466">Alien Icon by dreamicons</a>. <a href="https://www.freepik.com/author/lorddreamsss/icons">Icon by dreamicons</a>.-->
-          <img src="img/aliens.svg" alt="OU Logo">
-        </div>
         <h2>Reactive by Design</h2>
         <p>
           Engineered for real-time execution and scalable throughput. Event flows are processed as they happen. The
@@ -410,7 +392,7 @@
   <section class="gray-no">
     <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@umby">Umberto</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
-      <img src="img/umberto-FewHpO4VC9Y-unsplash.jpg" alt="DevOps" />
+      <img class="side-img" src="img/umberto-FewHpO4VC9Y-unsplash.jpg" alt="DevOps" />
       <div class="section-text">
         <h2>Built for DevOps & Platform Teams</h2>
         <p>
@@ -424,7 +406,7 @@
 
   <section class="gray-yes">
     <div class="section-wrapper reverse">
-      <img src="img/thisisengineering-zdBOU0faYK4-unsplash.jpg" alt="As Code" />
+      <img class="side-img" src="img/thisisengineering-zdBOU0faYK4-unsplash.jpg" alt="As Code" />
       <div class="section-text">
         <h2>Universe As Code</h2>
         <p>
@@ -438,7 +420,7 @@
 
   <section class="gray-no">
     <div class="section-wrapper">
-      <img src="img/galina-nelyubova-h-Ij-IDnc00-unsplash.jpg" alt="Extensible" />
+      <img class="side-img" src="img/galina-nelyubova-h-Ij-IDnc00-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>True Language-Agnostic</h2>
         <p>
@@ -452,7 +434,7 @@
 
   <section class="gray-yes">
     <div class="section-wrapper reverse">
-      <img src="img/bitan-sarkar-3dva77qVGds-unsplash.jpg" alt="Extensible" />
+      <img class="side-img" src="img/bitan-sarkar-3dva77qVGds-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>Composable Infrastructure</h2>
         <p>
@@ -465,7 +447,7 @@
   </section>
   <section class="gray-no">
     <div class="section-wrapper">
-      <img src="img/jere-barcebal-uqb68Xbxhik-unsplash.jpg" alt="Extensible" />
+      <img class="side-img" src="img/jere-barcebal-uqb68Xbxhik-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>AI Free, Verifiable by Design</h2>
         <p>
@@ -480,7 +462,7 @@
   <section class="gray-yes">
     <div class="section-wrapper reverse">
       <!--Photo by <a href="https://unsplash.com/@choys_">Conny Schneider</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
-      <img src="img/conny-schneider-xuTJZ7uD7PI-unsplash.jpg" alt="Extensible" />
+      <img class="side-img" src="img/conny-schneider-xuTJZ7uD7PI-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>Behind the Insights</h2>
         <p>
@@ -516,7 +498,7 @@
   <section class="gray-no">
     <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham Dhage</a> on <a href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.-->
-      <img src="img/shubham-dhage-5ZHsI64p-Ws-unsplash.jpg" class="last-side-image" alt="Extensible" />
+      <img class="side-img" src="img/shubham-dhage-5ZHsI64p-Ws-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>MIT License</h2>
         <p>
@@ -534,7 +516,6 @@
       <!--<a href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.-->
       <img src="img/mars_11829841.png" class="mars">
       <footer class="footer">
-
         <div class="footer-column footer-column-logo">
           <div class="product-name logo-row-top">OpenUniverse</div>
           <div class="slogan logo-row-bottom">From chaos to harmony</div>
@@ -579,20 +560,14 @@
             <li><a href="/security">Security</a></li>
           </ul>
         </div>
-        <!--
-        <div class="footer-column qr">
-          <a href="index.html" title="https://ou-org.github.io">
-            <img class="qr" src="img/qr.svg" alt="OpenUniverse site QR-code">
-          </a>
-        </div>
--->
       </footer>
     </div>
   </section>
   <section class="section-footer">
     <div class="section-wrapper">
       <div class="credit-footer">
-        <a class="button button-touch" role="button" target="_blank" href="mailto:pocsrv@proton.me&subject=From%20OpenUniverse%20Website">        
+        <a class="button button-touch" role="button" target="_blank"
+          href="mailto:pocsrv@proton.me&subject=From%20OpenUniverse%20Website">
           Get in Touch
         </a>
         <br><br>
@@ -612,11 +587,48 @@
           Dhage</a> on <a
           href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.
         <br><br>
-          &copy; OpenUniverse 2025
+        &copy; OpenUniverse 2025
       </div>
     </div>
     </div>
   </section>
 </body>
+<script>
+  const sideImgs = Array.from(document.querySelectorAll(".side-img"))
+  if (sideImgs.length > 0) {
+    sideImgs[0].classList.add("side-img-first");
+    sideImgs[sideImgs.length - 1].classList.add("side-img-last");
+  }
+  
+  // ---
+  const sections = document.querySelectorAll('.gray-no');
+  sections.forEach(section => {
+    const sectionText = section.querySelector('.section-text');
+    const image = document.createElement('div');
+    //
+    const threshold = 15; // degrees
+    const usedAngles = [];
+
+    function isTooClose(angle) {
+      return usedAngles.some(a => Math.abs(((angle - a + 180 + 360) % 360) - 180) < threshold);
+    }
+
+    let angle;
+    let attempts = 0;
+
+    do {
+      angle = Math.floor(Math.random() * 360);
+      attempts++;
+      if (attempts > 100) break;
+    } while (isTooClose(angle));
+
+    usedAngles.push(angle);
+    image.style.transform = `rotate(${angle}deg)`;
+
+    //
+    image.className = 'bg-icon';
+    sectionText.prepend(image);
+  });
+</script>
 
 </html>

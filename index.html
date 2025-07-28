@@ -24,6 +24,13 @@
       src: url("fonts/roboto/Roboto-Thin.ttf");
     }
 
+    * {
+      box-sizing: border-box;
+      --bg-color-gray-yes: #f9f9f9;
+      --bg-color-gray-no: #fff;
+    }
+
+
     html,
     body {
       height: 100%;
@@ -54,6 +61,7 @@
       padding: 1rem;
     }
 
+
     .section-wrapper {
       max-width: 1080px;
       margin: 0 auto;
@@ -69,11 +77,11 @@
     }
 
     .gray-yes {
-      background-color: #f9f9f9;
+      background-color: var(--bg-color-gray-yes);
     }
 
     .gray-no {
-      background-color: #fff;
+      background-color: var(--bg-color-gray-no);
     }
 
     .side-img {
@@ -89,8 +97,6 @@
     .section-text {
       position: relative;
       z-index: 1;
-
-
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -102,6 +108,10 @@
       min-height: max-content;
       color: white;
       background: linear-gradient(-25deg, #000 30%, #FD3C84 100%);
+    }
+
+    .section-brands {
+      background-color: var(--bg-color-gray-yes) !important;
     }
 
     .section-header .section-wrapper {
@@ -257,10 +267,12 @@
       .section-wrapper.reverse {
         flex-direction: column !important;
       }
-      .gray-no, .gray-yes {
+
+      .gray-no,
+      .gray-yes {
         background-color: #fff;
       }
-      
+
       .section-wrapper p,
       .section-wrapper.reverse p {
         text-align: justify
@@ -285,6 +297,7 @@
       z-index: 0;
       opacity: 0.035;
       transform-origin: center;
+      /* <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a> */
       background-image: url("img/glucose_8205747.svg");
       background-size: contain;
       background-position: center;
@@ -314,13 +327,12 @@
       display: block;
       width: fit-content;
       height: 3rem;
-      padding: .2rem;
       padding-left: 1.2rem;
       padding-right: 1.2rem;
       font-family: 'RobotoThin';
       font-weight: bold;
       font-size: 1.5rem;
-      line-height: 3rem;
+      line-height: calc(3rem - 2px);
       border: 1px solid;
       text-decoration: none !important;
       user-select: none;
@@ -338,46 +350,43 @@
 
     /* BRANDS */
     .brands-grid-container {
-    position: relative;
-    width: calc(100% - 2rem);
-    margin: 2rem auto;
-    padding: 0;
-  }
+      position: relative;
+      width: calc(100% - 2rem);
+      padding: 0;
+    }
 
-  .brands-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 1rem;
-    padding: 2rem 0;
-    position: relative;
-  }
-  
-  .brand {
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.4;
-    box-sizing: border-box;
-    z-index: 1;
-  }
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 1rem;
+      padding-right: 1rem;
+      position: relative;
+    }
 
-  /* Removed hover opacity change */
+    .brand {
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.4;
+      box-sizing: border-box;
+      z-index: 1;
+    }
 
-  .brand img,
-  .brand svg {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    filter: grayscale(100%) brightness(0) invert(0);
-    transition: filter 0.3s ease;
-  }
+    /* Removed hover opacity change */
 
-  /* Shift odd rows */
-  .shifted {
-    transform: translateX(50px);
-  }
+    .brand img,
+    .brand svg {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: grayscale(100%) brightness(0) invert(0);
+    }
 
+    /* Shift odd rows */
+    .shifted {
+      transform: translateX(50px);
+    }
   </style>
 </head>
 
@@ -554,29 +563,29 @@
     </div>
   </section>
 
-  <section class="gray-yes">
+  <section class="gray-yes section-brands">
     <div class="section-wrapper">
-        <div class="brands-grid-container">
-          <div class="brands-grid" id="brandsGrid">
-            <div class="brand"><img src="brands/git.svg" alt="Git"/></div>
-            <div class="brand"><img src="brands/github.svg" alt="GitHub"/></div>
-            <div class="brand"><img src="brands/grafana.svg" alt="Grafana"/></div>
-            <div class="brand"><img src="brands/ibm.svg" alt="IBM" /></div>
-            <div class="brand"><img src="brands/intel.svg" alt="Intel" /></div>
-            <div class="brand"><img src="brands/java.svg" alt="Java" /></div>
-            <div class="brand"><img src="brands/kafka.svg" alt="Kafka" /></div>
-            <div class="brand"><img src="brands/linux.svg" alt="Linux" /></div>
-            <div class="brand"><img src="brands/microsoft.svg" alt="Microsoft" /></div>
-            <div class="brand"><img src="brands/opensource.svg" alt="Open Source" /></div>
-            <div class="brand"><img src="brands/openssl-ar21.svg" alt="OpenSSL" /></div>
-            <div class="brand"><img src="brands/oracle.svg" alt="Oracle" /></div>
-            <div class="brand"><img src="brands/perses.svg" alt="Perses" /></div>
-            <div class="brand"><img src="brands/prometheus.svg" alt="Prometheus" /></div>
-            <div class="brand"><img src="brands/redhat.svg" alt="Red Hat" /></div>
-            <div class="brand"><img src="brands/solr.svg" alt="Solr" /></div>
-            <div class="brand"><img src="brands/vmware.svg" alt="VMware" /></div>            
-          </div>
-        </div>        
+      <div class="brands-grid-container">
+        <div class="brands-grid" id="brandsGrid">
+          <div class="brand"><img src="brands/git.svg" alt="Git" /></div>
+          <div class="brand"><img src="brands/github.svg" alt="GitHub" /></div>
+          <div class="brand"><img src="brands/grafana.svg" alt="Grafana" /></div>
+          <div class="brand"><img src="brands/ibm.svg" alt="IBM" /></div>
+          <div class="brand"><img src="brands/intel.svg" alt="Intel" /></div>
+          <div class="brand"><img src="brands/java.svg" alt="Java" /></div>
+          <div class="brand"><img src="brands/kafka.svg" alt="Kafka" /></div>
+          <div class="brand"><img src="brands/linux.svg" alt="Linux" /></div>
+          <div class="brand"><img src="brands/microsoft.svg" alt="Microsoft" /></div>
+          <div class="brand"><img src="brands/opensource.svg" alt="Open Source" /></div>
+          <div class="brand"><img src="brands/openssl-ar21.svg" alt="OpenSSL" /></div>
+          <div class="brand"><img src="brands/oracle.svg" alt="Oracle" /></div>
+          <div class="brand"><img src="brands/perses.svg" alt="Perses" /></div>
+          <div class="brand"><img src="brands/prometheus.svg" alt="Prometheus" /></div>
+          <div class="brand"><img src="brands/redhat.svg" alt="Red Hat" /></div>
+          <div class="brand"><img src="brands/solr.svg" alt="Solr" /></div>
+          <div class="brand"><img src="brands/vmware.svg" alt="VMware" /></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -642,6 +651,7 @@
         </a>
         <br><br>
         <b>Acknowledgments and Attributions:</b>
+        <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a>
         <a
           href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars
           Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.
@@ -669,7 +679,7 @@
     sideImgs[0].classList.add("side-img-first");
     sideImgs[sideImgs.length - 1].classList.add("side-img-last");
   }
-  
+
   // ---
   const sections = document.querySelectorAll('.gray-no');
   sections.forEach(section => {

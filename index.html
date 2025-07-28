@@ -101,7 +101,7 @@
       padding-bottom: 0;
       min-height: max-content;
       color: white;
-      background: linear-gradient(-25deg, #7BA0BE 30%, #FD3C84 100%);
+      background: linear-gradient(-25deg, #000 30%, #FD3C84 100%);
     }
 
     .section-header .section-wrapper {
@@ -335,6 +335,49 @@
       justify-self: flex-end;
       margin-bottom: 1rem;
     }
+
+    /* BRANDS */
+    .brands-grid-container {
+    position: relative;
+    width: calc(100% - 2rem);
+    margin: 2rem auto;
+    padding: 0;
+  }
+
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    padding: 2rem 0;
+    position: relative;
+  }
+  
+  .brand {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.4;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+
+  /* Removed hover opacity change */
+
+  .brand img,
+  .brand svg {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0) invert(0);
+    transition: filter 0.3s ease;
+  }
+
+  /* Shift odd rows */
+  .shifted {
+    transform: translateX(50px);
+  }
+
   </style>
 </head>
 
@@ -511,6 +554,33 @@
     </div>
   </section>
 
+  <section class="gray-yes">
+    <div class="section-wrapper">
+        <div class="brands-grid-container">
+          <div class="brands-grid" id="brandsGrid">
+            <div class="brand"><img src="brands/git.svg" alt="Git"/></div>
+            <div class="brand"><img src="brands/github.svg" alt="GitHub"/></div>
+            <div class="brand"><img src="brands/grafana.svg" alt="Grafana"/></div>
+            <div class="brand"><img src="brands/ibm.svg" alt="IBM" /></div>
+            <div class="brand"><img src="brands/intel.svg" alt="Intel" /></div>
+            <div class="brand"><img src="brands/java.svg" alt="Java" /></div>
+            <div class="brand"><img src="brands/kafka.svg" alt="Kafka" /></div>
+            <div class="brand"><img src="brands/linux.svg" alt="Linux" /></div>
+            <div class="brand"><img src="brands/microsoft.svg" alt="Microsoft" /></div>
+            <div class="brand"><img src="brands/opensource.svg" alt="Open Source" /></div>
+            <div class="brand"><img src="brands/openssl-ar21.svg" alt="OpenSSL" /></div>
+            <div class="brand"><img src="brands/oracle.svg" alt="Oracle" /></div>
+            <div class="brand"><img src="brands/perses.svg" alt="Perses" /></div>
+            <div class="brand"><img src="brands/prometheus.svg" alt="Prometheus" /></div>
+            <div class="brand"><img src="brands/redhat.svg" alt="Red Hat" /></div>
+            <div class="brand"><img src="brands/solr.svg" alt="Solr" /></div>
+            <div class="brand"><img src="brands/vmware.svg" alt="VMware" /></div>            
+          </div>
+        </div>        
+    </div>
+  </section>
+
+
   <section class="section-footer">
     <div class="section-wrapper">
       <!--<a href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.-->
@@ -629,6 +699,25 @@
     image.className = 'bg-icon';
     sectionText.prepend(image);
   });
+
+  function shiftOddRows() {
+    const grid = document.getElementById('brandsGrid');
+    const items = Array.from(grid.children);
+    const gridStyles = window.getComputedStyle(grid);
+    const columnCount = gridStyles.getPropertyValue('grid-template-columns').split(' ').length;
+
+    items.forEach(item => item.classList.remove('shifted'));
+
+    for (let i = 0; i < items.length; i++) {
+      const row = Math.floor(i / columnCount) + 1;
+      if (row % 2 === 0) {
+        items[i].classList.add('shifted');
+      }
+    }
+  }
+
+  window.addEventListener('resize', shiftOddRows);
+  window.addEventListener('load', shiftOddRows);
 </script>
 
 </html>

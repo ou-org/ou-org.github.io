@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- © OpenUniverse Web Design 2025 -->
-
+<!--
+https://www.pexels.com/video/officers-investigating-7253660/
+-->
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,7 +12,7 @@
   <link rel="icon" type="image/png" href="img/mars_11829841.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#000">
-<script>
+  <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js');
     }
@@ -67,7 +69,26 @@
       padding: 1rem;
     }
 
+    sectio:first-child {
+      padding: 0;
+    }
 
+    .page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* full viewport height */
+  }
+
+  .bottom-section {
+    flex-grow: 1; /* take up the rest */
+  }
+
+  .product-brand{
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+  }
     .section-wrapper {
       max-width: 1080px;
       margin: 0 auto;
@@ -110,10 +131,14 @@
     }
 
     .section-header {
-      padding-bottom: 0;
+      padding: 0;
       min-height: max-content;
       color: white;
       background: linear-gradient(-25deg, #000 30%, #FD3C84 100%);
+    }
+
+    .KKKsection-header-1 {
+      max-height: 5rem !important;
     }
 
     .section-brands {
@@ -125,6 +150,7 @@
     }
 
     .github-logo {
+      position: absolute;
       margin-top: 1rem;
       max-height: 0;
       align-self: flex-end;
@@ -142,10 +168,6 @@
 
     .github-logo:hover {
       filter: drop-shadow(0 0 1px white);
-    }
-
-    .section-header .product-name-0 {
-      margin-bottom: -2rem;
     }
 
     .slogan {
@@ -244,8 +266,15 @@
     }
 
     @media (max-width: 768px) {
-      .bg-icon, .header-icon {
+
+      .bg-icon,
+      .header-icon {
         display: none;
+      }
+
+      .button-start {
+        margin: auto;
+        margin-top: 1rem;
       }
 
       .section-header {
@@ -260,11 +289,6 @@
       .footer-column-logo {
         width: 100%;
         padding-bottom: 1.5rem;
-      }
-
-      .button-start {
-        margin: auto;
-        margin-top: 1rem;
       }
 
       .section-header .product-name-0,
@@ -394,14 +418,27 @@
       text-shadow: 0 0 6px #fff;
       box-shadow: 0 0 6px #fff;
     }
-
+    
     .button-start {
+      position: absolute !important;
       color: #fff;
       border-color: #fff;
-
-      align-self: flex-end;
-      margin-bottom: 3rem;
+      bottom: 1%;
+      right: -5%;
+      transform: translate(-50%, -50%);
     }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+      }
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
 
     .button-touch {
       justify-self: flex-end;
@@ -451,29 +488,44 @@
 </head>
 
 <body>
-  <section class="section-header">
+  <div class="page">
+  <section class="section-header top-section">
+    <div class="section-wrapper">
+      <div class="video-container">
+        <video preload="auto" autoplay loop muted playsinline width="100%">
+          <source src="img/7253660-sd_426_226_30fps.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="product-brand">
+        <div class="product-name product-name-0" href="index.html">Open<wbr>Universe</div>
+        <div class="slogan slogan-0">There are no boundaries</div>
+        </div>
+        <!--
+        <a class="github-logo" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
+          <img src="img/github-logo.svg" alt="GitHub Logo">
+        </a>
+        -->
+        <a class="button button-start" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="section-header bottom-section" >
     <div class="section-wrapper">
       <div class="header-icon header-icon-large"></div>
       <div class="header-icon header-icon-medium"></div>
       <div class="header-icon header-icon-small"></div>
-      <a class="github-logo" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
-        <img src="img/github-logo.svg" alt="GitHub Logo">
-      </a>
-      <div class="product-name product-name-0" href="index.html">Open<wbr>Universe</div>
-      <div class="slogan slogan-0">There are no boundaries</div>
-      <p>
+      <p style="padding-top: 11rem;">        
         <a class="product-name" href="index.html">Open<wbr>Universe</a> is the open source IaC (Infrastructure as Code)
         platform that unifies your environment.
         Empower your infrastructure with a code-first approach to event-driven cross-system workflows.
         Define triggers and responses as code, connect with diverse technologies, and support language-agnostic event
         sources and actions. Built for real-time coordination across modern distributed architecture.
       </p>
-      <a class="button button-start" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
-        Get Started
-      </a>
     </div>
   </section>
-
+</div>
   <section class="adv-section">
     <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
@@ -601,7 +653,7 @@
           International Journal of Science and Research Archive, Vol. 4 (2021), 229-249, <nobr>ISSN: 2582-8185</nobr>
           <br><br>
           <span style="float: right;">See documentation for more references.</span>
-          </p>
+        </p>
       </div>
     </div>
   </section>

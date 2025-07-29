@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- © OpenUniverse Web Design 2025 -->
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OpenUniverse IaC</title>
+  <title>𝗢𝗽𝗲𝗻𝗨𝗻𝗶𝘃𝗲𝗿𝘀𝗲</title>
   <!--<a href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.-->
   <link rel="icon" type="image/png" href="img/mars_11829841.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000">
+<script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
 
   <style>
     @font-face {
@@ -25,7 +33,6 @@
     }
 
     * {
-      box-sizing: border-box;
       --bg-color-gray-yes: #f9f9f9;
       --bg-color-gray-no: #fff;
     }
@@ -33,7 +40,6 @@
 
     html,
     body {
-      height: 100%;
       margin: 0;
       padding: 0;
       font-family: RobotoRegular;
@@ -76,12 +82,12 @@
       flex-direction: row-reverse;
     }
 
-    .gray-yes {
-      background-color: var(--bg-color-gray-yes);
+    .adv-section:nth-child(odd) {
+      background-color: var(--bg-color-gray-yes) !important;
     }
 
-    .gray-no {
-      background-color: var(--bg-color-gray-no);
+    .adv-section:nth-child(even) {
+      background-color: var(--bg-color-gray-no) !important;
     }
 
     .side-img {
@@ -122,6 +128,7 @@
       margin-top: 1rem;
       max-height: 0;
       align-self: flex-end;
+      transition: filter 0.3s;
     }
 
     .github-logo img {
@@ -130,6 +137,10 @@
       max-height: 20px;
       height: 20px;
       width: auto;
+    }
+
+    .github-logo:hover {
+      filter: drop-shadow(0 0 1px white);
     }
 
     .section-header .product-name-0 {
@@ -254,10 +265,6 @@
         margin-top: 1rem;
       }
 
-      .button-touch {
-        justify-self: left !important;
-      }
-
       .section-header .product-name-0,
       .section-header .slogan-0 {
         text-align: center;
@@ -268,8 +275,7 @@
         flex-direction: column !important;
       }
 
-      .gray-no,
-      .gray-yes {
+      .adv-section {
         background-color: #fff;
       }
 
@@ -336,9 +342,24 @@
       border: 1px solid;
       text-decoration: none !important;
       user-select: none;
+
+
+      color: #ccc;
+      border-color: #ccc;
+      transition: color 0.3s, border-color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+    }
+
+    .button:hover {
+      color: #fff;
+      border-color: #fff;
+      text-shadow: 0 0 6px #fff;
+      box-shadow: 0 0 6px #fff;
     }
 
     .button-start {
+      color: #fff;
+      border-color: #fff;
+
       align-self: flex-end;
       margin-bottom: 3rem;
     }
@@ -397,7 +418,7 @@
         <img src="img/github-logo.svg" alt="GitHub Logo">
       </a>
       <div class="product-name product-name-0" href="index.html">Open<wbr>Universe</div>
-      <div class="slogan slogan-0">There are no boundaries</div>
+      <div class="slogan slogan-0">777 There are no boundaries</div>
       <p>
         <a class="product-name" href="index.html">Open<wbr>Universe</a> is the open source IaC (Infrastructure as Code)
         platform that unifies your environment.
@@ -411,7 +432,7 @@
     </div>
   </section>
 
-  <section class="gray-no">
+  <section class="adv-section">
     <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img class="side-img" src="img/kseniia-ilinykh-ni1NYB6nXjo-unsplash.jpg" alt="Connect" />
@@ -426,7 +447,7 @@
     </div>
   </section>
 
-  <section class="gray-yes">
+  <section class="adv-section">
     <div class="section-wrapper reverse">
       <!--Photo by <a href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img class="side-img" src="img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg" alt="Reactive" />
@@ -441,7 +462,7 @@
     </div>
   </section>
 
-  <section class="gray-no">
+  <section class="adv-section">
     <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@umby">Umberto</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img class="side-img" src="img/umberto-FewHpO4VC9Y-unsplash.jpg" alt="DevOps" />
@@ -456,7 +477,7 @@
     </div>
   </section>
 
-  <section class="gray-yes">
+  <section class="adv-section">
     <div class="section-wrapper reverse">
       <img class="side-img" src="img/thisisengineering-zdBOU0faYK4-unsplash.jpg" alt="As Code" />
       <div class="section-text">
@@ -470,7 +491,7 @@
     </div>
   </section>
 
-  <section class="gray-no">
+  <section class="adv-section">
     <div class="section-wrapper">
       <img class="side-img" src="img/galina-nelyubova-h-Ij-IDnc00-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
@@ -484,7 +505,7 @@
     </div>
   </section>
 
-  <section class="gray-yes">
+  <section class="adv-section">
     <div class="section-wrapper reverse">
       <img class="side-img" src="img/bitan-sarkar-3dva77qVGds-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
@@ -497,7 +518,7 @@
       </div>
     </div>
   </section>
-  <section class="gray-no">
+  <section class="adv-section">
     <div class="section-wrapper">
       <img class="side-img" src="img/jere-barcebal-uqb68Xbxhik-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
@@ -511,43 +532,39 @@
     </div>
   </section>
 
-  <section class="gray-yes">
+  <section class="adv-section">
     <div class="section-wrapper reverse">
       <!--Photo by <a href="https://unsplash.com/@choys_">Conny Schneider</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img class="side-img" src="img/conny-schneider-xuTJZ7uD7PI-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>Behind the Insights</h2>
         <p>
-          [1] <a href="https://doi.org/10.1016/j.infsof.2019.01.006" target="_blank">
-            <i>A Scalable, event-driven
+          <a href="https://doi.org/10.1016/j.infsof.2019.01.006" target="_blank">
+            <i>1. A Scalable, event-driven
               architecture for designing interactions across heterogeneous devices in
-              smart environments</i></a>
-          <br>
+              smart environments</i></a><br>
           Ovidiu-Andrei Schipor, Radu-Daniel Vatavu, Jean Vanderdonckt.
           Information and Software Technology, Vol. 109 (2019), 43–59, <nobr>ISSN: 0950-5849</nobr>
           <br><br>
-          [2] <a href="https://doi.org/10.61841/turcomat.v11i1.14928" target="_blank"><i>The Power of Event-Driven
-              Architecture: Enabling RealTime Systems and Scalable Solutions</i></a>
-          <br>
+          <a href="https://doi.org/10.61841/turcomat.v11i1.14928" target="_blank"><i>2. The Power of Event-Driven
+              Architecture: Enabling RealTime Systems and Scalable Solutions</i></a><br>
           Adisheshu Reddy Kommera.
           Turkish Journal of Computer and Mathematics Education, Vol. 11 (2020), 1740-1751, <nobr>ISSN:
             3048-4855</nobr>
           <br><br>
-          [3] <a href="https://doi.org/10.30574/ijsra.2021.4.1.0166" target="_blank"><i>Exploring event-driven
+          <a href="https://doi.org/10.30574/ijsra.2021.4.1.0166" target="_blank"><i>3. Exploring event-driven
               architecture
-              in microservices- patterns, pitfalls and best practices</i></a>
-          <br>
+              in microservices- patterns, pitfalls and best practices</i></a><br>
           Chavan, Ashwin.
           International Journal of Science and Research Archive, Vol. 4 (2021), 229-249, <nobr>ISSN: 2582-8185</nobr>
-          <br>
-          <br>
-          See documentation for more references.
-        </p>
+          <br><br>
+          <span style="float: right;">See documentation for more references.</span>
+          </p>
       </div>
     </div>
   </section>
 
-  <section class="gray-no">
+  <section class="adv-section">
     <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham Dhage</a> on <a href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.-->
       <img class="side-img" src="img/shubham-dhage-5ZHsI64p-Ws-unsplash.jpg" alt="Extensible" />
@@ -563,7 +580,7 @@
     </div>
   </section>
 
-  <section class="gray-yes section-brands">
+  <section class="section-brands">
     <div class="section-wrapper">
       <div class="brands-grid-container">
         <div class="brands-grid" id="brandsGrid">
@@ -645,10 +662,17 @@
   <section class="section-footer">
     <div class="section-wrapper">
       <div class="credit-footer">
-        <a class="button button-touch" role="button" target="_blank"
-          href="mailto:pocsrv@proton.me&subject=From%20OpenUniverse%20Website">
-          Get in Touch
-        </a>
+
+        <div style="display: flex; gap: 1.5rem; justify-content: end;">
+          <a class="button button-touch" role="button" target="_blank"
+            href="mailto:pocsrv@proton.me&subject=From%20OpenUniverse%20Website">
+            Get in Touch
+          </a>
+          <a class="button" role="button" href="#"
+            onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
+            Up <span style="font-size: 2rem;">↑</span>
+          </a>
+        </div>
         <br><br>
         <b>Acknowledgments and Attributions:</b>
         <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a>
@@ -681,7 +705,7 @@
   }
 
   // ---
-  const sections = document.querySelectorAll('.gray-no');
+  const sections = document.querySelectorAll('.adv-section:nth-child(even)');
   sections.forEach(section => {
     const sectionText = section.querySelector('.section-text');
     const image = document.createElement('div');

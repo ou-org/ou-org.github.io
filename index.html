@@ -4,6 +4,7 @@
 <!--
 https://www.pexels.com/video/officers-investigating-7253660/
 -->
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,6 +20,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
   </script>
 
   <style>
+    @font-face {
+      font-family: 'TiltWarp-Regular';
+      src: url("fonts/TiltWarp-Regular-VariableFont_XROT,YROT.ttf");
+    }
+
     @font-face {
       font-family: 'BrunoAceSC-Regular';
       src: url("fonts/BrunoAceSC-Regular.ttf");
@@ -74,22 +80,17 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .page {
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* full viewport height */
-  }
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      /* full viewport height */
+    }
 
-  .bottom-section {
-    flex-grow: 1; /* take up the rest */
-  }
+    .bottom-section {
+      flex-grow: 1;
+      /* take up the rest */
+    }
 
-  .product-brand{
-    margin-top: 2.5rem;
-    KKKposition: absolute;
-    KKKtop: 15%;
-    KKKleft: 25%;
-    KKKtransform: translate(-50%, -50%);
-  }
     .section-wrapper {
       max-width: 1080px;
       margin: 0 auto;
@@ -138,10 +139,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       background: linear-gradient(-25deg, #000 30%, #FD3C84 100%);
     }
 
-    .KKKsection-header-1 {
-      max-height: 5rem !important;
-    }
-
     .section-brands {
       background-color: var(--bg-color-gray-yes) !important;
     }
@@ -171,6 +168,27 @@ https://www.pexels.com/video/officers-investigating-7253660/
       filter: drop-shadow(0 0 1px white);
     }
 
+    .slogan-header {
+      position: absolute;
+      top: 25%;
+      ;
+      left: 35%;
+      transform: translate(-50%, -50%);
+      font-family: 'TiltWarp-Regular';
+      font-weight: bold;
+      font-size: 5rem;
+      text-transform: uppercase;
+      color: #ccc;
+    }
+
+    .slogan-header .chaos {
+      color: #CC306B;
+    }
+
+    .slogan-header .harmony {
+      color: #fff;
+    }
+
     .slogan {
       font-weight: bold;
       font-family: RobotoThin;
@@ -192,6 +210,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .product-name-0 {
+      margin-top: 2.5rem;
       font-size: 3rem;
       line-height: 3rem;
     }
@@ -330,7 +349,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       background-image: url("img/mars_11829841.png");
       background-size: contain;
       background-position: center;
-      KKKtransform: rotate(-34deg);
     }
 
     .header-icon-large {
@@ -419,7 +437,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       text-shadow: 0 0 6px #fff;
       box-shadow: 0 0 6px #fff;
     }
-    
+
     .button-start {
       position: absolute !important;
       color: #fff;
@@ -430,16 +448,16 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .video-container {
-        position: relative;
-        width: 100%;
-      }
+      position: relative;
+      width: 100%;
+    }
 
-      video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
     .button-touch {
       justify-self: flex-end;
@@ -490,43 +508,47 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
 <body>
   <div class="page">
-  <section class="top-section">
-    <div class="section-wrapper">
-      <div class="video-container">
-        <video preload="auto" autoplay loop muted playsinline width="100%">
-          <source src="img/7253660-sd_426_226_30fps.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <!--
+    <section class="top-section">
+      <div class="section-wrapper">
+        <div class="video-container">
+          <video preload="auto" autoplay loop muted playsinline width="100%">
+            <source src="img/7253660-sd_426_226_30fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <!--
         <a class="github-logo" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
           <img src="img/github-logo.svg" alt="GitHub Logo">
         </a>
         -->
-        <a class="button button-start" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
-          Get Started
-        </a>
-      </div>
-    </div>
-  </section>
-  <section class="section-header bottom-section" >
-    <div class="section-wrapper">
-      <div class="header-icon header-icon-large"></div>
-      <div class="header-icon header-icon-medium"></div>
-      <div class="header-icon header-icon-small"></div>
-      <div class="product-brand">
-        <div class="product-name product-name-0" href="index.html">Open<wbr>Universe</div>
-        <div class="slogan slogan-0">There are no boundaries</div>
+          <div class="slogan-header">
+            From <span class="chaos">chaos</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to</span>&nbsp;<span
+              class="harmony">harmony</span></div>
+          <a class="button button-start" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
+            Get Started
+          </a>
         </div>
-      <p KKKstyle="padding-top: 11rem;">        
-        <a class="product-name" href="index.html">Open<wbr>Universe</a> is the open source IaC (Infrastructure as Code)
-        platform that unifies your environment.
-        Empower your infrastructure with a code-first approach to event-driven cross-system workflows.
-        Define triggers and responses as code, connect with diverse technologies, and support language-agnostic event
-        sources and actions. Built for real-time coordination across modern distributed architecture.
-      </p>
-    </div>
-  </section>
-</div>
+      </div>
+    </section>
+    <section class="section-header bottom-section">
+      <div class="section-wrapper">
+        <div class="header-icon header-icon-large"></div>
+        <div class="header-icon header-icon-medium"></div>
+        <div class="header-icon header-icon-small"></div>
+        <div>
+          <div class="product-name product-name-0" href="index.html">Open<wbr>Universe</div>
+          <div class="slogan slogan-0">There are no boundaries</div>
+        </div>
+        <p>
+          <a class="product-name" href="index.html">Open<wbr>Universe</a> is the open source IaC (Infrastructure as
+          Code)
+          platform that unifies your environment.
+          Empower your infrastructure with a code-first approach to event-driven cross-system workflows.
+          Define triggers and responses as code, connect with diverse technologies, and support language-agnostic event
+          sources and actions. Built for real-time coordination across modern distributed architecture.
+        </p>
+      </div>
+    </section>
+  </div>
   <section class="adv-section">
     <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->

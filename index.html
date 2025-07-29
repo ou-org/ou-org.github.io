@@ -69,7 +69,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       padding: 1rem;
     }
 
-    sectio:first-child {
+    section:first-child {
       padding: 0;
     }
 
@@ -84,10 +84,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
   }
 
   .product-brand{
-    position: absolute;
-    top: 15%;
-    left: 25%;
-    transform: translate(-50%, -50%);
+    margin-top: 2.5rem;
+    KKKposition: absolute;
+    KKKtop: 15%;
+    KKKleft: 25%;
+    KKKtransform: translate(-50%, -50%);
   }
     .section-wrapper {
       max-width: 1080px;
@@ -489,17 +490,13 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
 <body>
   <div class="page">
-  <section class="section-header top-section">
+  <section class="top-section">
     <div class="section-wrapper">
       <div class="video-container">
         <video preload="auto" autoplay loop muted playsinline width="100%">
           <source src="img/7253660-sd_426_226_30fps.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <div class="product-brand">
-        <div class="product-name product-name-0" href="index.html">Open<wbr>Universe</div>
-        <div class="slogan slogan-0">There are no boundaries</div>
-        </div>
         <!--
         <a class="github-logo" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
           <img src="img/github-logo.svg" alt="GitHub Logo">
@@ -516,7 +513,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
       <div class="header-icon header-icon-large"></div>
       <div class="header-icon header-icon-medium"></div>
       <div class="header-icon header-icon-small"></div>
-      <p style="padding-top: 11rem;">        
+      <div class="product-brand">
+        <div class="product-name product-name-0" href="index.html">Open<wbr>Universe</div>
+        <div class="slogan slogan-0">There are no boundaries</div>
+        </div>
+      <p KKKstyle="padding-top: 11rem;">        
         <a class="product-name" href="index.html">Open<wbr>Universe</a> is the open source IaC (Infrastructure as Code)
         platform that unifies your environment.
         Empower your infrastructure with a code-first approach to event-driven cross-system workflows.

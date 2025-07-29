@@ -129,6 +129,7 @@
       max-height: 0;
       align-self: flex-end;
       transition: filter 0.3s;
+      z-index: 1000;
     }
 
     .github-logo img {
@@ -164,6 +165,7 @@
       text-decoration: none;
       user-select: none;
       color: inherit;
+      z-index: 1000;
     }
 
     .product-name-0 {
@@ -242,7 +244,7 @@
     }
 
     @media (max-width: 768px) {
-      .bg-icon {
+      .bg-icon, .header-icon {
         display: none;
       }
 
@@ -293,6 +295,43 @@
         display: none;
       }
     }
+
+    .header-icon {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      transform-origin: center;
+      /* <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a> */
+      background-image: url("img/mars_11829841.png");
+      background-size: contain;
+      background-position: center;
+      KKKtransform: rotate(-34deg);
+    }
+
+    .header-icon-large {
+      margin-left: 35rem;
+      margin-top: 1rem;
+      width: 9rem;
+      height: 9rem;
+      opacity: 0.1;
+    }
+
+    .header-icon-medium {
+      margin-left: 50rem;
+      margin-top: 6.5rem;
+      width: 4rem;
+      height: 4rem;
+      opacity: 0.2;
+    }
+
+    .header-icon-small {
+      margin-left: 55rem;
+      margin-top: 2rem;
+      width: 2rem;
+      height: 2rem;
+      opacity: 0.2;
+    }
+
 
     .bg-icon {
       margin-left: 25rem;
@@ -414,6 +453,9 @@
 <body>
   <section class="section-header">
     <div class="section-wrapper">
+      <div class="header-icon header-icon-large"></div>
+      <div class="header-icon header-icon-medium"></div>
+      <div class="header-icon header-icon-small"></div>
       <a class="github-logo" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
         <img src="img/github-logo.svg" alt="GitHub Logo">
       </a>
@@ -507,7 +549,7 @@
 
   <section class="adv-section">
     <div class="section-wrapper reverse">
-      <img class="side-img" src="img/bitan-sarkar-3dva77qVGds-unsplash.jpg" alt="Extensible" />
+      <img class="side-img" src="img/lars-kuczynski-1MClItU5AbI-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>Composable Infrastructure</h2>
         <p>

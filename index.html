@@ -140,20 +140,12 @@ https://www.pexels.com/video/officers-investigating-7253660/
       padding: 0;
     }
 
-    .adv-section:nth-child(odd) {
+    .adv-section:nth-child(even) {
       background-color: var(--bg-color-gray-yes) !important;
     }
 
-    .adv-section:nth-child(even) {
+    .adv-section:nth-child(odd) {
       background-color: var(--bg-color-gray-no) !important;
-    }
-
-    .side-img {
-      height: auto;
-      width: 300px;
-      min-height: max-content;
-      object-fit: cover;
-      flex-shrink: 0;
     }
 
     .section-text {
@@ -187,12 +179,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     .slogan-header {
       position: absolute;
-      top: 25%;
-      left: 36%;
-      transform: translate(-50%, -50%);
+      top: 4rem;
+      left: 2rem;
       font-family: 'TiltWarp-Regular';
       font-weight: bold;
-      font-size: 560%;
+      font-size: 8cqw;
       text-transform: uppercase;
       color: #ccc;
     }
@@ -309,13 +300,16 @@ https://www.pexels.com/video/officers-investigating-7253660/
       }
 
       .button-start {
-        margin: auto;
         margin-top: 1rem;
       }
 
       .bottom-section {
-        min-height: 100vh;
-        max-height: 100vh;
+        padding: 0;
+      }
+
+      .cosmos {
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
 
       .footer {
@@ -338,13 +332,21 @@ https://www.pexels.com/video/officers-investigating-7253660/
       }
 
       .section-wrapper p,
-      .section-wrapper.reverse p {
-        text-align: justify
+      .section-wrapper.reverse p {}
+
+      .product-paragraph {
+        text-align: justify;
+      }
+
+      .section-text {
+        text-align: justify;
+        padding-bottom: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
 
       .side-img {
-        width: 100%;
-        max-height: 300px;
+        width: 100% !important;
       }
 
       .mars {
@@ -403,12 +405,20 @@ https://www.pexels.com/video/officers-investigating-7253660/
       background-position: center;
     }
 
+    .side-img {
+      height: auto;
+      width: 300px;
+      min-height: max-content;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
     .side-img-first {
       /*  margin-top: 0 !important; */
     }
 
     .side-img-last {
-      margin-bottom: 0 !important;
+      margin-bottom: 1rem !important;
     }
 
     .credit-footer {
@@ -454,14 +464,15 @@ https://www.pexels.com/video/officers-investigating-7253660/
       position: absolute !important;
       color: #fff;
       border-color: #fff;
-      bottom: 1%;
-      right: -5%;
-      transform: translate(-50%, -50%);
+      bottom: 1.7rem;
+      right: 2rem;
     }
 
     .video-container {
+      container-type: inline-size;
       position: relative;
       width: 100%;
+      max-width: 100vw;
     }
 
     video {
@@ -477,7 +488,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     /* BRANDS */
     .section-brands {
-      background-color: var(--bg-color-gray-yes) !important;
+      background-color: var(--bg-color-gray-yes);
       padding: 1rem;
     }
 
@@ -489,7 +500,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     .brands-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 1rem;
+      gap: 1.2rem;
       position: relative;
     }
 
@@ -840,7 +851,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
   }
 
   // ---
-  const sections = document.querySelectorAll('.adv-section:nth-child(even)');
+  const sections = document.querySelectorAll('.adv-section:nth-child(odd)');
   sections.forEach(section => {
     const sectionText = section.querySelector('.section-text');
     const image = document.createElement('div');
@@ -870,7 +881,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
   });
 
   function shiftOddRows() {
-    const grid = document.querySelector('.brandsGrid');
+    const grid = document.querySelector('.brands-grid');
     const items = Array.from(grid.children);
     const gridStyles = window.getComputedStyle(grid);
     const columnCount = gridStyles.getPropertyValue('grid-template-columns').split(' ').length;

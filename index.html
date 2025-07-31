@@ -103,11 +103,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .section-wrapper {
-      max-width: 1080px;
+      max-width: 1280px;
       margin: 0 auto;
       display: flex;
       flex-direction: row;
-      gap: 2rem;
+      KKKgap: 2rem;
       align-items: stretch;
       padding: 0;
     }
@@ -154,6 +154,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding-right: 2rem;
     }
 
     .github-logo {
@@ -179,13 +180,13 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     .slogan-header {
       position: absolute;
-      top: 4rem;
-      left: 2rem;
+      top: 1.8rem;
+      left: 2.8rem;
       font-family: 'TiltWarp-Regular';
       font-weight: bold;
-      font-size: 8cqw;
+      font-size: 6cqw;
       text-transform: uppercase;
-      color: #ccc;
+      color: #bbb;
     }
 
     .slogan-header .chaos {
@@ -231,15 +232,16 @@ https://www.pexels.com/video/officers-investigating-7253660/
     .section-footer {
       background-color: #000;
       color: #ccc;
-      padding: 1rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
-
+    
     .footer {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
       font-size: .8rem;
-      padding-top: 2rem;
+      padding-top: 3rem;
       margin-bottom: 1rem;
       justify-content: space-between;
       gap: 1.2rem;
@@ -292,6 +294,19 @@ https://www.pexels.com/video/officers-investigating-7253660/
       text-decoration: underline;
     }
 
+    @media (max-width: 1280px) {
+      .section-wrapper {
+        max-width: 100%;
+      }
+      .section-text {
+        padding-left: 2.5rem;
+      }
+      .side-img {
+        margin-right: 0 !important;
+      }
+
+    }
+
     @media (max-width: 768px) {
 
       .bg-icon,
@@ -340,6 +355,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
       .section-text {
         text-align: justify;
+        padding-top: 1rem;
         padding-bottom: 2rem;
         padding-left: 1rem;
         padding-right: 1rem;
@@ -347,6 +363,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
       .side-img {
         width: 100% !important;
+        margin-right: 0 !important;
       }
 
       .mars {
@@ -411,6 +428,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       min-height: max-content;
       object-fit: cover;
       flex-shrink: 0;
+        margin-right: 2.5rem;
     }
 
     .side-img-first {
@@ -428,7 +446,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .mars {
-      padding-top: 1.8rem;
+      margin-right: 2rem;
+      padding-top: 2rem;
       max-width: 10rem;
       max-height: 10rem;
     }

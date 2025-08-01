@@ -55,7 +55,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       font-size: 1rem;
       background-color: #000;
       overflow-x: hidden;
-      box-sizing: border-box;
     }
 
     i {
@@ -77,29 +76,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
       padding: 0;
     }
 
-    .page {
-      background: #000;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      min-height: fit-content;
-      margin: 0;
-      padding: 0;
-    }
-
     .top-section {}
 
     .bottom-section {
+      display: flex;
       flex-grow: 1;
-      max-height: fit-content;
-      height: 100%;
-      color: #eee;
-    }
-
-    .bottom-section .section-wrapper {
-      flex-direction: column;
-      max-height: fit-content;
-      height: 100%;
     }
 
     .section-wrapper {
@@ -107,18 +88,24 @@ https://www.pexels.com/video/officers-investigating-7253660/
       margin: 0 auto;
       display: flex;
       flex-direction: row;
-      KKKgap: 2rem;
-      align-items: stretch;
+      padding: 0;
+    }
+
+    .page {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      margin: 0;
       padding: 0;
     }
 
     .cosmos {
+      position: relative;
+      color: #eee;
       background: linear-gradient(-25deg, #000 30%, #FD3C84 100%);
-      padding-top: 2rem;
+      padding-top: 3rem;
       padding-left: 2.5rem;
       padding-right: 2.5rem;
-      min-height: fit-content;
-      height: 100%;
     }
 
     .section-wrapper.reverse {
@@ -132,8 +119,9 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     .arrow-down {
       display: block;
-      height: 2rem;
-      margin-bottom: 2rem;
+      height: 3rem;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
       margin-left: auto;
       margin-right: auto;
       cursor: pointer;
@@ -154,7 +142,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-right: 2rem;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
     }
 
     .github-logo {
@@ -235,7 +224,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       padding-left: 2rem;
       padding-right: 2rem;
     }
-    
+
     .footer {
       width: 100%;
       display: flex;
@@ -294,17 +283,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
       text-decoration: underline;
     }
 
-    @media (max-width: 1280px) {
-      .section-wrapper {
-        max-width: 100%;
-      }
-      .section-text {
-        padding-left: 2.5rem;
-      }
-      .side-img {
-        margin-right: 0 !important;
-      }
 
+    @media (max-height: 1080px) {
+      .page {
+        min-height: 100vh;
+      }
     }
 
     @media (max-width: 768px) {
@@ -354,11 +337,15 @@ https://www.pexels.com/video/officers-investigating-7253660/
       }
 
       .section-text {
-        text-align: justify;
-        padding-top: 1rem;
-        padding-bottom: 2rem;
+        justify-content: start;
+        padding-top: 2rem;
         padding-left: 1rem;
         padding-right: 1rem;
+      }
+
+      .section-text p {
+        text-align: justify;
+        padding-bottom: 2.5rem;
       }
 
       .side-img {
@@ -383,34 +370,37 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .header-icon-large {
-      margin-left: 35rem;
-      margin-top: 0rem;
-      width: 9rem;
-      height: 9rem;
+      position: absolute;
+      left: 58%;
+      top: 6%;
+      width: 13cqh;
+      height: 13cqh;
       opacity: 0.1;
     }
 
     .header-icon-medium {
-      margin-left: 50rem;
-      margin-top: 5.5rem;
-      width: 4rem;
-      height: 4rem;
+      position: absolute;
+      left: 83%;
+      top: 31%;
+      width: 5cqh;
+      height: 5cqh;
       opacity: 0.2;
     }
 
     .header-icon-small {
-      margin-left: 55rem;
-      margin-top: 2rem;
-      width: 2rem;
-      height: 2rem;
+      position: absolute;
+      left: 96%;
+      top: 5%;
+      width: 2cqh;
+      height: 2cqh;
       opacity: 0.2;
     }
 
 
     .bg-icon {
-      margin-left: 25rem;
-      width: 26rem;
-      height: 26rem;
+      margin-left: 25cqw;
+      width: 33cqh;
+      height: 33cqh;
       position: absolute;
       pointer-events: none;
       z-index: 0;
@@ -428,7 +418,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       min-height: max-content;
       object-fit: cover;
       flex-shrink: 0;
-        margin-right: 2.5rem;
     }
 
     .side-img-first {
@@ -491,7 +480,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       container-type: inline-size;
       position: relative;
       width: 100%;
-      max-width: 100vw;
     }
 
     video {
@@ -597,6 +585,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     </section>
   </div>
   <a id="target"></a>
+
   <section class="adv-section">
     <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
@@ -861,6 +850,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     </div>
     </div>
   </section>
+
 </body>
 <script>
   const sideImgs = Array.from(document.querySelectorAll(".side-img"))

@@ -46,6 +46,23 @@ https://www.pexels.com/video/officers-investigating-7253660/
       --bg-color-gray-no: #fff;
     }
 
+    .arrow-down {
+      border: solid #7B2541;
+      border-width: 0 6px 6px 0;
+      padding: 15px;
+      transform: rotate(45deg);
+      margin-top: 0rem;
+      margin-bottom: 3rem;
+      margin-left: 50%;
+      margin-right: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: filter 0.3s;
+    }
+
+    .arrow-down:hover {
+      filter: brightness(1.2);
+    }
 
     html,
     body {
@@ -115,17 +132,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
     .product-paragraph {
       padding-top: 2.8rem;
       font-size: 1rem;
-    }
-
-    .arrow-down {
-      display: block;
-      height: 3rem;
-      margin-top: 1rem;
-      margin-bottom: 3rem;
-      margin-left: auto;
-      margin-right: auto;
-      cursor: pointer;
-      padding: 0;
     }
 
     .adv-section:nth-child(even) {
@@ -578,8 +584,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
             event
             sources and actions. Built for real-time coordination across modern distributed architecture.
           </p>
-          <img class="arrow-down" src="img/bottom-arrow.svg" alt="Learn more"
-            onclick="document.querySelector('#target').scrollIntoView({ behavior: 'smooth' });" />
+          <div class="arrow-down" onclick="document.querySelector('#target').scrollIntoView({ behavior: 'smooth' });">
+          </div>
         </div>
       </div>
     </section>

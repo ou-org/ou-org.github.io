@@ -108,6 +108,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     .page {
       display: flex;
       width: 100%;
+      height: 100%;
       flex-direction: column;
       margin: 0;
       padding: 0;
@@ -247,19 +248,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       font-size: .8rem;
       color: #ccc;
     }
-
-    /* .section-footer {
-      display: flex;
-      flex-direction: column;
-      align-content: flex-start;
-      justify-content: space-between;
-      
-
-      background-color: #000;
-      color: #ccc;
-      padding-left: 2rem;
-      padding-right: 2rem;
-    } */
 
     .footer-row-1 {
       display: flex;
@@ -436,18 +424,16 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
 
     .bg-icon {
-      margin-left: 25cqw;
-      width: 33cqh;
-      height: 33cqh;
+      width: 400px;
+      height: 400px;
       position: absolute;
-      pointer-events: none;
       z-index: 0;
-      opacity: 0.035;
-      transform-origin: center;
+      opacity: 0.025;
       /* <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a> */
       background-image: url("img/glucose_8205747.svg");
       background-size: contain;
       background-position: center;
+      background-repeat: no-repeat;
     }
 
     .side-img {
@@ -1006,7 +992,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     } while (isTooClose(angle));
 
     usedAngles.push(angle);
-    image.style.transform = `rotate(${angle}deg)`;
+    //image.style.transform = `rotate(${angle}deg)`;
 
     //
     image.className = 'bg-icon';

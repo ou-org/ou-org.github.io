@@ -85,6 +85,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     a:hover {
       text-decoration: underline;
     }
+
     section:first-child {
       padding: 0;
     }
@@ -222,13 +223,50 @@ https://www.pexels.com/video/officers-investigating-7253660/
       margin-bottom: 0;
     }
 
-    .section-footer {
+    .foreground-content {
+      z-index: 1000;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .section-wrapper-bottom {
+      position: relative;
+      flex-direction: column;
+    }
+
+    .footer-buttons {
+      padding-top: 1rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: end;
+    }
+
+    .acknowledgments {
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+      font-size: .8rem;
+      color: #ccc;
+    }
+
+    /* .section-footer {
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      justify-content: space-between;
+      
+
       background-color: #000;
       color: #ccc;
       padding-left: 2rem;
       padding-right: 2rem;
+    } */
+
+    .footer-row-1 {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
     }
-    
+
     .footer {
       width: 100%;
       display: flex;
@@ -365,7 +403,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
     .header-icon-mars {
       position: absolute;
       pointer-events: none;
-      KKKz-index: 0;
       transform-origin: center;
       /* <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a> */
       background-image: url("img/mars_11829841.png");
@@ -427,12 +464,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     .side-img-last {
       margin-bottom: 1rem !important;
-    }
-
-    .credit-footer {
-      font-size: .8rem;
-      padding-bottom: 2.5rem;
-      text-align: left;
     }
 
     .mars {
@@ -539,10 +570,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     /*==========================================================*/
     #particle-canvas {
+      position: absolute !important;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 14rem;
-      padding-top: .5rem;
-      padding-bottom: .5rem;
+      height: 100%;
     }
 
     .particle-network-animation {
@@ -551,7 +583,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       left: 0;
       right: 0;
       height: 100vh;
-      KKKbackground-color: #171717;
     }
 
     .particle-network-animation::before {
@@ -562,10 +593,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       right: 0;
       bottom: 0;
       left: 0;
-      KKKbackground-image: url(https://images.unsplash.com/photo-1450849608880-6f787542c88a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=786a67dca1d8791d181bfd90b16240d9);
-      KKKbackground-position: center center;
-      KKKbackground-size: cover;
-      opacity: 0.2;
     }
 
     .glow {
@@ -573,7 +600,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       position: fixed;
       top: 50%;
       left: 50%;
-      KKKbackground-image: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.025), transparent);
     }
 
     .glow-1 {
@@ -855,63 +881,63 @@ https://www.pexels.com/video/officers-investigating-7253660/
     </div>
   </section>
 
-  <section class="section-footer">
-    <div class="section-wrapper">
-      <!--<a href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.-->
-      <img src="img/mars_11829841.png" class="mars">
-      <footer class="footer">
-        <div class="footer-column footer-column-logo">
-          <div class="product-name ou-row-top">OpenUniverse</div>
-          <div class="slogan ou-row-bottom">From chaos to harmony</div>
-        </div>
+  <section>
+    <!--
+      -->
+    <div class="section-wrapper section-wrapper-bottom">
+      <div class="foreground-content">
+        <div class="footer-row-1">
 
-        <div class="footer-column">
-          <div class="footer-column-header">Product</div>
-          <ul>
-            <li><a href="/features">Features</a></li>
-            <li><a href="/pricing">Build Guide</a></li>
-            <li><a href="/roadmap">Roadmap</a></li>
-            <li><a href="/changelog">Changelog</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <div class="footer-column-header">Developers</div>
-          <ul>
-            <li><a href="https://github.com/ou-org/OpenUniverse/README.md">Documentation</a></li>
-            <li><a href="https://github.com/ou-org/OpenUniverse">GitHub</a></li>
-            <li><a href="/api">API Reference</a></li>
-            <li><a href="/status">System Status</a></li>
-          </ul>
-        </div>
+          <!--<a href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.-->
+          <img src="img/mars_11829841.png" class="mars">
+          <footer class="footer">
+            <div class="footer-column footer-column-logo">
+              <div class="product-name ou-row-top">OpenUniverse</div>
+              <div class="slogan ou-row-bottom">From chaos to harmony</div>
+            </div>
 
-        <div class="footer-column">
-          <div class="footer-column-header">Community</div>
-          <ul>
-            <li><a href="/community">Get Involved</a></li>
-            <li><a href="https://discord.gg/yourproject">Discord</a></li>
-            <li><a href="https://twitter.com/yourproject">Twitter</a></li>
-            <li><a href="/contribute">Contributing</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <div class="footer-column-header">Legal</div>
-          <ul>
-            <li><a href="/terms">Terms of Service</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="https://github.com/ou-org/OpenUniverse/blob/main/LICENSE">License</a></li>
-            <li><a href="/security">Security</a></li>
-          </ul>
-        </div>
-      </footer>
-    </div>
-  </section>
-  <section class="section-footer">
-    <div class="section-wrapper">
-      <div class="credit-footer">
+            <div class="footer-column">
+              <div class="footer-column-header">Product</div>
+              <ul>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/pricing">Build Guide</a></li>
+                <li><a href="/roadmap">Roadmap</a></li>
+                <li><a href="/changelog">Changelog</a></li>
+              </ul>
+            </div>
 
-        <div style="display: flex; gap: 1.5rem; justify-content: end;">
+            <div class="footer-column">
+              <div class="footer-column-header">Developers</div>
+              <ul>
+                <li><a href="https://github.com/ou-org/OpenUniverse/README.md">Documentation</a></li>
+                <li><a href="https://github.com/ou-org/OpenUniverse">GitHub</a></li>
+                <li><a href="/api">API Reference</a></li>
+                <li><a href="/status">System Status</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <div class="footer-column-header">Community</div>
+              <ul>
+                <li><a href="/community">Get Involved</a></li>
+                <li><a href="https://discord.gg/yourproject">Discord</a></li>
+                <li><a href="https://twitter.com/yourproject">Twitter</a></li>
+                <li><a href="/contribute">Contributing</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <div class="footer-column-header">Legal</div>
+              <ul>
+                <li><a href="/terms">Terms of Service</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="https://github.com/ou-org/OpenUniverse/blob/main/LICENSE">License</a></li>
+                <li><a href="/security">Security</a></li>
+              </ul>
+            </div>
+        </div>
+        </footer>
+        <div class="footer-buttons">
           <a class="button button-touch" role="button" target="_blank"
             href="mailto:pocsrv@proton.me&subject=From%20OpenUniverse%20Website">
             Get in Touch
@@ -921,32 +947,34 @@ https://www.pexels.com/video/officers-investigating-7253660/
             Up <span style="font-size: 2rem;">↑</span>
           </a>
         </div>
-        <div id="particle-canvas"></div>
-        <br>
-        <b>Acknowledgments and Attributions:</b>
-        <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a>
-        <a
-          href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars
-          Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.
-        <a href="https://www.freepik.com/icon/alien_8152466">Alien Icon by dreamicons</a>. <a
-          href="https://www.freepik.com/author/lorddreamsss/icons">Icon by dreamicons</a>.
-        Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a
-          href="https://unsplash.com/">Unsplash</a>.
-        Photo by <a href="https://unsplash.com/@umby">Umberto</a> on <a href="https://unsplash.com/">Unsplash</a>. Photo
-        by <a href="https://unsplash.com/@choys_">Conny Schneider</a> on <a href="https://unsplash.com/">Unsplash</a>.
-        Photo by <a href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a href="https://unsplash.com/">Unsplash</a>.
-        Photo by <a
-          href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham
-          Dhage</a> on <a
-          href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.
-        Canvas Particle Animation by Julian Laval on <a href="https://codepen.io/JulianLaval/pen/KpLXOO">CodePen</a>.
-        
-        <br><br>
-        &copy; OpenUniverse 2025
+        <div class="acknowledgments">
+          <b>Acknowledgments and Attributions:</b>
+          <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a>
+          <a
+            href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars
+            Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.
+          <a href="https://www.freepik.com/icon/alien_8152466">Alien Icon by dreamicons</a>. <a
+            href="https://www.freepik.com/author/lorddreamsss/icons">Icon by dreamicons</a>.
+          Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a
+            href="https://unsplash.com/">Unsplash</a>.
+          Photo by <a href="https://unsplash.com/@umby">Umberto</a> on <a href="https://unsplash.com/">Unsplash</a>.
+          Photo
+          by <a href="https://unsplash.com/@choys_">Conny Schneider</a> on <a href="https://unsplash.com/">Unsplash</a>.
+          Photo by <a href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a
+            href="https://unsplash.com/">Unsplash</a>.
+          Photo by <a
+            href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham
+            Dhage</a> on <a
+            href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.
+          Canvas Particle Animation by Julian Laval on <a href="https://codepen.io/JulianLaval/pen/KpLXOO">CodePen</a>.
+
+          <br><br>
+          &copy; OpenUniverse 2025
+        </div>
       </div>
+      <div id="particle-canvas"></div>
     </div>
   </section>
-
 </body>
 <script>
   const sideImgs = Array.from(document.querySelectorAll(".side-img"))
@@ -1057,7 +1085,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
           (b = void 0 !== b ? b : {}),
           (this.options = {
             particleColor: void 0 !== b.particleColor ? b.particleColor : "#fff",
-            background: void 0 !== b.background ? b.background : "#1a252f",
+            background: void 0 !== b.background ? b.background : "transparent",
             interactive: void 0 !== b.interactive ? b.interactive : !0,
             velocity: this.setVelocity(b.speed),
             density: this.j(b.density)
@@ -1092,6 +1120,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
             "background-size": "cover"
           });
         }
+        this.l(this.k, { background: "transparent" });
         if (
           !/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(this.options.particleColor)
         )
@@ -1213,7 +1242,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
   var canvasDiv = document.getElementById("particle-canvas");
   var options = {
-    particleColor: "#fff",
+    particleColor: "#777",
     background: "#000",
     interactive: false,
     speed: "slow",

@@ -85,7 +85,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
     a:hover {
       text-decoration: underline;
     }
-
     section:first-child {
       padding: 0;
     }
@@ -229,7 +228,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       padding-left: 2rem;
       padding-right: 2rem;
     }
-
+    
     .footer {
       width: 100%;
       display: flex;
@@ -298,7 +297,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     @media (max-width: 768px) {
 
       .bg-icon,
-      .header-icon {
+      .header-icon-mars {
         display: none;
       }
 
@@ -363,10 +362,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
       }
     }
 
-    .header-icon {
+    .header-icon-mars {
       position: absolute;
       pointer-events: none;
-      z-index: 0;
+      KKKz-index: 0;
       transform-origin: center;
       /* <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a> */
       background-image: url("img/mars_11829841.png");
@@ -374,8 +373,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       background-position: center;
     }
 
-    .header-icon-large {
-      position: absolute;
+    .header-icon-mars-large {
       left: 58%;
       top: 6%;
       width: 13cqh;
@@ -383,8 +381,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       opacity: 0.1;
     }
 
-    .header-icon-medium {
-      position: absolute;
+    .header-icon-mars-medium {
       left: 83%;
       top: 31%;
       width: 5cqh;
@@ -392,12 +389,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
       opacity: 0.2;
     }
 
-    .header-icon-small {
-      position: absolute;
-      left: 96%;
-      top: 5%;
-      width: 2cqh;
-      height: 2cqh;
+    .header-icon-mars-small {
+      left: 90%;
+      top: 7%;
+      width: 3cqh;
+      height: 3cqh;
       opacity: 0.2;
     }
 
@@ -540,6 +536,99 @@ https://www.pexels.com/video/officers-investigating-7253660/
     .shifted {
       transform: translateX(50px);
     }
+
+    /*==========================================================*/
+    #particle-canvas {
+      width: 100%;
+      height: 14rem;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+
+    .particle-network-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      KKKbackground-color: #171717;
+    }
+
+    .particle-network-animation::before {
+      z-index: -2;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      KKKbackground-image: url(https://images.unsplash.com/photo-1450849608880-6f787542c88a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=786a67dca1d8791d181bfd90b16240d9);
+      KKKbackground-position: center center;
+      KKKbackground-size: cover;
+      opacity: 0.2;
+    }
+
+    .glow {
+      z-index: -1;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      KKKbackground-image: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.025), transparent);
+    }
+
+    .glow-1 {
+      width: 150vw;
+      height: 150vh;
+      margin-top: -75vh;
+      margin-left: -75vw;
+      animation: glow-1-move 25s linear infinite both;
+    }
+
+    @keyframes glow-1-move {
+      from {
+        transform: translate(-100%, 100%);
+      }
+
+      to {
+        transform: translate(100%, -100%);
+      }
+    }
+
+    .glow-2 {
+      width: 100vw;
+      height: 100vh;
+      margin-top: -50vh;
+      margin-left: -50vw;
+      animation: glow-2-move 25s linear 8.3333333333s infinite both;
+    }
+
+    @keyframes glow-2-move {
+      from {
+        transform: translate(-100%, 0%);
+      }
+
+      to {
+        transform: translate(100%, 100%);
+      }
+    }
+
+    .glow-3 {
+      width: 120vw;
+      height: 120vh;
+      margin-top: -60vh;
+      margin-left: -60vw;
+      animation: glow-3-move 25s linear 16.6666666667s infinite both;
+    }
+
+    @keyframes glow-3-move {
+      from {
+        transform: translate(100%, 100%);
+      }
+
+      to {
+        transform: translate(0%, -100%);
+      }
+    }
   </style>
 </head>
 
@@ -568,9 +657,9 @@ https://www.pexels.com/video/officers-investigating-7253660/
     <section class="bottom-section">
       <div class="section-wrapper">
         <div class="cosmos">
-          <div class="header-icon header-icon-large"></div>
-          <div class="header-icon header-icon-medium"></div>
-          <div class="header-icon header-icon-small"></div>
+          <div class="header-icon-mars header-icon-mars-large"></div>
+          <div class="header-icon-mars header-icon-mars-medium"></div>
+          <div class="header-icon-mars header-icon-mars-small"></div>
           <div>
             <div class="product-name product-name-0" href="index.html">Open<wbr>Universe</div>
             <div class="slogan slogan-0">There are no boundaries</div>
@@ -766,7 +855,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
     </div>
   </section>
 
-
   <section class="section-footer">
     <div class="section-wrapper">
       <!--<a href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.-->
@@ -786,7 +874,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
             <li><a href="/changelog">Changelog</a></li>
           </ul>
         </div>
-
+        
         <div class="footer-column">
           <div class="footer-column-header">Developers</div>
           <ul>
@@ -806,7 +894,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
             <li><a href="/contribute">Contributing</a></li>
           </ul>
         </div>
-
+        
         <div class="footer-column">
           <div class="footer-column-header">Legal</div>
           <ul>
@@ -833,7 +921,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
             Up <span style="font-size: 2rem;">↑</span>
           </a>
         </div>
-        <br><br>
+        <div id="particle-canvas"></div>
+        <br>
         <b>Acknowledgments and Attributions:</b>
         <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a>
         <a
@@ -850,10 +939,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
           href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham
           Dhage</a> on <a
           href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.
+        Canvas Particle Animation by Julian Laval on <a href="https://codepen.io/JulianLaval/pen/KpLXOO">CodePen</a>.
+        
         <br><br>
         &copy; OpenUniverse 2025
       </div>
-    </div>
     </div>
   </section>
 
@@ -913,6 +1003,224 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
   window.addEventListener('resize', shiftOddRows);
   window.addEventListener('load', shiftOddRows);
+
+
+
+  // particle.min.js hosted on GitHub
+  // Scroll down for initialisation code
+
+  !(function (a) {
+    var b =
+      ("object" == typeof self && self.self === self && self) ||
+      ("object" == typeof global && global.global === global && global);
+    "function" == typeof define && define.amd
+      ? define(["exports"], function (c) {
+        b.ParticleNetwork = a(b, c);
+      })
+      : "object" == typeof module && module.exports
+        ? (module.exports = a(b, {}))
+        : (b.ParticleNetwork = a(b, {}));
+  })(function (a, b) {
+    var c = function (a) {
+      (this.canvas = a.canvas),
+        (this.g = a.g),
+        (this.particleColor = a.options.particleColor),
+        (this.x = Math.random() * this.canvas.width),
+        (this.y = Math.random() * this.canvas.height),
+        (this.velocity = {
+          x: (Math.random() - 0.5) * a.options.velocity,
+          y: (Math.random() - 0.5) * a.options.velocity
+        });
+    };
+    return (
+      (c.prototype.update = function () {
+        (this.x > this.canvas.width + 20 || this.x < -20) &&
+          (this.velocity.x = -this.velocity.x),
+          (this.y > this.canvas.height + 20 || this.y < -20) &&
+          (this.velocity.y = -this.velocity.y),
+          (this.x += this.velocity.x),
+          (this.y += this.velocity.y);
+      }),
+      (c.prototype.h = function () {
+        this.g.beginPath(),
+          (this.g.fillStyle = this.particleColor),
+          (this.g.globalAlpha = 0.7),
+          this.g.arc(this.x, this.y, 1.5, 0, 2 * Math.PI),
+          this.g.fill();
+      }),
+      (b = function (a, b) {
+        (this.i = a),
+          (this.i.size = {
+            width: this.i.offsetWidth,
+            height: this.i.offsetHeight
+          }),
+          (b = void 0 !== b ? b : {}),
+          (this.options = {
+            particleColor: void 0 !== b.particleColor ? b.particleColor : "#fff",
+            background: void 0 !== b.background ? b.background : "#1a252f",
+            interactive: void 0 !== b.interactive ? b.interactive : !0,
+            velocity: this.setVelocity(b.speed),
+            density: this.j(b.density)
+          }),
+          this.init();
+      }),
+      (b.prototype.init = function () {
+        if (
+          ((this.k = document.createElement("div")),
+            this.i.appendChild(this.k),
+            this.l(this.k, {
+              position: "absolute",
+              top: 0,
+              left: 0,
+              bottom: 0,
+              right: 0,
+              "z-index": 1
+            }),
+            /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(this.options.background))
+        )
+          this.l(this.k, { background: this.options.background });
+        else {
+          if (!/\.(gif|jpg|jpeg|tiff|png)$/i.test(this.options.background))
+            return (
+              console.error(
+                "Please specify a valid background image or hexadecimal color"
+              ),
+              !1
+            );
+          this.l(this.k, {
+            background: 'url("' + this.options.background + '") no-repeat center',
+            "background-size": "cover"
+          });
+        }
+        if (
+          !/(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(this.options.particleColor)
+        )
+          return (
+            console.error(
+              "Please specify a valid particleColor hexadecimal color"
+            ),
+            !1
+          );
+        (this.canvas = document.createElement("canvas")),
+          this.i.appendChild(this.canvas),
+          (this.g = this.canvas.getContext("2d")),
+          (this.canvas.width = this.i.size.width),
+          (this.canvas.height = this.i.size.height),
+          this.l(this.i, { position: "relative" }),
+          this.l(this.canvas, { "z-index": "20", position: "relative" }),
+          window.addEventListener(
+            "resize",
+            function () {
+              return this.i.offsetWidth === this.i.size.width &&
+                this.i.offsetHeight === this.i.size.height
+                ? !1
+                : ((this.canvas.width = this.i.size.width = this.i.offsetWidth),
+                  (this.canvas.height = this.i.size.height = this.i.offsetHeight),
+                  clearTimeout(this.m),
+                  void (this.m = setTimeout(
+                    function () {
+                      this.o = [];
+                      for (
+                        var a = 0;
+                        a <
+                        (this.canvas.width * this.canvas.height) /
+                        this.options.density;
+                        a++
+                      )
+                        this.o.push(new c(this));
+                      this.options.interactive && this.o.push(this.p),
+                        requestAnimationFrame(this.update.bind(this));
+                    }.bind(this),
+                    500
+                  )));
+            }.bind(this)
+          ),
+          (this.o = []);
+        for (
+          var a = 0;
+          a < (this.canvas.width * this.canvas.height) / this.options.density;
+          a++
+        )
+          this.o.push(new c(this));
+        this.options.interactive &&
+          ((this.p = new c(this)),
+            (this.p.velocity = { x: 0, y: 0 }),
+            this.o.push(this.p),
+            this.canvas.addEventListener(
+              "mousemove",
+              function (a) {
+                (this.p.x = a.clientX - this.canvas.offsetLeft),
+                  (this.p.y = a.clientY - this.canvas.offsetTop);
+              }.bind(this)
+            ),
+            this.canvas.addEventListener(
+              "mouseup",
+              function (a) {
+                (this.p.velocity = {
+                  x: (Math.random() - 0.5) * this.options.velocity,
+                  y: (Math.random() - 0.5) * this.options.velocity
+                }),
+                  (this.p = new c(this)),
+                  (this.p.velocity = { x: 0, y: 0 }),
+                  this.o.push(this.p);
+              }.bind(this)
+            )),
+          requestAnimationFrame(this.update.bind(this));
+      }),
+      (b.prototype.update = function () {
+        this.g.clearRect(0, 0, this.canvas.width, this.canvas.height),
+          (this.g.globalAlpha = 1);
+        for (var a = 0; a < this.o.length; a++) {
+          this.o[a].update(), this.o[a].h();
+          for (var b = this.o.length - 1; b > a; b--) {
+            var c = Math.sqrt(
+              Math.pow(this.o[a].x - this.o[b].x, 2) +
+              Math.pow(this.o[a].y - this.o[b].y, 2)
+            );
+            c > 120 ||
+              (this.g.beginPath(),
+                (this.g.strokeStyle = this.options.particleColor),
+                (this.g.globalAlpha = (120 - c) / 120),
+                (this.g.lineWidth = 0.7),
+                this.g.moveTo(this.o[a].x, this.o[a].y),
+                this.g.lineTo(this.o[b].x, this.o[b].y),
+                this.g.stroke());
+          }
+        }
+        0 !== this.options.velocity &&
+          requestAnimationFrame(this.update.bind(this));
+      }),
+      (b.prototype.setVelocity = function (a) {
+        return "fast" === a ? 1 : "slow" === a ? 0.33 : "none" === a ? 0 : 0.66;
+      }),
+      (b.prototype.j = function (a) {
+        return "high" === a
+          ? 5e3
+          : "low" === a
+            ? 2e4
+            : isNaN(parseInt(a, 10))
+              ? 1e4
+              : a;
+      }),
+      (b.prototype.l = function (a, b) {
+        for (var c in b) a.style[c] = b[c];
+      }),
+      b
+    );
+  });
+
+  // Initialisation
+
+  var canvasDiv = document.getElementById("particle-canvas");
+  var options = {
+    particleColor: "#fff",
+    background: "#000",
+    interactive: false,
+    speed: "slow",
+    density: "high"
+  };
+  var particleCanvas = new ParticleNetwork(canvasDiv, options);
+
 </script>
 
 </html>

@@ -13,6 +13,13 @@ https://www.pexels.com/video/officers-investigating-7253660/
   <!--<a href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.-->
   <link rel="icon" type="image/png" href="img/mars_11829841.png">
   <link rel="manifest" href="manifest.json">
+
+  <link rel="preload" href="/fonts/TiltWarp-Regular-VariableFont_XROT,YROT.ttf" as="font" type="font/ttf"
+    crossorigin="anonymous">
+  <link rel="preload" href="/fonts/BrunoAceSC-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/Roboto-Thin.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
   <meta name="theme-color" content="#000">
   <script>
     if ('serviceWorker' in navigator) {
@@ -21,6 +28,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
   </script>
 
   <style>
+    html {
+      visibility: hidden;
+    }
+
     @font-face {
       font-family: 'TiltWarp-Regular';
       src: url("fonts/TiltWarp-Regular-VariableFont_XROT,YROT.ttf");
@@ -47,11 +58,13 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .arrow-down {
+      width: 16px;
+      height: 16px;
       border: solid #7B2541;
-      border-width: 0 6px 6px 0;
-      padding: 15px;
+      border-width: 0 4px 4px 0;
+      display: block;
       transform: rotate(45deg);
-      justify-self: center;
+      margin: auto;
       margin-bottom: 3rem;
       cursor: pointer;
       transition: filter 0.3s;
@@ -560,7 +573,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 95%;
     }
 
     .particle-network-animation {
@@ -589,10 +602,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .glow-1 {
-      width: 150vw;
-      height: 150vh;
-      margin-top: -75vh;
-      margin-left: -75vw;
+      KKKwidth: 150vw;
+      KKKheight: 150vh;
+      KKKmargin-top: -75vh;
+      KKKmargin-left: -75vw;
       animation: glow-1-move 25s linear infinite both;
     }
 
@@ -607,10 +620,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .glow-2 {
-      width: 100vw;
-      height: 100vh;
-      margin-top: -50vh;
-      margin-left: -50vw;
+      KKKwidth: 100vw;
+      KKKheight: 100vh;
+      KKKmargin-top: -50vh;
+      KKKmargin-left: -50vw;
       animation: glow-2-move 25s linear 8.3333333333s infinite both;
     }
 
@@ -625,10 +638,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .glow-3 {
-      width: 120vw;
-      height: 120vh;
-      margin-top: -60vh;
-      margin-left: -60vw;
+      KKKwidth: 120vw;
+      KKKheight: 120vh;
+      KKKmargin-top: -60vh;
+      KKKmargin-left: -60vw;
       animation: glow-3-move 25s linear 16.6666666667s infinite both;
     }
 
@@ -691,10 +704,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
       </div>
     </section>
   </div>
-  <a id="target"></a>
 
   <section class="adv-section">
     <div class="section-wrapper">
+      <a id="target"></a>
       <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img class="side-img" src="img/kseniia-ilinykh-ni1NYB6nXjo-unsplash.jpg" alt="Connect" />
       <div class="section-text">
@@ -959,6 +972,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
         </div>
       </div>
       <div id="particle-canvas"></div>
+      <!--
+      -->
     </div>
   </section>
 </body>
@@ -1236,6 +1251,16 @@ https://www.pexels.com/video/officers-investigating-7253660/
   };
   var particleCanvas = new ParticleNetwork(canvasDiv, options);
 
+
+  Promise.all([
+    document.fonts.ready,
+    new Promise(resolve => {
+      if (document.readyState === 'complete') return resolve();
+      window.addEventListener('load', resolve);
+    })
+  ]).then(() => {
+    document.documentElement.style.visibility = 'visible';
+  });
 </script>
 
 </html>

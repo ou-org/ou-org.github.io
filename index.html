@@ -57,21 +57,40 @@ https://www.pexels.com/video/officers-investigating-7253660/
       --bg-color-gray-no: #fff;
     }
 
-    .arrow-down {
-      width: 16px;
-      height: 16px;
-      border: solid #7B2541;
-      border-width: 0 4px 4px 0;
-      display: block;
-      transform: rotate(45deg);
+    .arrow-wrapper {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: auto;
       margin-bottom: 3rem;
       cursor: pointer;
-      transition: filter 0.3s;
+      transition: background-color 0.6s, filter 0.6s;
     }
 
-    .arrow-down:hover {
+    .arrow-wrapper:hover {
+      background-color: #431023;
+      /* Circle appears on hover */
       filter: brightness(1.2);
+    }
+
+    .arrow-wrapper:hover .arrow-down {
+      border-color: #000;
+    }
+
+    .arrow-down {
+      width: 16px;
+      height: 16px;
+      border: solid #831F44;
+      border-width: 0 4px 4px 0;
+      display: block;
+      transform: rotate(45deg);
+      pointer-events: none;
+      margin-bottom: 8px;
+      transition: border-color 0.6s;
     }
 
     html,
@@ -128,9 +147,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .cosmos {
+      z-index: 1000;
       position: relative;
       color: #fff;
-      background: linear-gradient(-25deg, #000 30%, #FD3C84 100%);
+      background: linear-gradient(-25deg, #00000000 30%, #FD3C84 100%);
       padding-top: 3rem;
       padding-left: 2.5rem;
       padding-right: 2.5rem;
@@ -141,7 +161,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .product-paragraph {
-      padding-top: 2.8rem;
+      padding-top: 2.3rem;
       font-size: 1rem;
     }
 
@@ -237,8 +257,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       margin-bottom: 0;
     }
 
-    .foreground-content {
-      z-index: 1000;
+    .bottom-content {
       padding-left: 2rem;
       padding-right: 2rem;
     }
@@ -441,7 +460,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       height: 400px;
       position: absolute;
       z-index: 0;
-      opacity: 0.025;
+      opacity: 0.035;
       /* <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a> */
       background-image: url("img/glucose_8205747.svg");
       background-size: contain;
@@ -508,6 +527,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .video-container {
+      z-index: 1000;
       container-type: inline-size;
       position: relative;
       width: 100%;
@@ -526,7 +546,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     /* BRANDS */
     .section-brands {
-      background-color: var(--bg-color-gray-yes);
+      background-color: #eee;
       padding: 1rem;
       padding-bottom: 2rem;
     }
@@ -573,7 +593,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       top: 0;
       left: 0;
       width: 100%;
-      height: 95%;
+      height: 100%;
     }
 
     .particle-network-animation {
@@ -581,7 +601,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       top: 0;
       left: 0;
       right: 0;
-      height: 100vh;
+      height: 100%;
     }
 
     .particle-network-animation::before {
@@ -659,6 +679,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
 <body>
   <div class="page">
+    <div id="particle-canvas"></div>
     <section class="top-section">
       <div class="section-wrapper">
         <div class="video-container">
@@ -698,7 +719,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
             event
             sources and actions. Built for real-time coordination across modern distributed architecture.
           </p>
-          <div class="arrow-down" onclick="document.querySelector('#target').scrollIntoView({ behavior: 'smooth' });">
+          <div class="arrow-wrapper"
+            onclick="document.querySelector('#target').scrollIntoView({ behavior: 'smooth' });">
+            <div class="arrow-down">
+            </div>
           </div>
         </div>
       </div>
@@ -884,7 +908,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     <!--
       -->
     <div class="section-wrapper section-wrapper-bottom">
-      <div class="foreground-content">
+      <div class="bottom-content">
         <div class="footer-row-1">
 
           <!--<a href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.-->
@@ -971,12 +995,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
           &copy; OpenUniverse 2025
         </div>
       </div>
-      <div id="particle-canvas"></div>
       <!--
-      -->
-    </div>
-  </section>
-</body>
+        -->
+      </div>
+    </section>    
+  </body>
 <script>
   const sideImgs = Array.from(document.querySelectorAll(".side-img"))
   if (sideImgs.length > 0) {
@@ -1138,33 +1161,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
           (this.canvas.height = this.i.size.height),
           this.l(this.i, { position: "relative" }),
           this.l(this.canvas, { "z-index": "20", position: "relative" }),
-          window.addEventListener(
-            "resize",
-            function () {
-              return this.i.offsetWidth === this.i.size.width &&
-                this.i.offsetHeight === this.i.size.height
-                ? !1
-                : ((this.canvas.width = this.i.size.width = this.i.offsetWidth),
-                  (this.canvas.height = this.i.size.height = this.i.offsetHeight),
-                  clearTimeout(this.m),
-                  void (this.m = setTimeout(
-                    function () {
-                      this.o = [];
-                      for (
-                        var a = 0;
-                        a <
-                        (this.canvas.width * this.canvas.height) /
-                        this.options.density;
-                        a++
-                      )
-                        this.o.push(new c(this));
-                      this.options.interactive && this.o.push(this.p),
-                        requestAnimationFrame(this.update.bind(this));
-                    }.bind(this),
-                    500
-                  )));
-            }.bind(this)
-          ),
           (this.o = []);
         for (
           var a = 0;
@@ -1243,7 +1239,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
   var canvasDiv = document.getElementById("particle-canvas");
   var options = {
-    particleColor: "#777",
+    particleColor: "#B22A5C",
     background: "#000",
     interactive: false,
     speed: "slow",

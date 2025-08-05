@@ -61,18 +61,18 @@ https://www.pexels.com/video/officers-investigating-7253660/
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background-color: transparent;
+      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: auto;
       margin-bottom: 1rem;
       cursor: pointer;
-      transition: background-color 0.6s, filter 0.6s;
+      transition: background-color 0.9s, filter 0.9s;
     }
 
     .arrow-wrapper:hover {
-      background-color: #431023;
+      background: #C62A4B;
       filter: brightness(1.2);
     }
 
@@ -83,7 +83,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     .arrow-down {
       width: 16px;
       height: 16px;
-      border: solid #831F44;
+      border: solid #C62A4B;
       border-width: 0 4px 4px 0;
       display: block;
       transform: rotate(45deg);
@@ -98,7 +98,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       padding: 0;
       font-family: RobotoRegular;
       font-size: 1rem;
-      background-color: #000;
+      background-color: #111;
       overflow-x: hidden;
     }
 
@@ -136,6 +136,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
       padding: 0;
     }
 
+    .adv-section .section-wrapper {
+      background-color: rgba(0, 0, 0, 0.01);
+    }
+
     .page {
       min-height: 100vh;
       display: flex;
@@ -144,18 +148,18 @@ https://www.pexels.com/video/officers-investigating-7253660/
       flex-direction: column;
       margin: 0;
       padding: 0;
-      background-image: url("img/nustar160728a-1.jpg");
+      background-image: url("img/deep-pMfqcyzTB9c-unsplash.svg");
+      background-color: #13293d;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
     }
 
     .cosmos {
       z-index: 1000;
       position: relative;
       color: #fff;
-      background: linear-gradient(-25deg, #00000000 30%, #FD3C84 100%);
+      background: rgba(0, 0, 0, 0.2) !important;
       padding-top: 3rem;
       padding-left: 2.5rem;
       padding-right: 2.5rem;
@@ -271,6 +275,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     .section-wrapper-bottom {
       position: relative;
       flex-direction: column;
+      background: #000;
     }
 
     .footer-buttons {
@@ -352,10 +357,19 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
 
-    @media (max-height: 1080px) {
+    @media (max-width: 1080px) {
       .page {
         min-height: 100vh;
       }
+
+      .cosmos {
+        background: unset !important;
+      }
+
+      .adv-section .section-wrapper {
+        background-color: unset;
+      }
+
     }
 
     @media (max-width: 768px) {
@@ -376,6 +390,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
       .cosmos {
         padding-left: 1rem;
         padding-right: 1rem;
+        background: unset !important;
+      }
+
+      .adv-section .section-wrapper {
+        background-color: unset !important;
       }
 
       .footer {
@@ -410,6 +429,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
         padding-top: 2rem;
         padding-left: 1rem;
         padding-right: 1rem;
+        background: white !important;
       }
 
       .section-text p {
@@ -554,13 +574,13 @@ https://www.pexels.com/video/officers-investigating-7253660/
     /* BRANDS */
     .section-brands {
       background-color: #eee;
-      padding: 1rem;
-      padding-bottom: 2rem;
     }
 
     .brands-grid-container {
+      background: rgba(0, 0, 0, 0.01);
       position: relative;
-      width: calc(100% - 2rem);
+      width: 100%;
+      padding: 1rem;
     }
 
     .brands-grid {

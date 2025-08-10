@@ -27,9 +27,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
   </script>
 
-  <style>
-    html {
-      visibility: hidden;
+<style>
+  html {
+    visibility: hidden;
+    background-color: #fff;
     }
 
     @font-face {
@@ -57,55 +58,30 @@ https://www.pexels.com/video/officers-investigating-7253660/
       --bg-color-gray-no: #fff;
     }
 
-    .arrow-wrapper {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: transparent;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: auto;
-      margin-bottom: 1rem;
-      cursor: pointer;
-      transition: background-color 0.9s, filter 0.9s;
-    }
-
-    .arrow-wrapper:hover {
-      background: #C62A4B;
-      filter: brightness(1.2);
-    }
-
-    .arrow-wrapper:hover .arrow-down {
-      border-color: #000;
-    }
-
-    .arrow-down {
-      width: 16px;
-      height: 16px;
-      border: solid #C62A4B;
-      border-width: 0 4px 4px 0;
-      display: block;
-      transform: rotate(45deg);
-      pointer-events: none;
-      margin-bottom: 8px;
-      transition: border-color 0.6s;
-    }
-
     html,
     body {
       margin: 0;
       padding: 0;
       font-family: RobotoRegular;
       font-size: 1rem;
-      background-color: #111;
       overflow-x: hidden;
+    }
+
+    body {
+      background-color: #222;
+    }
+
+    h2 {
+      font-family: RobotoThin;
+      font-size: 2.5rem;
+      margin: 0;
+      margin-bottom: 0;
     }
 
     i {
       font-family: Georgia, 'Times New Roman', Times, serif;
       font-style: italic;
-      font-size: 1.13rem;
+      font-size: 1.6rem;
     }
 
     a {
@@ -117,30 +93,20 @@ https://www.pexels.com/video/officers-investigating-7253660/
       text-decoration: underline;
     }
 
-    section:first-child {
-      padding: 0;
-    }
-
-    .top-section {}
-
-    .bottom-section {
-      display: flex;
-      flex-grow: 1;
-    }
-
     .section-wrapper {
       max-width: 1280px;
-      margin: 0 auto;
+      margin: auto;
       display: flex;
       flex-direction: row;
       padding: 0;
     }
 
     .adv-section .section-wrapper {
-      background-color: rgba(0, 0, 0, 0.01);
+      background-color: rgba(0, 0, 0, 0.2);
     }
 
     .page {
+      position: relative;
       min-height: 100vh;
       display: flex;
       width: 100%;
@@ -148,38 +114,34 @@ https://www.pexels.com/video/officers-investigating-7253660/
       flex-direction: column;
       margin: 0;
       padding: 0;
-      background-image: url("img/deep-pMfqcyzTB9c-unsplash.svg");
-      background-color: #13293d;
+      background-color: #000;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    .cosmos {
-      z-index: 1000;
-      position: relative;
-      color: #fff;
-      background: rgba(0, 0, 0, 0.2) !important;
-      padding-top: 3rem;
-      padding-left: 2.5rem;
-      padding-right: 2.5rem;
+    .page img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-height: 90cqh;
+      width: 50cqw;
+      opacity: .25;
     }
 
     .section-wrapper.reverse {
       flex-direction: row-reverse;
     }
 
-    .product-paragraph {
-      padding-top: 2.3rem;
-      font-size: 1rem;
-    }
-
     .adv-section:nth-child(even) {
-      background-color: var(--bg-color-gray-yes) !important;
+      background-color: #FD3F84 !important;
+      KKKopacity: 1;
     }
 
     .adv-section:nth-child(odd) {
-      background-color: var(--bg-color-gray-no) !important;
+      background-color: #444 !important;
+      KKKopacity: 0.9;
     }
 
     .section-text {
@@ -190,6 +152,9 @@ https://www.pexels.com/video/officers-investigating-7253660/
       justify-content: center;
       padding-left: 2.5rem;
       padding-right: 2.5rem;
+      color: white !important;
+      min-height: 500px;
+      font-size: 1.5rem !important;
     }
 
     .github-logo {
@@ -213,36 +178,18 @@ https://www.pexels.com/video/officers-investigating-7253660/
       filter: drop-shadow(0 0 1px white);
     }
 
-    .slogan-header {
-      opacity: .85;
-      position: absolute;
-      top: 1.8rem;
-      left: 2.8rem;
-      font-family: 'TiltWarp-Regular';
-      font-weight: bold;
-      font-size: 6cqw;
-      text-transform: uppercase;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-      color: #bbb;
-    }
-
-    .slogan-header .chaos {
-      color: #E43677;
-    }
-
-    .slogan-header .harmony {
-      color: #edffff;
+    .product-header {
+      align-self: center;
+      align-content: center;
+      margin: auto;
+      color: white;
+      z-index: 1000;
     }
 
     .slogan {
       font-weight: bold;
       font-family: RobotoThin;
       text-align: left;
-    }
-
-    .slogan-0 {
-      font-size: 2.45rem;
-      line-height: 3rem;
     }
 
     .product-name {
@@ -256,15 +203,13 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .product-name-0 {
-      font-size: 3rem;
-      line-height: 3rem;
+      font-size: 6cqw;
+      line-height: 6cqw;
     }
 
-    h2 {
-      font-family: RobotoThin;
-      font-size: 2rem;
-      margin: 0;
-      margin-bottom: 0;
+    .slogan-0 {
+      font-size: 4.90cqw;
+      line-height: 6cqw;
     }
 
     .bottom-content {
@@ -362,10 +307,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
         min-height: 100vh;
       }
 
-      .cosmos {
-        background: unset !important;
-      }
-
       .adv-section .section-wrapper {
         background-color: unset;
       }
@@ -377,20 +318,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       .bg-icon,
       .header-icon-mars {
         display: none;
-      }
-
-      .button-start {
-        margin-top: 1rem;
-      }
-
-      .bottom-section {
-        padding: 0;
-      }
-
-      .cosmos {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        background: unset !important;
       }
 
       .adv-section .section-wrapper {
@@ -406,11 +333,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
         padding-bottom: 1.5rem;
       }
 
-      .bottom-section .product-name-0,
-      .bottom-section .slogan-0 {
-        text-align: center;
-      }
-
       .section-wrapper,
       .section-wrapper.reverse {
         flex-direction: column !important;
@@ -419,7 +341,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       .section-wrapper p,
       .section-wrapper.reverse p {}
 
-      .product-paragraph,
       .acknowledgments {
         text-align: justify;
       }
@@ -429,7 +350,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
         padding-top: 2rem;
         padding-left: 1rem;
         padding-right: 1rem;
-        background: white !important;
+        background-color: white;
+        color: black !important;
       }
 
       .section-text p {
@@ -438,6 +360,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       }
 
       .side-img {
+        max-width: 100% !important;
         width: 100% !important;
         margin-right: 0 !important;
       }
@@ -447,68 +370,12 @@ https://www.pexels.com/video/officers-investigating-7253660/
       }
     }
 
-    .header-icon-mars {
-      position: absolute;
-      pointer-events: none;
-      transform-origin: center;
-      /* <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a> */
-      background-image: url("img/mars_11829841.png");
-      background-size: contain;
-      background-position: center;
-    }
-
-    .header-icon-mars-large {
-      left: 58%;
-      top: 6%;
-      width: 13cqh;
-      height: 13cqh;
-      opacity: 0.1;
-    }
-
-    .header-icon-mars-medium {
-      left: 83%;
-      top: 31%;
-      width: 5cqh;
-      height: 5cqh;
-      opacity: 0.2;
-    }
-
-    .header-icon-mars-small {
-      left: 90%;
-      top: 7%;
-      width: 3cqh;
-      height: 3cqh;
-      opacity: 0.2;
-    }
-
-
-    .bg-icon {
-      width: 400px;
-      height: 400px;
-      position: absolute;
-      z-index: 0;
-      opacity: 0.035;
-      /* <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a> */
-      background-image: url("img/glucose_8205747.svg");
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
     .side-img {
       height: auto;
-      width: 300px;
+      max-width: 35%;
       min-height: max-content;
       object-fit: cover;
       flex-shrink: 0;
-    }
-
-    .side-img-first {
-      /*  margin-top: 0 !important; */
-    }
-
-    .side-img-last {
-      margin-bottom: 1rem !important;
     }
 
     .mars {
@@ -545,7 +412,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       box-shadow: 0 0 6px #fff;
     }
 
-    .button-start {
+    .button-learn {
       position: absolute !important;
       color: #fff;
       border-color: #fff;
@@ -553,17 +420,26 @@ https://www.pexels.com/video/officers-investigating-7253660/
       right: 2rem;
     }
 
-    .video-container {
-      z-index: 1000;
-      container-type: inline-size;
-      position: relative;
-      width: 100%;
+    .button-start {
+      margin-top: 2rem;
+      justify-self: end;
+      color: #fff;
+      border-color: #fff;
     }
 
-    video {
+    .videoWrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      /* 16:9 */
+      padding-top: 25px;
+    }
+
+    .videoWrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      object-fit: cover;
-      display: block;
+      height: 100%;
     }
 
     .button-touch {
@@ -573,11 +449,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     /* BRANDS */
     .section-brands {
-      background-color: #eee;
+      background-color: #333;
     }
 
     .brands-grid-container {
-      background: rgba(0, 0, 0, 0.01);
+      background: rgba(0, 0, 0, 0.3);
       position: relative;
       width: 100%;
       padding: 1rem;
@@ -595,7 +471,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       display: flex;
       align-items: center;
       justify-content: center;
-      opacity: 0.4;
+      opacity: 0.9;
       z-index: 1;
     }
 
@@ -606,7 +482,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
-      filter: grayscale(100%) brightness(0) invert(0);
+      filter: grayscale(100%) brightness(1) invert(1);
     }
 
     /* Shift odd rows */
@@ -618,58 +494,59 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
 <body>
   <div class="page">
-    <section class="top-section">
-      <div class="section-wrapper">
-        <div class="video-container">
-          <video preload="auto" autoplay loop muted playsinline width="100%">
-            <source src="img/7253660-sd_640_338_30fps.mp4" type="video/mp4">
-          </video>
-          <!--
-        <a class="github-logo" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
-          <img src="img/github-logo.svg" alt="GitHub Logo">
-        </a>
-        -->
-          <div class="slogan-header">
-            From <span class="chaos">chaos</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to</span>&nbsp;<span
-              class="harmony">harmony</span></div>
+    <img src="img/glucose_8205747.svg">
+    <div class="product-header">
+      <div class="product-name product-name-0">Open<wbr>Universe</div>
+      <div class="slogan slogan-0">There are no boundaries</div>
+    </div>
+
+    <a class="button button-learn" role="button" target="_blank"
+      onclick="document.querySelector('#target1').scrollIntoView({ behavior: 'smooth' });">
+      Learn More
+    </a>
+  </div>
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <a id="target1"></a>
+      <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
+      <img class="side-img" src="img/shubham-dhage-JNKgOlj4OBs-unsplash.jpg" alt="Connect" />
+      <div class="section-text">
+        <h2>Why OpenUniverse?</h2>
+        <p>
+          <a class="product-name" href="index.html">Open<wbr>Universe</a> is the open source IaC (Infrastructure as
+          Code)
+          platform that unifies your environment.
+          Empower your infrastructure with a code-first approach to event-driven cross-system workflows.
+          Define triggers and responses as code, connect with diverse technologies, and support language-agnostic
+          event
+          sources and actions. Built for real-time coordination across modern distributed architecture.
           <a class="button button-start" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
             Get Started
           </a>
-        </div>
+        </p>
       </div>
-    </section>
-    <section class="bottom-section">
-      <div class="section-wrapper">
-        <div class="cosmos">
-          <div class="header-icon-mars header-icon-mars-large"></div>
-          <div class="header-icon-mars header-icon-mars-medium"></div>
-          <div class="header-icon-mars header-icon-mars-small"></div>
-          <div>
-            <div class="product-name product-name-0" href="index.html">Open<wbr>Universe</div>
-            <div class="slogan slogan-0">There are no boundaries</div>
-          </div>
-          <p class="product-paragraph">
-            <a class="product-name" href="index.html">Open<wbr>Universe</a> is the open source IaC (Infrastructure as
-            Code)
-            platform that unifies your environment.
-            Empower your infrastructure with a code-first approach to event-driven cross-system workflows.
-            Define triggers and responses as code, connect with diverse technologies, and support language-agnostic
-            event
-            sources and actions. Built for real-time coordination across modern distributed architecture.
-          </p>
-          <div class="arrow-wrapper"
-            onclick="document.querySelector('#target').scrollIntoView({ behavior: 'smooth' });">
-            <div class="arrow-down">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <section class="adv-section">
     <div class="section-wrapper">
-      <a id="target"></a>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/QmaNucXFYd8?si=-WHmDu-Ivm2fs1uA"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="side-img"
+        style="width: 600px; aspect-ratio: 16 / 9; align-self: center;"></iframe>
+      <div class="section-text">
+        <h2>EIP on Steroids</h2>
+        <p>
+          Today’s IT landscape is complex, with diverse protocols, multi-cloud services, and growing use of asynchronous
+          communication. Enterprise Integration Patterns (EIP) offer proven solutions and a shared vocabulary to design
+          reliable, adaptable integrations that handle complexity and failures gracefully. </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img class="side-img" src="img/kseniia-ilinykh-ni1NYB6nXjo-unsplash.jpg" alt="Connect" />
       <div class="section-text">
@@ -684,7 +561,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
   </section>
 
   <section class="adv-section">
-    <div class="section-wrapper reverse">
+    <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img class="side-img" src="img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg" alt="Reactive" />
       <div class="section-text">
@@ -714,7 +591,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
   </section>
 
   <section class="adv-section">
-    <div class="section-wrapper reverse">
+    <div class="section-wrapper">
       <img class="side-img" src="img/thisisengineering-zdBOU0faYK4-unsplash.jpg" alt="As Code" />
       <div class="section-text">
         <h2>Universe As Code</h2>
@@ -742,8 +619,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
   </section>
 
   <section class="adv-section">
-    <div class="section-wrapper reverse">
-      <img class="side-img" src="img/lars-kuczynski-1MClItU5AbI-unsplash.jpg" alt="Extensible" />
+    <div class="section-wrapper">
+      <img class="side-img" src="img/shubham-dhage-JNKgOlj4OBs-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>Composable Infrastructure</h2>
         <p>
@@ -769,7 +646,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
   </section>
 
   <section class="adv-section">
-    <div class="section-wrapper reverse">
+    <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@choys_">Conny Schneider</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
       <img class="side-img" src="img/conny-schneider-xuTJZ7uD7PI-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
@@ -794,7 +671,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
           Chavan, Ashwin.
           International Journal of Science and Research Archive, Vol. 4 (2021), 229-249, <nobr>ISSN: 2582-8185</nobr>
           <br><br>
-          <span style="float: right;">See documentation for more references.</span>
+          <span style="float: right; color: #bbb;">See documentation for more references.</span>
         </p>
       </div>
     </div>
@@ -841,10 +718,15 @@ https://www.pexels.com/video/officers-investigating-7253660/
       </div>
     </div>
   </section>
+  <section>
+    <div class="section-wrapper">
+      <img src="img/donald-giannatti-Wj1D-qiOseE-unsplash.jpg" style="display: block; width: 100%; height: auto;">
+    </div>
+  </section>
 
   <section>
-    <div class="section-wrapper section-wrapper-bottom">
-      <div class="bottom-content">
+    <div class="section-wrapper">
+      <div class="bottom-content section-wrapper-bottom">
         <div class="footer-row-1">
           <!--<a href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.-->
           <img src="img/mars_11829841.png" class="mars">
@@ -935,10 +817,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
   </section>
 </body>
 <script>
-  const sideImgs = Array.from(document.querySelectorAll(".side-img"))
-  if (sideImgs.length > 0) {
-    sideImgs[0].classList.add("side-img-first");
-    sideImgs[sideImgs.length - 1].classList.add("side-img-last");
+  const sectionWrappers = Array.from(document.querySelectorAll(".section-wrapper"));
+  for (let i = 0; i < sectionWrappers.length; i++) {
+    if (i % 2 === 0) {
+      sectionWrappers[i].classList.add('reverse');
+    }
   }
 
   // ---

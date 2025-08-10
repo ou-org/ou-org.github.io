@@ -118,6 +118,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      user-select: none;
     }
 
     .page img {
@@ -314,7 +315,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     @media (max-width: 768px) {
-
+      .button-start {
+        color: #000 !important;
+        border-color: #000 !important;
+      }
       .bg-icon,
       .header-icon-mars {
         display: none;
@@ -398,8 +402,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       border: 1px solid;
       text-decoration: none !important;
       user-select: none;
-
-
       color: #ccc;
       border-color: #ccc;
       transition: color 0.3s, border-color 0.3s, text-shadow 0.3s, box-shadow 0.3s;

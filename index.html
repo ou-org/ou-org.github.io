@@ -27,10 +27,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
   </script>
 
-<style>
-  html {
-    visibility: hidden;
-    background-color: #fff;
+  <style>
+    html {
+      visibility: hidden;
+      background-color: #000;
     }
 
     @font-face {
@@ -67,10 +67,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       overflow-x: hidden;
     }
 
-    body {
-      background-color: #222;
-    }
-
     h2 {
       font-family: RobotoThin;
       font-size: 2.5rem;
@@ -91,6 +87,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     a:hover {
       text-decoration: underline;
+    }
+
+    section:last-of-type {
+      background-color: #222;
     }
 
     .section-wrapper {
@@ -135,14 +135,56 @@ https://www.pexels.com/video/officers-investigating-7253660/
       flex-direction: row-reverse;
     }
 
-    .adv-section:nth-child(even) {
+    /* .adv-section:nth-child(even) {
       background-color: #FD3F84 !important;
-      KKKopacity: 1;
     }
 
     .adv-section:nth-child(odd) {
       background-color: #444 !important;
-      KKKopacity: 0.9;
+    } */
+
+    .adv-section:nth-child(2) {
+      background-color: #FD3F84 !important;
+    }
+
+    .adv-section:nth-child(3) {
+      background-color: darkturquoise !important;
+    }
+
+    .adv-section:nth-child(4) {
+      background-color: #444 !important;
+    }
+
+    .adv-section:nth-child(5) {
+      background-color: cadetblue !important;
+    }
+
+    .adv-section:nth-child(6) {
+      background-color: #ccc !important;
+    }
+
+    .adv-section:nth-child(7) {
+      background-color: darkcyan !important;
+    }
+
+    .adv-section:nth-child(8) {
+      background-color: brown !important;
+    }
+
+    .adv-section:nth-child(9) {
+      background-color: cornflowerblue !important;
+    }
+
+    .adv-section:nth-child(10) {
+      background-color: blueviolet !important;
+    }
+
+    .adv-section:nth-child(11) {
+      background-color: #ccc !important;
+    }
+
+    .adv-section:nth-child(12) {
+      background-color: crimson !important;
     }
 
     .section-text {
@@ -154,7 +196,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       padding-left: 2.5rem;
       padding-right: 2.5rem;
       color: white !important;
-      min-height: 500px;
+      min-height: 470px;
       font-size: 1.5rem !important;
     }
 
@@ -180,8 +222,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .product-header {
-      align-self: center;
-      align-content: center;
       margin: auto;
       color: white;
       z-index: 1000;
@@ -190,17 +230,12 @@ https://www.pexels.com/video/officers-investigating-7253660/
     .slogan {
       font-weight: bold;
       font-family: RobotoThin;
-      text-align: left;
     }
 
     .product-name {
       font-family: 'BrunoAceSC-Regular';
       font-weight: bold;
-      text-decoration: none;
       user-select: none;
-      color: inherit;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
     }
 
     .product-name-0 {
@@ -209,7 +244,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .slogan-0 {
-      font-size: 4.90cqw;
+      font-size: 4.92cqw;
       line-height: 6cqw;
     }
 
@@ -261,7 +296,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .ou-row-bottom {
-      font-size: 1.24rem;
+      font-size: 1.20rem;
       line-height: 1rem;
     }
 
@@ -319,6 +354,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
         color: #000 !important;
         border-color: #000 !important;
       }
+
       .bg-icon,
       .header-icon-mars {
         display: none;
@@ -363,15 +399,28 @@ https://www.pexels.com/video/officers-investigating-7253660/
         padding-bottom: 2.5rem;
       }
 
+      .videoWrapper {
+        width: 100% !important;
+        padding-bottom: 56.25%;
+        /* 16:9 aspect ratio (9/16 = 0.5625) */
+        height: 0;
+        /* important! */
+        overflow: hidden;
+      }
+
       .side-img {
         max-width: 100% !important;
         width: 100% !important;
-        margin-right: 0 !important;
       }
 
       .mars {
         display: none;
       }
+
+      .fade-image {
+        max-height: 200px !important;
+      }
+
     }
 
     .side-img {
@@ -431,15 +480,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     .videoWrapper {
       position: relative;
-      padding-bottom: 56.25%;
-      /* 16:9 */
-      padding-top: 25px;
+      width: 65%;
     }
 
     .videoWrapper iframe {
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
     }
@@ -455,17 +500,19 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .brands-grid-container {
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, .3);
       position: relative;
       width: 100%;
+      height: 100%;
       padding: 1rem;
     }
 
     .brands-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
       position: relative;
+      min-height: 700px;
     }
 
     .brand {
@@ -473,7 +520,9 @@ https://www.pexels.com/video/officers-investigating-7253660/
       display: flex;
       align-items: center;
       justify-content: center;
-      opacity: 0.9;
+      padding-right: 30px;
+      padding-bottom: 50px;
+      KKKopacity: 0.9;
       z-index: 1;
     }
 
@@ -481,15 +530,22 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     .brand img,
     .brand svg {
-      max-width: 100%;
-      max-height: 100%;
+      max-width: 100px;
+      max-height: 100px;
       object-fit: contain;
       filter: grayscale(100%) brightness(1) invert(1);
     }
 
-    /* Shift odd rows */
-    .shifted {
-      transform: translateX(50px);
+    .fade-image {
+      width: 100% !important;
+      height: 598px !important;
+      /* your image height */
+      background-image:
+        linear-gradient(to bottom, transparent 90%, black 100%),
+        url("img/donald-giannatti-Wj1D-qiOseE-unsplash.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   </style>
 </head>
@@ -532,11 +588,12 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
   <section class="adv-section">
     <div class="section-wrapper">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/QmaNucXFYd8?si=-WHmDu-Ivm2fs1uA"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="side-img"
-        style="width: 600px; aspect-ratio: 16 / 9; align-self: center;"></iframe>
+      <div class="videoWrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/QmaNucXFYd8?si=-WHmDu-Ivm2fs1uA"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
       <div class="section-text">
         <h2>EIP on Steroids</h2>
         <p>
@@ -694,7 +751,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       </div>
     </div>
   </section>
-
+  <!--
   <section class="section-brands">
     <div class="section-wrapper">
       <div class="brands-grid-container">
@@ -720,13 +777,9 @@ https://www.pexels.com/video/officers-investigating-7253660/
       </div>
     </div>
   </section>
+-->
   <section>
-    <div class="section-wrapper">
-      <img src="img/donald-giannatti-Wj1D-qiOseE-unsplash.jpg" style="display: block; width: 100%; height: auto;">
-    </div>
-  </section>
-
-  <section>
+    <div class="section-wrapper fade-image"></div>
     <div class="section-wrapper">
       <div class="bottom-content section-wrapper-bottom">
         <div class="footer-row-1">
@@ -786,7 +839,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
           </a>
           <a class="button" role="button" href="#"
             onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
-            Up <span style="font-size: 2rem;">↑</span>
+            Up <span style="font-size: 2rem; font-family: Arial;">↑</span>
           </a>
         </div>
         <div class="footer-row-1">
@@ -825,55 +878,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       sectionWrappers[i].classList.add('reverse');
     }
   }
-
-  // ---
-  const sections = document.querySelectorAll('.adv-section:nth-child(odd)');
-  sections.forEach(section => {
-    const sectionText = section.querySelector('.section-text');
-    const image = document.createElement('div');
-    //
-    const threshold = 15; // degrees
-    const usedAngles = [];
-
-    function isTooClose(angle) {
-      return usedAngles.some(a => Math.abs(((angle - a + 180 + 360) % 360) - 180) < threshold);
-    }
-
-    let angle;
-    let attempts = 0;
-
-    do {
-      angle = Math.floor(Math.random() * 360);
-      attempts++;
-      if (attempts > 100) break;
-    } while (isTooClose(angle));
-
-    usedAngles.push(angle);
-    //image.style.transform = `rotate(${angle}deg)`;
-
-    //
-    image.className = 'bg-icon';
-    sectionText.prepend(image);
-  });
-
-  function shiftOddRows() {
-    const grid = document.querySelector('.brands-grid');
-    const items = Array.from(grid.children);
-    const gridStyles = window.getComputedStyle(grid);
-    const columnCount = gridStyles.getPropertyValue('grid-template-columns').split(' ').length;
-
-    items.forEach(item => item.classList.remove('shifted'));
-
-    for (let i = 0; i < items.length; i++) {
-      const row = Math.floor(i / columnCount) + 1;
-      if (row % 2 === 0) {
-        items[i].classList.add('shifted');
-      }
-    }
-  }
-
-  window.addEventListener('resize', shiftOddRows);
-  window.addEventListener('load', shiftOddRows);
 
   Promise.all([
     document.fonts.ready,

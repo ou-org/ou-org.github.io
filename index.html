@@ -180,11 +180,15 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .adv-section:nth-child(11) {
-      background-color: #ccc !important;
+      background-color: crimson !important;
     }
 
     .adv-section:nth-child(12) {
-      background-color: crimson !important;
+      background-color: #444 !important;
+    }
+
+    .adv-section:nth-child(13) {
+      background-color: darkmagenta !important;
     }
 
     .section-text {
@@ -337,92 +341,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       text-decoration: underline;
     }
 
-
-    @media (max-width: 1080px) {
-      .page {
-        min-height: 100vh;
-      }
-
-      .adv-section .section-wrapper {
-        background-color: unset;
-      }
-
-    }
-
-    @media (max-width: 768px) {
-      .button-start {
-        color: #000 !important;
-        border-color: #000 !important;
-      }
-
-      .bg-icon,
-      .header-icon-mars {
-        display: none;
-      }
-
-      .adv-section .section-wrapper {
-        background-color: unset !important;
-      }
-
-      .footer {
-        flex-wrap: wrap;
-      }
-
-      .footer-column-logo {
-        width: 100%;
-        padding-bottom: 1.5rem;
-      }
-
-      .section-wrapper,
-      .section-wrapper.reverse {
-        flex-direction: column !important;
-      }
-
-      .section-wrapper p,
-      .section-wrapper.reverse p {}
-
-      .acknowledgments {
-        text-align: justify;
-      }
-
-      .section-text {
-        justify-content: start;
-        padding-top: 2rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        background-color: white;
-        color: black !important;
-      }
-
-      .section-text p {
-        text-align: justify;
-        padding-bottom: 2.5rem;
-      }
-
-      .videoWrapper {
-        width: 100% !important;
-        padding-bottom: 56.25%;
-        /* 16:9 aspect ratio (9/16 = 0.5625) */
-        height: 0;
-        /* important! */
-        overflow: hidden;
-      }
-
-      .side-img {
-        max-width: 100% !important;
-        width: 100% !important;
-      }
-
-      .mars {
-        display: none;
-      }
-
-      .fade-image {
-        max-height: 200px !important;
-      }
-
-    }
-
     .side-img {
       height: auto;
       max-width: 35%;
@@ -495,41 +413,16 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     /* BRANDS */
-    .section-brands {
-      background-color: #333;
-    }
-
-    .brands-grid-container {
-      background: rgba(0, 0, 0, .3);
-      position: relative;
-      width: 100%;
-      height: 100%;
-      padding: 1rem;
-    }
-
-    .brands-grid {
-      display: flex;
-      flex-wrap: wrap;
-      align-content: center;
-      position: relative;
-      min-height: 700px;
-    }
 
     .brand {
-      background: transparent;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-right: 30px;
+      display: inline-flex;
+      padding-right: 30px;;
       padding-bottom: 50px;
-      KKKopacity: 0.9;
-      z-index: 1;
     }
 
     /* Removed hover opacity change */
 
-    .brand img,
-    .brand svg {
+    .brand img {
       max-width: 100px;
       max-height: 100px;
       object-fit: contain;
@@ -547,7 +440,102 @@ https://www.pexels.com/video/officers-investigating-7253660/
       background-size: cover;
       background-repeat: no-repeat;
     }
-  </style>
+
+/* MEDIA */
+
+
+    @media (max-width: 1080px) {
+      .page {
+        min-height: 100vh;
+      }
+
+      .adv-section .section-wrapper {
+        background-color: unset;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+      .button-start {
+        color: #000 !important;
+        border-color: #000 !important;
+      }
+
+      .header-icon-mars {
+        display: none;
+      }
+
+      .adv-section .section-wrapper {
+        background-color: unset !important;
+      }
+
+      .footer {
+        flex-wrap: wrap;
+      }
+
+      .footer-column-logo {
+        width: 100%;
+        padding-bottom: 1.5rem;
+      }
+
+      .section-wrapper,
+      .section-wrapper.reverse {
+        flex-direction: column !important;
+      }
+
+      .section-wrapper p,
+      .section-wrapper.reverse p {}
+
+      .acknowledgments {
+        text-align: justify;
+        hyphens: auto;
+        text-align-last: left;
+        text-justify: inter-word;
+      }
+
+      .section-text {
+        justify-content: start;
+        padding-top: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        background-color: white;
+        color: black !important;
+      }
+
+      .section-text.brands {
+        background-color: unset !important;
+        color: white !important;
+      }
+
+      .section-text p {
+        text-align: justify;
+        padding-bottom: 2.5rem;
+      }
+
+      .videoWrapper {
+        width: 100% !important;
+        padding-bottom: 56.25%;
+        /* 16:9 aspect ratio (9/16 = 0.5625) */
+        height: 0;
+        /* important! */
+        overflow: hidden;
+      }
+
+      .side-img {
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+
+      .mars {
+        display: none;
+      }
+
+      .fade-image {
+        max-height: 200px !important;
+      }
+    }
+
+</style>
 </head>
 
 <body>
@@ -740,6 +728,40 @@ https://www.pexels.com/video/officers-investigating-7253660/
     <div class="section-wrapper">
       <!--Photo by <a href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham Dhage</a> on <a href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.-->
       <img class="side-img" src="img/shubham-dhage-5ZHsI64p-Ws-unsplash.jpg" alt="Extensible" />
+      <div class="section-text brands">
+        <h2>Plays well with…</h2>
+        <p>
+          <div>
+            <div class="brand"><img src="brands/git.svg" alt="Git" /></div>
+            <div class="brand"><img src="brands/github.svg" alt="GitHub" /></div>
+            <div class="brand"><img src="brands/grafana.svg" alt="Grafana" /></div>
+            <div class="brand"><img src="brands/ibm.svg" alt="IBM" /></div>
+            <div class="brand"><img src="brands/intel.svg" alt="Intel" /></div>
+            <div class="brand"><img src="brands/java.svg" alt="Java" /></div>
+            <div class="brand"><img src="brands/kafka.svg" alt="Kafka" /></div>
+            <div class="brand"><img src="brands/linux.svg" alt="Linux" /></div>
+            <div class="brand"><img src="brands/microsoft.svg" alt="Microsoft" /></div>
+            <div class="brand"><img src="brands/opensource.svg" alt="Open Source" /></div>
+            <div class="brand"><img src="brands/openssl-ar21.svg" alt="OpenSSL" /></div>
+            <div class="brand"><img src="brands/oracle.svg" alt="Oracle" /></div>
+            <div class="brand"><img src="brands/perses.svg" alt="Perses" /></div>
+            <div class="brand"><img src="brands/prometheus.svg" alt="Prometheus" /></div>
+            <div class="brand"><img src="brands/redhat.svg" alt="Red Hat" /></div>
+            <div class="brand"><img src="brands/solr.svg" alt="Solr" /></div>
+            <div class="brand"><img src="brands/vmware.svg" alt="VMware" /></div>
+            <h2>...and others.</h2>
+<!--
+            -->
+          </div>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham Dhage</a> on <a href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.-->
+      <img class="side-img" src="img/shubham-dhage-5ZHsI64p-Ws-unsplash.jpg" alt="Extensible" />
       <div class="section-text">
         <h2>MIT License</h2>
         <p>
@@ -751,33 +773,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       </div>
     </div>
   </section>
-  <!--
-  <section class="section-brands">
-    <div class="section-wrapper">
-      <div class="brands-grid-container">
-        <div class="brands-grid">
-          <div class="brand"><img src="brands/git.svg" alt="Git" /></div>
-          <div class="brand"><img src="brands/github.svg" alt="GitHub" /></div>
-          <div class="brand"><img src="brands/grafana.svg" alt="Grafana" /></div>
-          <div class="brand"><img src="brands/ibm.svg" alt="IBM" /></div>
-          <div class="brand"><img src="brands/intel.svg" alt="Intel" /></div>
-          <div class="brand"><img src="brands/java.svg" alt="Java" /></div>
-          <div class="brand"><img src="brands/kafka.svg" alt="Kafka" /></div>
-          <div class="brand"><img src="brands/linux.svg" alt="Linux" /></div>
-          <div class="brand"><img src="brands/microsoft.svg" alt="Microsoft" /></div>
-          <div class="brand"><img src="brands/opensource.svg" alt="Open Source" /></div>
-          <div class="brand"><img src="brands/openssl-ar21.svg" alt="OpenSSL" /></div>
-          <div class="brand"><img src="brands/oracle.svg" alt="Oracle" /></div>
-          <div class="brand"><img src="brands/perses.svg" alt="Perses" /></div>
-          <div class="brand"><img src="brands/prometheus.svg" alt="Prometheus" /></div>
-          <div class="brand"><img src="brands/redhat.svg" alt="Red Hat" /></div>
-          <div class="brand"><img src="brands/solr.svg" alt="Solr" /></div>
-          <div class="brand"><img src="brands/vmware.svg" alt="VMware" /></div>
-        </div>
-      </div>
-    </div>
-  </section>
--->
+
   <section>
     <div class="section-wrapper fade-image"></div>
     <div class="section-wrapper">

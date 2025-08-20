@@ -131,8 +131,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .boxed {
-      height: 15rem;
-      font-family: RobotoMono, monospace !important;
+      height: 16rem;
+      font-family: RobotoCondensed, monospace !important;
       line-height: 1.2rem;
       font-size: 1rem;
       border: 1px dashed;
@@ -590,6 +590,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
       .fade-image {
         max-height: 200px !important;
       }
+
+      .boxed {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -710,12 +714,19 @@ https://www.pexels.com/video/officers-investigating-7253660/
         <h3>Documents:</h3>
         <div class="flowchart">
           <pre class="boxed">
-<b>RootDocument (AbstractDocumentObject)</b>
-
+<b>AbstractDocument</b>
+                        
 ┌ Header (HeaderObject)
-├ Properties (Map)
-├ Triggers [discovered dynamically] (List&lt;TriggerDocument&gt;)
-├ Jobs [discovered dynamically] (List&lt;JobDocument&gt;)
+└ Properties (Map)
+</pre>          
+          <pre class="boxed">
+<b>RootDocument
+extends AbstractDocument</b>
+
+┌ <b>Header (HeaderObject)</b>
+├ <b>Properties (Map)</b>
+├ Triggers (List&lt;TriggerDocument&gt;)
+├ Jobs (List&lt;JobDocument&gt;)
 ├ SignatureSettings (Map)
 ├ HashAlgorithm (String)
 ├ UnprotectCommand (CommandObject)
@@ -723,67 +734,67 @@ https://www.pexels.com/video/officers-investigating-7253660/
 └ <abbr title="Dead Message Queue">DMQ</abbr> (CommandObject)
 </pre>
           <pre class="boxed">
-<b>EventDocument (AbstractDocumentObject)</b>
+<b>EventDocument
+extends AbstractDocument</b>
 
-┌ Header (HeaderObject)
-├ Properties (Map)
+┌ <b>Header (HeaderObject)</b>
+├ <b>Properties (Map)</b>
 └ Processable (Boolean)
 </pre>
           <pre class="boxed">
-<b>Triggers/CalendarDocument (AbstractDocumentObject)</b>
+<b>Triggers/CalendarDocument
+extends AbstractDocument</b>
 
-┌ Header (HeaderObject)
-├ Properties (Map)
+┌ <b>Header (HeaderObject)</b>
+├ <b>Properties (Map)</b>
 └ Calendars (List&lt;CalendarObject&gt;)
 </pre>
           <pre class="boxed">
-<b>Triggers/SchedulerDocument (AbstractDocumentObject)</b>
+<b>Triggers/SchedulerDocument
+extends AbstractDocument</b>
 
-┌ Header (HeaderObject)
-├ Properties (Map)
+┌ <b>Header (HeaderObject)</b>
+├ <b>Properties (Map)</b>
 └ Schedulers (List&lt;SchedulerObject&gt;)
 </pre>
           <pre class="boxed">
-<b>Triggers/EventPublisherDocument (AbstractDocumentObject)</b>
+<b>Triggers/EventPublisherDocument
+extends AbstractDocument</b>
 
-┌ Header (HeaderObject)
-├ Properties (Map)
+┌ <b>Header (HeaderObject)</b>
+├ <b>Properties (Map)</b>
 └ Command (CommandObject)
 </pre>
           <pre class="boxed">
-<b>JobDocument (AbstractDocumentObject)</b>
+<b>JobDocument
+extends AbstractDocument</b>
 
-┌ Header (HeaderObject)
-├ Properties (Map)
-├ Events [discovered dynamically] (List&lt;EventDocument&gt;)
-├ Systems [discovered dynamically] (List&lt;SystemDocument&gt;)
-└ EventProcessors [discovered dynamically] (List&lt;ProcessorDocument&gt;)
+┌ <b>Header (HeaderObject)</b>
+├ <b>Properties (Map)</b>
+├ Events (List&lt;EventDocument&gt;)
+├ Systems (List&lt;SystemDocument&gt;)
+└ EventProcessors (List&lt;ProcessorDocument&gt;)
 </pre>
           <pre class="boxed">
-<b>SystemDocument (AbstractDocumentObject)</b>
+<b>SystemDocument
+extends AbstractDocument</b>
 
-┌ Header (HeaderObject)
-├ Properties (Map)
+┌ <b>Header (HeaderObject)</b>
+├ <b>Properties (Map)</b>
 └ AbstractSystemDefinition (Object)
 </pre>
           <pre class="boxed">
-<b>EventProcessorDocument (AbstractDocumentObject)</b>
+<b>EventProcessorDocument
+extends AbstractDocument</b>
 
-┌ Header (HeaderObject)
-├ Properties (Map)
+┌ <b>Header (HeaderObject)</b>
+├ <b>Properties (Map)</b>
 └ Command (CommandObject)
 </pre>
         </div>
         <br>
         <h3>Objects:</h3>
         <div class="flowchart">
-          <pre class="boxed">
-<b>AbstractDocumentObject</b>
-            
-┌ Header (HeaderObject)
-├ Properties (Map)
-└ DocumentBodyFields...
-</pre>
           <pre class="boxed">
 <b>HeaderObject</b>
 
@@ -810,14 +821,14 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
 ┌ EventType (String)
 ├ ScheduledFor (Time)
-└ UserDefinedFields...
+└ user-defined fields...
 </pre>
           <pre class="boxed">
 <b>SchedulerObject</b>
 
 ┌ EventType (String)
 ├ CronExpression (String)
-└ UserDefinedFields...
+└ user-defined fields...
 </pre>
           <pre class="boxed">
 <b>ExportTargetObject</b>

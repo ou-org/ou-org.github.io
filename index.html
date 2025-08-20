@@ -131,7 +131,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .boxed {
-      height: 11rem;
+      height: 15rem;
       font-family: RobotoMono, monospace !important;
       line-height: 1.2rem;
       font-size: 1rem;
@@ -144,6 +144,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
     .section-wrapper {
       max-width: 1280px;
       margin: auto;
+      margin-bottom: -1px; /* Need for brands section */
       display: flex;
       flex-direction: row;
       padding: 0;
@@ -228,7 +229,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .section-text {
-      z-index: 1;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -488,15 +488,16 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     /* BRANDS */
 
-    .brand {
-      display: inline-flex;
-      padding-right: 30px;
-      padding-bottom: 50px;
+    .brands-grid {
+      display: flex;
+      flex-wrap: wrap;
     }
 
-    .brand img {
-      max-height: 100px;
-      object-fit: contain;
+  
+    .brand {
+      padding-right: 40px;
+      padding-bottom: 50px;
+      filter: brightness(0) invert(1);
     }
 
     .fade-image {
@@ -554,7 +555,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       }
 
       .section-text {
-        justify-content: start;
+        KKKjustify-content: start;
         padding-top: 2rem;
         padding-left: 1rem;
         padding-right: 1rem;
@@ -698,48 +699,135 @@ https://www.pexels.com/video/officers-investigating-7253660/
         <br>
         <h2>Core components</h2>
         <p>
+          The architecture is based on documents as the primary abstraction. Each component—events, jobs, triggers,
+          systems, and processors—is described as a structured document, with the RootDocument serving as the central
+          blueprint. This model makes the environment self-describing, auditable, and easy to evolve.
+          Execution is fully event-driven. Events from calendars, schedulers, or publishers activate jobs, which process
+          them through defined processors and then act on target systems. Instead of static configuration, relationships
+          between jobs, events, and systems are discovered dynamically at runtime, creating adaptive orchestration
+          flows.
+          <br><br>
+        <h3>Documents:</h3>
         <div class="flowchart">
-          <pre class="boxed"><b>Environment&nbsp;</b>┐
-            ├ Environment variables
-            ├ Command line arguments
-            ├ System properties
-            ├ User-defined properties
-            └ Protected values
-         </pre>
+          <pre class="boxed">
+<b>RootDocument (AbstractDocumentObject)</b>
 
-          <pre class="boxed"><b>Documents&nbsp;</b>┐
-          ├ Name
-          ├ Description
-          ├ Enabled/Disabled
-          ├ Tags
-          ├ Attributes
-          └ Pre-run constraints
-       </pre>
+┌ Header (HeaderObject)
+├ Properties (Map)
+├ Triggers [discovered dynamically] (List&lt;TriggerDocument&gt;)
+├ Jobs [discovered dynamically] (List&lt;JobDocument&gt;)
+├ SignatureSettings (Map)
+├ HashAlgorithm (String)
+├ UnprotectCommand (CommandObject)
+├ ExportTargets (List&lt;ExportTargetObject&gt;)
+└ <abbr title="Dead Message Queue">DMQ</abbr> (CommandObject)
+</pre>
+          <pre class="boxed">
+<b>EventDocument (AbstractDocumentObject)</b>
 
-          <pre class="boxed"><b>Root&nbsp;</b>┐
-     ├ Events
-     ├ Triggers
-     ├ Jobs ┐
-     │      ├ Systems
-     │      └ Event Processors
-     ├ Systems
-     ├ Export Targets
-     └ <abbr title="Dead Message Queue">DMQ</abbr>
+┌ Header (HeaderObject)
+├ Properties (Map)
+└ Processable (Boolean)
 </pre>
-          <pre class="boxed"><div><b>Events</b></div></pre>
-          <pre class="boxed"><b>Triggers</b>
-      • Calendars
-      • Schedulers
-      • Event Publishes
+          <pre class="boxed">
+<b>Triggers/CalendarDocument (AbstractDocumentObject)</b>
+
+┌ Header (HeaderObject)
+├ Properties (Map)
+└ Calendars (List&lt;CalendarObject&gt;)
 </pre>
-          <pre class="boxed"><b>Jobs&nbsp;</b>┐
-     ├ Systems
-     └ Event processors
+          <pre class="boxed">
+<b>Triggers/SchedulerDocument (AbstractDocumentObject)</b>
+
+┌ Header (HeaderObject)
+├ Properties (Map)
+└ Schedulers (List&lt;SchedulerObject&gt;)
 </pre>
-          <pre class="boxed"><b>Systems</b></pre>
-          <pre class="boxed"><b>Event processors</b></pre>
-          <pre class="boxed"><div><b>Export Targets</b></div></pre>
-          <pre class="boxed"><div><b><abbr title="Dead Message Queue">DMQ</abbr></b></div></pre>
+          <pre class="boxed">
+<b>Triggers/EventPublisherDocument (AbstractDocumentObject)</b>
+
+┌ Header (HeaderObject)
+├ Properties (Map)
+└ Command (CommandObject)
+</pre>
+          <pre class="boxed">
+<b>JobDocument (AbstractDocumentObject)</b>
+
+┌ Header (HeaderObject)
+├ Properties (Map)
+├ Events [discovered dynamically] (List&lt;EventDocument&gt;)
+├ Systems [discovered dynamically] (List&lt;SystemDocument&gt;)
+└ EventProcessors [discovered dynamically] (List&lt;ProcessorDocument&gt;)
+</pre>
+          <pre class="boxed">
+<b>SystemDocument (AbstractDocumentObject)</b>
+
+┌ Header (HeaderObject)
+├ Properties (Map)
+└ AbstractSystemDefinition (Object)
+</pre>
+          <pre class="boxed">
+<b>EventProcessorDocument (AbstractDocumentObject)</b>
+
+┌ Header (HeaderObject)
+├ Properties (Map)
+└ Command (CommandObject)
+</pre>
+        </div>
+        <br>
+        <h3>Objects:</h3>
+        <div class="flowchart">
+          <pre class="boxed">
+<b>AbstractDocumentObject</b>
+            
+┌ Header (HeaderObject)
+├ Properties (Map)
+└ DocumentBodyFields...
+</pre>
+          <pre class="boxed">
+<b>HeaderObject</b>
+
+┌ Type (String)
+├ Name (String)
+├ Description (String)
+├ Disabled (Boolean)
+├ Tags (List)
+├ Attributes (Map)
+└ PreRunConstraints (List&lt;CommandObject&gt;)
+</pre>
+          <pre class="boxed">
+<b>CommandObject</b>
+
+┌ Command (String)
+├ Arguments (List)
+├ EnvironmentVariables (Map)
+├ WorkingDirectory (String)
+├ ErrorLogFile (String)
+└ InstancesCount (Integer)
+</pre>
+          <pre class="boxed">
+<b>CalendarObject</b>
+
+┌ EventType (String)
+├ ScheduledFor (Time)
+└ UserDefinedFields...
+</pre>
+          <pre class="boxed">
+<b>SchedulerObject</b>
+
+┌ EventType (String)
+├ CronExpression (String)
+└ UserDefinedFields...
+</pre>
+          <pre class="boxed">
+<b>ExportTargetObject</b>
+
+┌ Id (String)
+├ StoreAsArray (Boolean)
+├ EnableCompression (Boolean)
+├ СompresionLevel (Integer)
+└ Command (CommandObject)
+</pre>
         </div>
         </p>
       </div>
@@ -1132,20 +1220,21 @@ https://www.pexels.com/video/officers-investigating-7253660/
         <br>
         <h2>Plays well with…</h2>
         <p>
-        <div>
-          <div class="brand"><img src="img/brands/kafka.svg" alt="Kafka"
-              style="width: 100px; filter: brightness(0) invert(1);" /></div>
-          <div class="brand"><img src="img/brands/prometheus.svg" alt="Prometheus" title="Prometheus"
-              style="width: 120px; filter: brightness(0) invert(1);" /></div>
-          <div class="brand"><img src="img/brands/grafana.svg" alt="Grafana"
-              style="width: 120px; filter: brightness(0) invert(1);" /></div>
-          <div class="brand"><img src="img/brands/perses.svg" alt="Perses" title="Perses"
-              style="width: 80px; filter: brightness(0) invert(1);" />
-          </div>
-          <div class="brand"><img src="img/brands/solr.svg" alt="Solr" title="Solr"
-              style="width: 120px; filter: brightness(0) invert(1);" /></div>
-          <div class="brand"><img src="img/brands/OpenTelemetry.svg" alt="Open Telemetry" title="Open Telemetry"
-              style="width: 40px; filter: brightness(0) invert(1);" /></div>
+        <div class="brands-grid">
+          <img class="brand" src="img/brands/kafka.svg" alt="Kafka" style="width: 100px;" />
+          <img class="brand" src="img/brands/prometheus.svg" alt="Prometheus" title="Prometheus"
+              style="width: 120px;" />
+          <img class="brand" src="img/brands/grafana.svg" alt="Grafana" style="width: 120px;" />
+          <img class="brand" src="img/brands/perses.svg" alt="Perses" title="Perses" style="width: 80px;" />
+          <img class="brand" src="img/brands/apache-Solr.svg" alt="Apache Solr" title="Apache Solr"
+              style="width: 120px; margin-left: -10px" />
+          <img class="brand" src="img/brands/OpenTelemetry.svg" alt="Open Telemetry" title="Open Telemetry"
+              style="width: 40px;" />
+          <img class="brand" src="img/brands/apache-nifi.svg" alt="Apache nifi" title="Apache nifi"
+              style="width: 80px;" />
+          <img class="brand" src="img/brands/fluentd.png" alt="fluentd" title="fluentd" style="width: 100px;" />
+          <img class="brand" src="img/brands/OpenSearch.svg" alt="OpenSearch" title="OpenSearch"
+              style="width: 150px;" />
         </div>
         <h2 style="text-align: end;">...and others</h2>
         </p>
@@ -1162,45 +1251,37 @@ https://www.pexels.com/video/officers-investigating-7253660/
         <br>
         <h2>Code Languages?<br>Choose Any!</h2>
         <p>
-        <div>
-          <div class="brand"><img src="img/langs/ada.svg" title="Ada"
-              style="width: 60px; filter: brightness(0) invert(1);" /></div>
-          <div class="brand"><img src="img/langs/scala.png" title="Scala"
-              style="width: 60px; filter: brightness(0) invert(1);" />
-          </div>
-          <div class="brand"><img src="img/langs/java.svg" title="Java"
-              style="width: 60px; filter: brightness(0) invert(1);" />
-          </div>
-          <div class="brand"><img src="img/langs/rust.svg" title="Rust"
-              style="width: 60px; filter: brightness(0) invert(1);" />
-          </div>
-          <div class="brand"><img src="img/langs/go.svg" title="Go"
-              style="width: 60px; filter: brightness(0) invert(1);" /></div>
-          <div class="brand"><img src="img/langs/c.svg" title="C"
-              style="width: 60px; filter: brightness(0) invert(1);" /></div>
-          <div class="brand"><img src="img/langs/clojure.svg" title="Clojure"
-              style="width: 60px; filter: brightness(0) invert(1);" /></div>
-          <div class="brand"><img src="img/langs/py.svg" title="Python"
-              style="width: 60px; filter: brightness(0) invert(1);" />
-          </div>
-          <div class="brand"><img src="img/langs/haskell.svg" title="Haskell"
-              style="width: 60px; filter: brightness(0) invert(1);" /></div>
-          <div class="brand"><img src="img/langs/php.svg" title="PHP"
-              style="width: 60px; filter: brightness(0) invert(1);" /></div>
-          <div class="brand"><img src="img/langs/lua.svg" title="Lua"
-              style="width: 60px; filter: brightness(0) invert(1);" /></div>
-          <div class="brand"><img src="img/langs/julia.svg" title="Julia"
-              style="width: 60px; filter: brightness(0) invert(1);" />
-          </div>
-          <div class="brand"><img src="img/langs/js.svg" title="JavaScript"
-              style="width: 60px; filter: brightness(0) invert(1);" />
-          </div>
-          <div class="brand"><img src="img/langs/csharp.svg" title="C#"
-              style="width: 60px; filter: brightness(0) invert(1);" />
-          </div>
-          <div class="brand"><img src="img/langs/nim.png" title="nim"
-              style="width: 60px; filter: brightness(0) invert(1);" /></div>
-
+          <div class="brands-grid">
+          <img class="brand" src="img/langs/ada.svg" title="Ada"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/scala.png" title="Scala"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/java.svg" title="Java"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/rust.svg" title="Rust"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/go.svg" title="Go"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/c.svg" title="C"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/clojure.svg" title="Clojure"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/py.svg" title="Python"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/haskell.svg" title="Haskell"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/php.svg" title="PHP"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/lua.svg" title="Lua"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/julia.svg" title="Julia"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/js.svg" title="JavaScript"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/csharp.svg" title="C#"
+              style="width: 60px;" />
+          <img class="brand" src="img/langs/nim.png" title="nim"
+              style="width: 60px;" />
         </div>
         <h2 style="text-align: end;">...fit to task</h2>
         </p>

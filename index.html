@@ -49,6 +49,9 @@ https://www.pexels.com/video/officers-investigating-7253660/
     html {
       visibility: hidden;
       background-color: #000;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
     }
 
     @font-face {
@@ -76,13 +79,12 @@ https://www.pexels.com/video/officers-investigating-7253660/
       src: url("fonts/roboto/RobotoCondensed-VariableFont_wght.ttf");
     }
 
-    html,
     body {
       margin: 0;
       padding: 0;
       font-family: RobotoRegular;
       font-size: 1rem;
-      overflow-x: hidden;
+      overflow-y: hidden;
     }
 
     h2 {
@@ -126,25 +128,29 @@ https://www.pexels.com/video/officers-investigating-7253660/
     .flowchart {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      align-self: center;
+      gap: 2rem;
     }
 
     .boxed {
-      height: 16rem;
+      height: 19rem;
+      width: 19rem;
       font-family: RobotoCondensed, monospace !important;
       line-height: 1.2rem;
       font-size: 1rem;
-      border: 1px dashed;
+      border: 1px dotted;
       padding: 1rem;
-      width: fit-content;
-      align-content: center;
+      transition: border 0.3s;
+    }
+
+    .boxed:hover {
+      border: 1px solid;
     }
 
     .section-wrapper {
       max-width: 1280px;
       margin: auto;
-      margin-bottom: -1px; /* Need for brands section */
+      margin-bottom: -1px;
+      /* Need for brands section */
       display: flex;
       flex-direction: row;
       padding: 0;
@@ -218,14 +224,14 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .adv-section.color-turquoise {
-      background-color: turquoise;
-      color: #000;
+      background-color: #6A435B;
+      color: #fff;
     }
 
     .adv-section.color-turquoise-super {
-      background-color: darkturquoise;
-      color: #000 !important;
-      border-color: #000 !important;
+      background-color: #008486;
+      color: #fff !important;
+      border-color: #fff !important;
     }
 
     .section-text {
@@ -240,27 +246,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       z-index: 1;
     }
 
-    .github-logo {
-      position: absolute;
-      margin-top: 1rem;
-      max-height: 0;
-      align-self: flex-end;
-      transition: filter 0.3s;
-      z-index: 1000;
-    }
-
-    .github-logo img {
-      padding-bottom: 1.2rem;
-      min-height: 20px;
-      max-height: 20px;
-      height: 20px;
-      width: auto;
-    }
-
-    .github-logo:hover {
-      filter: drop-shadow(0 0 1px white);
-    }
-
     .product-header {
       user-select: none;
       margin: auto;
@@ -271,7 +256,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
       to {
         color: white;
         border-color: white;
-
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        opacity: 1;
       }
     }
 
@@ -291,6 +277,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       font-size: 9cqw;
       line-height: 9cqw;
       color: transparent;
+      text-shadow: unset;
       animation-name: fadeIn;
       animation-duration: 4s;
       animation-timing-function: ease-in;
@@ -302,6 +289,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       font-size: 5.67cqw;
       line-height: 6cqw;
       color: transparent;
+      text-shadow: unset;
       animation-name: fadeIn;
       animation-duration: 4s;
       animation-timing-function: ease-in;
@@ -413,8 +401,18 @@ https://www.pexels.com/video/officers-investigating-7253660/
       max-height: 10rem;
     }
 
+    .page-buttons {
+      display: flex;
+      width: fit-content;
+      align-self: end;
+      gap: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+    }
+
     .button {
-      display: block;
+      display: flex;
+      justify-content: center;
       width: fit-content;
       height: 3rem;
       padding-left: 1.2rem;
@@ -432,16 +430,16 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .button-learn {
-      position: absolute !important;
+      min-width: 10rem;
       color: transparent;
       border-color: transparent;
+      bottom: 1.7rem;
+      right: 2rem;
       animation-name: fadeIn;
       animation-duration: 1s;
       animation-timing-function: ease-in;
       animation-fill-mode: forwards;
       animation-delay: 4s;
-      bottom: 1.7rem;
-      right: 2rem;
     }
 
     .button-learn:hover {
@@ -451,14 +449,18 @@ https://www.pexels.com/video/officers-investigating-7253660/
       box-shadow: 0 0 6px #fff;
     }
 
-    .button-start {
-      margin-top: 2rem;
-      justify-self: end;
+    .github-icon {
+      width: 1.8rem;
+      filter: invert(1);
+      padding-right: .8rem;
+      opacity: 0;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+      animation-delay: 4s;
     }
 
-    .button-start:hover {
-      background-color: rgba(0, 0, 0, .03);
-    }
 
     .videoWrapper {
       position: relative;
@@ -493,7 +495,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       flex-wrap: wrap;
     }
 
-  
+
     .brand {
       padding-right: 40px;
       padding-bottom: 50px;
@@ -594,6 +596,14 @@ https://www.pexels.com/video/officers-investigating-7253660/
       .boxed {
         width: 100%;
       }
+
+      .page-buttons {
+        align-self: center;
+        padding-right: 0;
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 24rem;
+      }
     }
   </style>
 </head>
@@ -610,10 +620,15 @@ https://www.pexels.com/video/officers-investigating-7253660/
       <div class="slogan slogan-0">There are no boundaries</div>
     </div>
 
-    <a class="button button-learn" role="button" target="_blank"
-      onclick="document.querySelector('#target1').scrollIntoView({ behavior: 'smooth' });">
-      Learn More
-    </a>
+    <div class="page-buttons">
+      <a class="button button-learn" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
+        <img src="img/icons/github-icon.svg" class="github-icon">Get Started
+      </a>
+      <a class="button button-learn" role="button" target="_blank"
+        onclick="document.querySelector('#target1').scrollIntoView({ behavior: 'smooth' });">
+        Learn More
+      </a>
+    </div>
   </div>
   <section class="adv-section">
     <div class="section-wrapper">
@@ -625,7 +640,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
         <p>
           A <b>Universe</b> is a complete digital environment that connects data, information, and knowledge across
           diverse domains. It extends beyond IT infrastructure to include ALL data sources like physical assets,
-          business processes, regulatory constraints, data lifecycles, and knowledge flows. A Universe can be understood
+          business processes, regulatory constraints, data lifecycles, and knowledge flows. A Universe can be
+          understood
           through different perspectives:
         <ul>
           <li>Structural (composition, ownership, hierarchy).</li>
@@ -652,7 +668,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
       <div class="section-text">
         <h2>Universe as Code</h2>
         <p>
-          <b>UaC (Universe as Code)</b> is the forward-thinking extension of the well-known IaC (Infrastructure as Code)
+          <b>UaC (Universe as Code)</b> is the forward-thinking extension of the well-known IaC (Infrastructure as
+          Code)
           paradigm. While IaC focuses on describing and automating IT infrastructure such as servers, networks, and
           software stacks, UaC embraces a much broader and more complex scope.
           In UaC, the principle of declarative,
@@ -660,7 +677,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
           regulatory constraints, data lifecycles, and knowledge flows.<br><br>
           Just as IaC transformed system
           administration into programmable workflows, UaC envisions an environment where entire digital-physical
-          ecosystems can be described, evolved, and reasoned about through code. This approach anticipates future needs
+          ecosystems can be described, evolved, and reasoned about through code. This approach anticipates future
+          needs
           where interoperability, compliance, intelligence, and evolution of systems are orchestrated holistically,
           making UaC a natural evolution beyond IaC.
         </p>
@@ -683,13 +701,10 @@ https://www.pexels.com/video/officers-investigating-7253660/
           event
           sources and actions. Built for real-time coordination across modern distributed architecture.
           <br><br>
-          Define triggers, workflows, and conditions declaratively. Write, version, and audit your entire orchestration
+          Define triggers, workflows, and conditions declaratively. Write, version, and audit your entire
+          orchestration
           logic using standard development tools. From simple alerts to complex multi-step responses, everything is
           stored and deployed as code — enabling consistent, automated, and reviewable operations.
-
-          <a class="button button-start" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
-            Get Started
-          </a>
         </p>
         <br>
       </div>
@@ -700,145 +715,271 @@ https://www.pexels.com/video/officers-investigating-7253660/
     <div class="section-wrapper">
       <img style="width: 0;" class="side-img" />
       <div class="section-text">
-        <br>
+        <br><br>
+        <h2>How it works</h2>
+        <p>
+          OpenUniverse operates in several stages to transform static documents definitions into a dynamic,
+          event-driven
+          infrastructure.
+          <br><br>
+          First, the repository working directory is scanned for documents. Each document is represented as a JSON
+          object. A single JSON file may contain a single document or an array of documents. During this scan,
+          OpenUniverse automatically skips any documents with unsupported specification versions or those explicitly
+          marked as disabled.
+          <br><br>
+          Next, each discovered document is passed through an optional chain of pre-run constraints, if declared.
+          Constraints ensure that documents meet structural, logical, and environmental requirements before execution.
+          Processing does not starts if any constraint reports invalid requirements.
+          <br><br>
+          Once validation is complete, OpenUniverse enters the discovery phase. Here, the system analyzes declared
+          search queries, resolves cross-references between documents, and maps their relationships.
+          <br><br>
+          After discovery, OpenUniverse loads the resolved document instances and begins execution. At this point, the
+          runtime becomes active:
+        <ul>
+          <li><b>Triggers</b> fire events based on conditions, calendars, or schedules</li>
+          <li><b>Processors</b> consume event messages and execute the appropriate activities across systems defined
+            in
+            <b>jobs</b>
+          </li>
+          <li><b>Export targets</b> deliver data to external backends for storage or further processing</li>
+          <li><b>DMQ</b> intercepts undeliverable or failed messages, routing them into a dedicated dead-message queue
+            for later inspection, retries, or manual handling</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <img style="width: 0;" class="side-img" />
+      <div class="section-text">
+        <br><br>
         <h2>Core components</h2>
         <p>
           The architecture is based on documents as the primary abstraction. Each component—events, jobs, triggers,
           systems, and processors—is described as a structured document, with the RootDocument serving as the central
           blueprint. This model makes the environment self-describing, auditable, and easy to evolve.
-          Execution is fully event-driven. Events from calendars, schedulers, or publishers activate jobs, which process
-          them through defined processors and then act on target systems. Instead of static configuration, relationships
+          Execution is fully event-driven. Events from calendars, schedulers, or publishers activate jobs, which
+          process
+          them through defined processors and then act on target systems. Instead of static configuration,
+          relationships
           between jobs, events, and systems are discovered dynamically at runtime, creating adaptive orchestration
           flows.
           <br><br>
-        <h3>Documents:</h3>
+        <h3 style="">Documents:</h3><br>
         <div class="flowchart">
-          <pre class="boxed">
-<b>AbstractDocument</b>
-                        
-┌ Header (HeaderObject)
-└ Properties (Map)
-</pre>          
-          <pre class="boxed">
-<b>RootDocument
-extends AbstractDocument</b>
-
-┌ <b>Header (HeaderObject)</b>
-├ <b>Properties (Map)</b>
-├ Triggers (List&lt;TriggerDocument&gt;)
-├ Jobs (List&lt;JobDocument&gt;)
-├ SignatureSettings (Map)
-├ HashAlgorithm (String)
-├ UnprotectCommand (CommandObject)
-├ ExportTargets (List&lt;ExportTargetObject&gt;)
-└ <abbr title="Dead Message Queue">DMQ</abbr> (CommandObject)
-</pre>
-          <pre class="boxed">
-<b>EventDocument
-extends AbstractDocument</b>
-
-┌ <b>Header (HeaderObject)</b>
-├ <b>Properties (Map)</b>
-└ Processable (Boolean)
-</pre>
-          <pre class="boxed">
-<b>Triggers/CalendarDocument
-extends AbstractDocument</b>
-
-┌ <b>Header (HeaderObject)</b>
-├ <b>Properties (Map)</b>
-└ Calendars (List&lt;CalendarObject&gt;)
-</pre>
-          <pre class="boxed">
-<b>Triggers/SchedulerDocument
-extends AbstractDocument</b>
-
-┌ <b>Header (HeaderObject)</b>
-├ <b>Properties (Map)</b>
-└ Schedulers (List&lt;SchedulerObject&gt;)
-</pre>
-          <pre class="boxed">
-<b>Triggers/EventPublisherDocument
-extends AbstractDocument</b>
-
-┌ <b>Header (HeaderObject)</b>
-├ <b>Properties (Map)</b>
-└ Command (CommandObject)
-</pre>
-          <pre class="boxed">
-<b>JobDocument
-extends AbstractDocument</b>
-
-┌ <b>Header (HeaderObject)</b>
-├ <b>Properties (Map)</b>
-├ Events (List&lt;EventDocument&gt;)
-├ Systems (List&lt;SystemDocument&gt;)
-└ EventProcessors (List&lt;ProcessorDocument&gt;)
-</pre>
-          <pre class="boxed">
-<b>SystemDocument
-extends AbstractDocument</b>
-
-┌ <b>Header (HeaderObject)</b>
-├ <b>Properties (Map)</b>
-└ AbstractSystemDefinition (Object)
-</pre>
-          <pre class="boxed">
-<b>EventProcessorDocument
-extends AbstractDocument</b>
-
-┌ <b>Header (HeaderObject)</b>
-├ <b>Properties (Map)</b>
-└ Command (CommandObject)
-</pre>
+          <div class="boxed">
+            <b>AbstractDocument</b> (Abstract)
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            └ <b>Properties (Map)</b>
+          </div>
+          <div class="boxed">
+            <b>RootDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            ├ Triggers (List&lt;TriggerDocument&gt;)<br>
+            ├ Jobs (List&lt;JobDocument&gt;)<br>
+            ├ SignSettings (SignSettingsObject)<br>
+            ├ HashAlgorithm (String)<br>
+            ├ UnprotectPlugin (PluginObject)<br>
+            ├ ExportTargets (List&lt;ExportTargetObject&gt;)<br>
+            └ <abbr title="Dead Message Queue">DMQ</abbr>Plugin (PluginObject)
+          </div>
+          <div class="boxed">
+            <b>EventDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            └ Processable (Boolean)
+          </div>
+          <div class="boxed">
+            <b>Triggers/CalendarDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            └ Calendars (List&lt;CalendarObject&gt;)
+          </div>
+          <div class="boxed">
+            <b>Triggers/SchedulerDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            └ Schedulers (List&lt;SchedulerObject&gt;)
+          </div>
+          <div class="boxed">
+            <b>Triggers/EventPublisherDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            └ EventPublisherPlugin (PluginObject)
+          </div>
+          <div class="boxed">
+            <b>JobDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            ├ Systems (List&lt;SystemDocument&gt;)<br>
+            └ EventProcessors (List&lt;ProcessorDocument&gt;)
+          </div>
+          <div class="boxed">
+            <b>SystemDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            └ AbstractSystemDefinition (Object)
+          </div>
+          <div class="boxed">
+            <b>EventProcessorDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            └ EventProcessorPlugin (PluginObject)
+          </div>
         </div>
-        <br>
-        <h3>Objects:</h3>
+        <br><br>
+        <h3>Objects:</h3><br>
         <div class="flowchart">
-          <pre class="boxed">
-<b>HeaderObject</b>
+          <div class="boxed">
+            <b>HeaderObject</b>
+            <br><br>
+            ┌ SpecVer (String)<br>
+            ├ Type (String)<br>
+            ├ Name (String)<br>
+            ├ Description (String)<br>
+            ├ Disabled (Boolean)<br>
+            ├ Tags (List)<br>
+            ├ Attributes (Map)<br>
+            └ PreRunConstraints (List&lt;PluginObject&gt;)
+          </div>
+          <div class="boxed">
+            <b>PluginObject</b>
+            <br><br>
+            ┌ Command (String)<br>
+            ├ Arguments (List)<br>
+            ├ EnvironmentVariables (Map)<br>
+            ├ WorkingDirectory (String)<br>
+            ├ ErrorLogFile (String)<br>
+            └ InstancesCount (Integer)
+          </div>
+          <div class="boxed">
+            <b>CalendarObject</b>
+            <br><br>
+            ┌ EventType (String)<br>
+            ├ ScheduledFor (Time)<br>
+            └ user-defined fields...
+          </div>
+          <div class="boxed">
+            <b>SchedulerObject</b>
+            <br><br>
+            ┌ EventType (String)<br>
+            ├ CronExpression (String)<br>
+            └ user-defined fields...
+          </div>
 
-┌ Type (String)
-├ Name (String)
-├ Description (String)
-├ Disabled (Boolean)
-├ Tags (List)
-├ Attributes (Map)
-└ PreRunConstraints (List&lt;CommandObject&gt;)
-</pre>
-          <pre class="boxed">
-<b>CommandObject</b>
+          <div class="boxed">
+            <b>SignSettingsObject</b>
+            <br><br>
+            ┌ KeyStoreType (String)<br>
+            ├ KeyStoreFile (String)<br>
+            ├ KeyStorePassword (String)<br>
+            ├ KeyAlias (String)<br>
+            ├ KeyPassword (String)<br>
+            └ SignatureAlgorithm (String)
+          </div>
 
-┌ Command (String)
-├ Arguments (List)
-├ EnvironmentVariables (Map)
-├ WorkingDirectory (String)
-├ ErrorLogFile (String)
-└ InstancesCount (Integer)
-</pre>
-          <pre class="boxed">
-<b>CalendarObject</b>
-
-┌ EventType (String)
-├ ScheduledFor (Time)
-└ user-defined fields...
-</pre>
-          <pre class="boxed">
-<b>SchedulerObject</b>
-
-┌ EventType (String)
-├ CronExpression (String)
-└ user-defined fields...
-</pre>
-          <pre class="boxed">
-<b>ExportTargetObject</b>
-
-┌ Id (String)
-├ StoreAsArray (Boolean)
-├ EnableCompression (Boolean)
-├ СompresionLevel (Integer)
-└ Command (CommandObject)
-</pre>
+          <div class="boxed">
+            <b>ExportTargetObject</b>
+            <br><br>
+            ┌ Id (String)<br>
+            ├ StoreAsArray (Boolean)<br>
+            ├ EnableCompression (Boolean)<br>
+            ├ СompresionLevel (Integer)<br>
+            └ ExportTargetPlugin (PluginObject)<br>
+          </div>
+        </div>
+        <br><br>
+        <h3>Plugins:</h3><br>
+        <div class="flowchart">
+          <div class="boxed">
+            <b>Event Publisher Plugin</b>
+            <br><br>
+            Generates and publishes event messages
+            <br><br>
+            Required in:
+            <ul>
+              <li>Triggers/EventPublisherDocument</li>
+            </ul>
+          </div>
+          <div class="boxed">
+            <b>Event Processor Plugin</b>
+            <br><br>
+            Consumes events, applies processing logic, and emits the result
+            <br><br>
+            Required in:
+            <ul>
+              <li>EventProcessorDocument</li>
+            </ul>
+          </div>
+          <div class="boxed">
+            <b>Pre-Run Validator Plugin</b>
+            <br><br>
+            Validates OpenUniverse documents before execution starts
+            <br><br>
+            Optional in:
+            <ul>
+              <li>RootDocument</li>
+              <li>EventDocument</li>
+              <li>JobDocument</li>
+              <li>Triggers/EventPublisherDocument</li>
+              <li>Triggers/CalendarDocument</li>
+              <li>Triggers/SchedulerDocument</li>
+              <li>EventProcessorDocument</li>
+              <li>SystemDocument</li>
+            </ul>
+          </div>
+          <div class="boxed">
+            <b>Secret Extractor Plugin</b>
+            <br><br>
+            Decrypts or extracts protected values for runtime usage.
+            <br><br>
+            Optional in:
+            <ul>
+              <li>RootDocument</li>
+            </ul>
+          </div>
+          <div class="boxed">
+            <b>Export Target Plugin</b>
+            <br><br>
+            Delivers JSON messages to external backend(s)
+            <br><br>
+            Optional in:
+            <ul>
+              <li>RootDocument</li>
+            </ul>
+          </div>
+          <div class="boxed">
+            <b>Dead Message Queue (<abbr title="Dead Message Queue">DMQ</abbr>) Plugin</b>
+            <br><br>
+            Safely stores undeliverable messages in the Dead Message Queue (<abbr title="Dead Message Queue">DMQ</abbr>)
+            for later inspection or reprocessing
+            <br><br>
+            Optional in:
+            <ul>
+              <li>RootDocument</li>
+            </ul>
+          </div>
         </div>
         </p>
       </div>
@@ -853,66 +994,37 @@ extends AbstractDocument</b>
         <br><br>
         <h2>Key Features</h2>
         <br>
+
         <h3>Client-side by Design</h3>
         <p>
           Runs as a lightweight client, <b>not a server</b> — easy to integrate into existing environments without
           adding
           infrastructure overhead.
         <ul>
-          <li>No extra servers to maintain</li>
-          <li>Lower operational cost and footprint</li>
-          <li>Works anywhere without central dependencies</li>
           <li>No exposed server endpoints</li>
           <li>Data stays local — sensitive information is processed on the client</li>
           <li>Aligns with strict data residency and regulatory requirements</li>
         </ul>
         </p>
 
-        <h3>Universal “System” Abstraction</h3>
+        <h3>Flexible Document Formats</h3>
         <p>
-          Everything is modeled as a system — from hardware such as IoT devices, robots and CNC machines to enterprise
-          databases and <abbr title="Next Generation Firewall">NGFW</abbr>s.
-          This flexible concept makes it possible to orchestrate and observe heterogeneous environments with a single
-          approach.
-        <ul>
-          <li>Unified model for diverse systems</li>
-          <li>Reduces complexity of integration</li>
-          <li>Scales from small devices to enterprise infrastructure</li>
-        </ul>
+          Documents can be authored in <strong>JSON</strong>, <strong>YAML</strong>, or <strong>JavaScript</strong>.<br>
+          When JSON saved with a .js extension, JavaScript-style comments are allowed.
+          <br><br><br>
         </p>
-        <h3>Event Triggers</h3>
+
+        <h3>Integrated Version Control</h3>
         <p>
-          Jobs and processes can be activated by events &mdash; such as calendar schedules,
-          message publishers, or external signals.
-          Triggers define when and why execution starts.
+          Version control is built directly into the platform, ensuring that every
+          change to systems, jobs, events, and relationships is tracked and managed.
+          This makes history, auditing, and rollback an integral part of how the
+          platform operates, not an external add-on.
         <ul>
-          <li>Enables automation without manual intervention</li>
-          <li>Supports time-based (schedulers, calendars) and data-driven triggers</li>
-          <li>Reactive design for real-time responsiveness</li>
-          <li>Unifies multiple event sources under one model</li>
-        </ul>
-        </p>
-        <h3>Event Processors</h3>
-        <p>
-          Events are not only triggers but also data streams. Event processors transform,
-          filter, and route events between systems and jobs.
-        <ul>
-          <li>Decouples producers from consumers</li>
-          <li>Flexible filtering and transformation of event data</li>
-          <li>Scales from simple notifications to complex event-driven pipelines</li>
-          <li>Bridges real-time signals with system orchestration</li>
-        </ul>
-        </p>
-        <h3>Job as a Core Unit</h3>
-        <p>
-          A job executes a set of processes across one or many systems.
-          Jobs define what to run, where to run it, and how results are collected.
-          They provide a consistent way to express distributed execution.
-        <ul>
-          <li>Core abstraction for orchestrating work</li>
-          <li>Distributed execution across heterogeneous systems</li>
-          <li>Parallelism for speed and efficiency</li>
-          <li>Simplifies complex workflows into a single unit</li>
+          <li>Native tracking of changes across all core components</li>
+          <li>Enables reproducibility and reliable rollbacks</li>
+          <li>Improves collaboration with transparent history</li>
+          <li>Supports compliance and audit requirements out of the box</li>
         </ul>
         </p>
 
@@ -940,21 +1052,7 @@ extends AbstractDocument</b>
         <ul>
           <li>Prevents faulty or unsafe executions</li>
           <li>Ensures environments and dependencies are ready</li>
-          <li>Reduces runtime errors and wasted resources</li>
           <li>Provides a clear and declarative way to enforce policies</li>
-        </ul>
-        </p>
-        <h3>Integrated Version Control</h3>
-        <p>
-          Version control is built directly into the platform, ensuring that every
-          change to systems, jobs, events, and relationships is tracked and managed.
-          This makes history, auditing, and rollback an integral part of how the
-          platform operates, not an external add-on.
-        <ul>
-          <li>Native tracking of changes across all core components</li>
-          <li>Enables reproducibility and reliable rollbacks</li>
-          <li>Improves collaboration with transparent history</li>
-          <li>Supports compliance and audit requirements out of the box</li>
         </ul>
         </p>
 
@@ -971,6 +1069,7 @@ extends AbstractDocument</b>
           <li>Supports both synchronous and asynchronous operations</li>
         </ul>
         </p>
+
         <h3>Programming Language Agnostic</h3>
         <p>
           The platform is fully independent of programming languages. It can orchestrate
@@ -983,6 +1082,55 @@ extends AbstractDocument</b>
           <li>Future-proof for evolving development stacks</li>
         </ul>
         </p>
+
+        <h3>Universal “System” Abstraction</h3>
+        <p>
+          Everything is modeled as a system — from hardware such as IoT devices, robots and CNC machines to enterprise
+          databases and <abbr title="Next Generation Firewall">NGFW</abbr>s.
+          This flexible concept makes it possible to orchestrate and observe heterogeneous environments with a single
+          approach.
+        <ul>
+          <li>Unified model for diverse systems</li>
+          <li>Reduces complexity of integration</li>
+          <li>Scales from small devices to enterprise infrastructure</li>
+        </ul>
+        </p>
+        <h3>Event Triggers</h3>
+        <p>
+          Jobs and processes can be activated by events &mdash; such as calendars and schedules timepoints,
+          or triggered from external signals.
+          Triggers define when and why execution starts.
+        <ul>
+          <li>Enables automation with or without manual intervention</li>
+          <li>Supports time-based (schedulers, calendars) and data-driven triggers</li>
+          <li>Reactive design for real-time responsiveness</li>
+          <li>Unifies multiple event sources under one model</li>
+        </ul>
+        </p>
+        <h3>Event Processors</h3>
+        <p>
+          Event processors transform, filter, route and response on events across affected systems.
+        <ul>
+          <li>Decouples event producers from event consumers</li>
+          <li>Flexible filtering and transformation of event data</li>
+          <li>Scales from simple notifications to complex event-driven pipelines</li>
+          <li>Bridges real-time signals with system orchestration</li>
+        </ul>
+        </p>
+
+        <h3>Job as a Core Unit</h3>
+        <p>
+          A job executes a set of processes across one or many systems.
+          Jobs define what to run, where to run it, and which results to collect.
+          They provide a consistent way to express distributed execution.
+        <ul>
+          <li>Core abstraction for orchestrating work</li>
+          <li>Distributed execution across heterogeneous systems</li>
+          <li>Parallelism for speed and efficiency</li>
+          <li>Simplifies complex workflows into a single unit</li>
+        </ul>
+        </p>
+
         <h3>Vendor-neutral Real-time Streaming</h3>
         <p>
           You’re not locked into a single backend tool.
@@ -995,9 +1143,11 @@ extends AbstractDocument</b>
           <li>Query and visualize your data using tools like Grafana, Perses, Datadog, Tableau, etc.</li>
         </ul>
         </p>
-        <h3>Abstract DMQ</h3>
+
+        <h3>Abstract <abbr title="Dead Message Queue">DMQ</abbr></h3>
         <p>
-          Abstract DMQ ensures that no message is ever lost — automatically capturing and preserving undeliverable
+          Abstract <abbr title="Dead Message Queue">DMQ</abbr> ensures that no message is ever lost — automatically
+          capturing and preserving undeliverable
           (“dead”) messages across the universe for recovery, analysis, and compliance.
           It can use any backend for storage and management of dead messages.
         <ul>
@@ -1007,6 +1157,7 @@ extends AbstractDocument</b>
           <li>Compliance-ready — maintains audit trails for regulatory and operational needs</li>
         </ul>
         </p>
+
         <h3>MIT License</h3>
         <p>
           The platform is released under the MIT License, one of the most widely
@@ -1031,7 +1182,8 @@ extends AbstractDocument</b>
         <br>
         <h2>Constructor for Your Next Startup</h2>
         <p>
-          Turn your MVP into a scalable, production-ready reality from day one. OpenUniverse lets you focus on building
+          Turn your MVP into a scalable, production-ready reality from day one. OpenUniverse lets you focus on
+          building
           your core product — while it takes care of integration, orchestration, and automation. Go from prototype to
           global scale without rewriting your architecture. Embrace a platform that’s flexible, language-agnostic, and
           built to adapt as your vision grows.
@@ -1054,8 +1206,10 @@ extends AbstractDocument</b>
         <br>
         <h2>EIP on Steroids</h2>
         <p>
-          Today’s IT landscape is complex, with diverse protocols, multi-cloud services, and growing use of asynchronous
-          communication. Enterprise Integration Patterns (EIP) offer proven solutions and a shared vocabulary to design
+          Today’s IT landscape is complex, with diverse protocols, multi-cloud services, and growing use of
+          asynchronous
+          communication. Enterprise Integration Patterns (EIP) offer proven solutions and a shared vocabulary to
+          design
           reliable, adaptable integrations that handle complexity and failures gracefully.
         </p>
         <br>
@@ -1072,7 +1226,8 @@ extends AbstractDocument</b>
         <h2>Access Anything</h2>
         <p>
           Works seamlessly across platforms, clouds, and systems. Connect to cloud services, on-prem systems, APIs,
-          message queues, databases, or custom endpoints. The platform speaks your language and adapts to your ecosystem
+          message queues, databases, or custom endpoints. The platform speaks your language and adapts to your
+          ecosystem
           — no need to conform to a rigid stack.
         </p>
         <h2 style="text-align: end;">...connect them all</h2>
@@ -1090,7 +1245,8 @@ extends AbstractDocument</b>
         <h2>Reactive by Design</h2>
         <p>
           Engineered for real-time execution and scalable throughput. Event flows are processed as they happen. The
-          platform supports asynchronous triggers, backpressure handling, and distributed execution to meet the demands
+          platform supports asynchronous triggers, backpressure handling, and distributed execution to meet the
+          demands
           of fast-moving systems.
         </p>
         <br>
@@ -1121,7 +1277,8 @@ extends AbstractDocument</b>
         <br>
         <h2>True Language-Agnostic</h2>
         <p>
-          Bring your own tools, scripts, and runtimes. Use any language or executable interface to build event sources,
+          Bring your own tools, scripts, and runtimes. Use any language or executable interface to build event
+          sources,
           processors, or responders. Whether it's a shell script, Python program, or compiled binary — if it runs, it
           integrates.
         </p>
@@ -1138,7 +1295,8 @@ extends AbstractDocument</b>
         <h2>Composable Infrastructure</h2>
         <p>
           Design your infrastructure like building with blocks — intuitive, modular, and endlessly flexible. Define
-          every component as code, integrate any system at any scale, and use your preferred tools and languages. Build
+          every component as code, integrate any system at any scale, and use your preferred tools and languages.
+          Build
           fast, evolve freely, and stay in control.
         </p>
         <br>
@@ -1199,7 +1357,7 @@ extends AbstractDocument</b>
 
   <section class="adv-section">
     <div class="section-wrapper">
-      <img style="min-width: 53%;" class="side-img" src="img/kabiur-rahman-riyad-YzZJUXjb9aw-unsplash.jpg"
+      <img style="min-width: 48%;" class="side-img" src="img/kabiur-rahman-riyad-YzZJUXjb9aw-unsplash.jpg"
         alt="Extensible" />
       <div class="section-text">
         <br>
@@ -1207,10 +1365,10 @@ extends AbstractDocument</b>
         <p>
           Export messages asynchronously to any backend in real-time:
         <ul>
-          <li>Message brokers (Kafka, RabbitMQ, Redis Streams, etc.),</li>
-          <li>Time series (Prometheus, VictoriaMetrics, Graphite, etc.),</li>
-          <li>Search engines (Solr, OpenSearch, ElasticSearch, etc.)</li>
-          <li>Relational databases (Oracle, Db2, Postgree, MS-SQL, MySql, etc.),</li>
+          <li>Message brokers</li>
+          <li>Time series</li>
+          <li>Search engines</li>
+          <li>Relational databases,</li>
         </ul>
         Query and visualize your data using tools like Grafana, Perses, Datadog, Tableau, etc.
         <br>
@@ -1234,18 +1392,18 @@ extends AbstractDocument</b>
         <div class="brands-grid">
           <img class="brand" src="img/brands/kafka.svg" alt="Kafka" style="width: 100px;" />
           <img class="brand" src="img/brands/prometheus.svg" alt="Prometheus" title="Prometheus"
-              style="width: 120px;" />
+            style="width: 120px;" />
           <img class="brand" src="img/brands/grafana.svg" alt="Grafana" style="width: 120px;" />
           <img class="brand" src="img/brands/perses.svg" alt="Perses" title="Perses" style="width: 80px;" />
           <img class="brand" src="img/brands/apache-Solr.svg" alt="Apache Solr" title="Apache Solr"
-              style="width: 120px; margin-left: -10px" />
+            style="width: 120px; margin-left: -10px" />
           <img class="brand" src="img/brands/OpenTelemetry.svg" alt="Open Telemetry" title="Open Telemetry"
-              style="width: 40px;" />
+            style="width: 40px;" />
           <img class="brand" src="img/brands/apache-nifi.svg" alt="Apache nifi" title="Apache nifi"
-              style="width: 80px;" />
+            style="width: 80px;" />
           <img class="brand" src="img/brands/fluentd.png" alt="fluentd" title="fluentd" style="width: 100px;" />
           <img class="brand" src="img/brands/OpenSearch.svg" alt="OpenSearch" title="OpenSearch"
-              style="width: 150px;" />
+            style="width: 150px;" />
         </div>
         <h2 style="text-align: end;">...and others</h2>
         </p>
@@ -1262,37 +1420,22 @@ extends AbstractDocument</b>
         <br>
         <h2>Code Languages?<br>Choose Any!</h2>
         <p>
-          <div class="brands-grid">
-          <img class="brand" src="img/langs/ada.svg" title="Ada"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/scala.png" title="Scala"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/java.svg" title="Java"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/rust.svg" title="Rust"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/go.svg" title="Go"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/c.svg" title="C"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/clojure.svg" title="Clojure"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/py.svg" title="Python"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/haskell.svg" title="Haskell"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/php.svg" title="PHP"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/lua.svg" title="Lua"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/julia.svg" title="Julia"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/js.svg" title="JavaScript"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/csharp.svg" title="C#"
-              style="width: 60px;" />
-          <img class="brand" src="img/langs/nim.png" title="nim"
-              style="width: 60px;" />
+        <div class="brands-grid">
+          <img class="brand" src="img/langs/ada.svg" title="Ada" style="width: 60px;" />
+          <img class="brand" src="img/langs/scala.png" title="Scala" style="width: 60px;" />
+          <img class="brand" src="img/langs/java.svg" title="Java" style="width: 60px;" />
+          <img class="brand" src="img/langs/rust.svg" title="Rust" style="width: 60px;" />
+          <img class="brand" src="img/langs/go.svg" title="Go" style="width: 60px;" />
+          <img class="brand" src="img/langs/c.svg" title="C" style="width: 60px;" />
+          <img class="brand" src="img/langs/clojure.svg" title="Clojure" style="width: 60px;" />
+          <img class="brand" src="img/langs/py.svg" title="Python" style="width: 60px;" />
+          <img class="brand" src="img/langs/haskell.svg" title="Haskell" style="width: 60px;" />
+          <img class="brand" src="img/langs/php.svg" title="PHP" style="width: 60px;" />
+          <img class="brand" src="img/langs/lua.svg" title="Lua" style="width: 60px;" />
+          <img class="brand" src="img/langs/julia.svg" title="Julia" style="width: 60px;" />
+          <img class="brand" src="img/langs/js.svg" title="JavaScript" style="width: 60px;" />
+          <img class="brand" src="img/langs/csharp.svg" title="C#" style="width: 60px;" />
+          <img class="brand" src="img/langs/nim.png" title="nim" style="width: 60px;" />
         </div>
         <h2 style="text-align: end;">...fit to task</h2>
         </p>
@@ -1387,24 +1530,27 @@ extends AbstractDocument</b>
         <div class="footer-row-1">
           <div class="acknowledgments">
             <b>Acknowledgments and Attributions:</b>
-            <a href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a>
-            <a
-              href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars
-              Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.
-            <a href="https://www.freepik.com/icon/alien_8152466">Alien Icon by dreamicons</a>. <a
-              href="https://www.freepik.com/author/lorddreamsss/icons">Icon by dreamicons</a>.
-            Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a
-              href="https://unsplash.com/">Unsplash</a>.
-            Photo by <a href="https://unsplash.com/@umby">Umberto</a> on <a href="https://unsplash.com/">Unsplash</a>.
-            Photo
-            by <a href="https://unsplash.com/@choys_">Conny Schneider</a> on <a
-              href="https://unsplash.com/">Unsplash</a>.
-            Photo by <a href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a
-              href="https://unsplash.com/">Unsplash</a>.
-            Photo by <a
-              href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham
-              Dhage</a> on <a
-              href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.
+            <a target="_blank" href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a>. <a target="_blank" href="https://www.freepik.com/author/freepik/icons">Icon by Freepik</a>.
+            <a target="_blank" href="https://www.freepik.com/icon/mars_11829841">Mars Icon by Mayor Icons</a>. <a target="_blank" href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a target="_blank" href="https://unsplash.com/photos/white-clouds-over-the-city-ni1NYB6nXjo">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@umby">Umberto</a> on <a target="_blank" href="https://unsplash.com/photos/green-bokeh-lights-FewHpO4VC9Y">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@choys_">Conny Schneider</a> on <a target="_blank" href="https://unsplash.com/photos/a-blue-background-with-lines-and-dots-xuTJZ7uD7PI">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a target="_blank" href="https://unsplash.com/photos/a-very-long-line-of-yellow-lines-on-a-black-background-YeUVDKZWSZ4">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@shubhudi">Shubham Dhage</a> on <a target="_blank" href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@theshubhamdhage">Shubham Dhage</a> on <a target="_blank" href="https://unsplash.com/photos/shubham-dhage-JNKgOlj4OBs">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@thisisengineering">ThisisEngineering</a> on <a target="_blank" href="https://unsplash.com/photos/thisisengineering-zdBOU0faYK4">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@leshatuman">lesha tuman</a> on <a target="_blank" href="https://unsplash.com/photos/lesha-tuman-2qjPlJKnZ6M">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@galka_nz">Galina Nelyubova</a> on <a target="_blank" href="https://unsplash.com/photos/galina-nelyubova-h-Ij-IDnc00">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@alexkixa">Alexandre Debiève</a> on <a target="_blank" href="https://unsplash.com/photos/alexandre-debieve-FO7JIlwjOtU">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@drkctyy">Jere Barcebal</a> on <a target="_blank" href="https://unsplash.com/photos/jere-barcebal-uqb68Xbxhik">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@riiyad">Kabiur Rahman Riyad</a> on <a target="_blank" href="https://unsplash.com/photos/kabiur-rahman-riyad-YzZJUXjb9aw">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@rayyanbrh">Rayyân</a> on <a target="_blank" href="https://unsplash.com/photos/rayyan-df6PWKUJwcw">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@markusspiske">Markus Spiske</a> on <a target="_blank" href="https://unsplash.com/photos/markus-spiske-1LLh8k2_YFk">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@wizwow">Donald Giannatti</a> on <a target="_blank" href="https://unsplash.com/photos/donald-giannatti-Wj1D-qiOseE">Unsplash</a>.
+            Fog Animaton by <a target="_blank" href="https://www.vantajs.com/?effect=fog">Vanta.js</a>.
+            Net Animaton by <a target="_blank" href="https://www.vantajs.com/?effect=net">Vanta.js</a>.
+            <br><br>
+            All trademarks, logos, and brand names are the property of their respective owners. All company, product, and service names used on this website are for identification purposes only. The use of these names, trademarks, and brands does not imply any endorsement, affiliation, or sponsorship by the trademark owners.
             <br><br>
             &copy; OpenUniverse 2025
           </div>
@@ -1474,14 +1620,14 @@ extends AbstractDocument</b>
           mouseControls: false,
           touchControls: false,
           gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
+          minHeight: 0.00,
+          minWidth: 0.00,
           scale: 1.00,
           scaleMobile: 1.00,
-          color: 0x777777,
+          color: 0x333333,
           backgroundColor: 0x000000,
-          points: 12.00,
-          maxDistance: 26.00,
+          points: 10.00,
+          maxDistance: 20.00,
           spacing: 27.00,
           showDots: true
         })
@@ -1499,7 +1645,7 @@ extends AbstractDocument</b>
           baseColor: 0x000000,
           blurFactor: 0.70,
           speed: 1.00,
-          zoom: 0.80
+          zoom: 0.40
         });
       }
       document.documentElement.style.visibility = 'visible';

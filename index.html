@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="en" style="visibility: hidden; background-color: #000;">
+
+<!-- © OpenUniverse Web Design 2025 -->
+<!-- 𝗢𝗽𝗲𝗻𝗨𝗻𝗶𝘃𝗲𝗿𝘀𝗲 -->
+<!--
+https://www.pexels.com/video/officers-investigating-7253660/
+-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000">
+  <title>OpenUniverse</title>
+  <!--<a href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.-->
+  <!--
+  <link rel="icon" type="image/png" href="img/icons/mars_11829841.png">
+  -->
+  <link rel="icon" type="image/png" href="img/icons/glucose_8205747.svg">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="preload" href="/fonts/TiltWarp-Regular-VariableFont_XROT,YROT.ttf" as="font" type="font/ttf"
+    crossorigin="anonymous">
+  <link rel="preload" href="/fonts/roboto/RobotoMono-VariableFont_wght.ttf" as="font" type="font/ttf"
+    crossorigin="anonymous">
+  <link rel="preload" href="/fonts/roboto/Roboto-Thin.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/roboto/RobotoCondensed-VariableFont_wght.ttf" as="font" type="font/ttf"
+    crossorigin="anonymous">
+  <script type="text/javascript" src="js/TagCloud.min.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+
+  <script src="js/cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="js/cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <script src="js/cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html {
+        background: #000;
+      }
+    }
+
+    html {
+      visibility: hidden;
+      background-color: #000;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    @font-face {
+      font-family: 'TiltWarp-Regular';
+      src: url("fonts/TiltWarp-Regular-VariableFont_XROT,YROT.ttf");
+    }
+
+    @font-face {
+      font-family: RobotoRegular;
+      src: url("fonts/roboto/Roboto-Regular.ttf");
+    }
+
+    @font-face {
+      font-family: RobotoThin;
+      src: url("fonts/roboto/Roboto-Thin.ttf");
+    }
+
+    @font-face {
+      font-family: RobotoMono;
+      src: url("fonts/roboto/RobotoMono-VariableFont_wght.ttf");
+    }
+
+    @font-face {
+      font-family: RobotoCondensed;
+      src: url("fonts/roboto/RobotoCondensed-VariableFont_wght.ttf");
+    }
+
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #FD3F84 #555;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: RobotoRegular;
+      font-size: 1rem;
+      overflow-y: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-wrap-style: balance;
+    }
+
+    p {
+      hyphens: auto;
+      text-wrap-style: pretty;
+    }
+
+    h2 {
+      font-family: RobotoThin;
+      font-size: 2.5rem;
+      margin: 0;
+      margin-bottom: 0;
+    }
+
+    h3 {
+      font-family: RobotoThin;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0;
+      margin-bottom: 0;
+    }
+
+    i {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-style: italic;
+      font-size: 1.6rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    abbr:hover {
+      cursor: help;
+    }
+
+
+    section:last-of-type {
+      background-color: #111;
+    }
+
+    .flowchart {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .boxed {
+      height: 19rem;
+      width: 19rem;
+      font-family: RobotoCondensed, monospace !important;
+      line-height: 1.2rem;
+      font-size: 1rem;
+      border: 1px dotted;
+      padding: 1rem;
+      transition: border 0.3s;
+    }
+
+    .boxed:hover {
+      border: 1px solid;
+    }
+
+    .section-wrapper {
+      max-width: 1280px;
+      margin: auto;
+      margin-bottom: -1px;
+      /* Need for brands section */
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+    }
+
+    .adv-section .section-wrapper {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .page {
+      min-height: 100vh;
+      max-height: 100vh;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .bg-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+      z-index: 1;
+      margin: auto;
+      opacity: .05;
+    }
+
+    .section-wrapper.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .adv-section.color-red {
+      background-color: #FD3F84;
+      color: #fff;
+    }
+
+    .adv-section.color-red-super {
+      background-color: #CA326A;
+      color: #fff;
+    }
+
+    .adv-section.color-black {
+      background-color: #666;
+      color: #fff;
+    }
+
+    .adv-section.color-black-super {
+      background-color: #444;
+      color: #fff;
+    }
+
+    .adv-section.color-turquoise {
+      background-color: #6A435B;
+      color: #fff;
+    }
+
+    .adv-section.color-turquoise-super {
+      background-color: #008486;
+      color: #fff !important;
+      border-color: #fff !important;
+    }
+
+    .section-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      min-height: 470px;
+      font-size: 1.5rem !important;
+      z-index: 1;
+    }
+
+    .product-header {
+      user-select: none;
+      margin: auto;
+      z-index: 1000;
+    }
+
+    @keyframes fadeIn {
+      to {
+        color: white;
+        border-color: white;
+        opacity: 1;
+      }
+    }
+
+    .product-name {
+      font-family: 'TiltWarp-Regular';
+      KKKfont-weight: bold;
+      user-select: none;
+    }
+
+    .product-name-0 {      
+      text-rendering: optimizeLegibility;
+      font-size: 9cqw;
+      line-height: 9cqw;
+      letter-spacing: .03em;
+      color: transparent;
+      text-shadow: unset;
+      animation-name: fadeIn;
+      animation-duration: 4s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+      animation-delay: 1.5s;
+    }
+
+    .slogan {
+      color: transparent;
+      text-shadow: unset;
+      animation-name: fadeIn;
+      animation-duration: 4s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+      animation-delay: 3.5s;
+    }
+
+    .slogan-0 {
+      text-transform: uppercase;
+      text-rendering: optimizeLegibility;
+      letter-spacing: .0265em !important;
+      font-family: RobotoThin;
+      font-weight: bold;
+      font-size: 4.6cqw;
+      line-height: 6cqw;
+    }
+
+    .slogan-1 {
+      padding-top: 2cqw;
+      text-rendering: optimizeLegibility;
+      letter-spacing: .024cqw !important;
+      font-size: 1.327cqw;
+      font-family: RobotoRegular;
+    }
+
+    .bottom-content {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .section-wrapper-bottom {
+      position: relative;
+      flex-direction: column;
+      background: #000;
+    }
+
+    .footer-buttons {
+      padding-top: 1rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: end;
+    }
+
+    .acknowledgments {
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+      font-size: .8rem !important;
+      color: #ccc;
+      text-align: justify;
+      hyphens: auto;
+      text-wrap: wrap;
+      overflow-wrap: break-word;
+      word-break: break-all;
+    }
+
+    .footer-row-1 {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .footer {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: .8rem;
+      padding-top: 3rem;
+      margin-bottom: 1rem;
+      justify-content: space-between;
+      gap: 1.2rem;
+    }
+
+    .ou-row-top {
+      font-size: 1.9rem;
+      line-height: 1.7rem;
+    }
+
+    .ou-row-bottom {
+      font-weight: bold;
+      font-family: RobotoThin;
+      font-size: 1.20rem;
+      line-height: 1rem;
+    }
+
+    .footer-column-logo {
+      display: flex;
+      flex-direction: column;
+      text-wrap: nowrap;
+      color: #fff;
+      gap: .3rem;
+      height: fit-content;
+      margin-top: -.38rem;
+    }
+
+    .footer-column-header {
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 16px;
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column li {
+      margin-bottom: 8px;
+      text-wrap: nowrap;
+    }
+
+    .footer-column a {
+      color: #ccc;
+    }
+
+    .footer-column a:hover {
+      text-decoration: underline;
+    }
+
+    .side-img {
+      height: auto;
+      max-width: 35%;
+      min-height: max-content;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .mars {
+      margin-right: 2rem;
+      padding-top: 2rem;
+      max-width: 10rem;
+      max-height: 10rem;
+    }
+
+    .page-buttons {
+      display: flex;
+      width: fit-content;
+      align-self: end;
+      gap: 2cqw;
+      padding-right: 2cqw;
+      padding-bottom: 2cqw;
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+      width: fit-content;
+      height: 3rem;
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+      font-family: RobotoThin;
+      font-weight: bold;
+      font-size: 1.5rem;
+      line-height: calc(3rem - 2px);
+      border: 1px solid;
+      text-decoration: none !important;
+      user-select: none;
+      transition: color 0.3s, border-color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .button-learn {
+      min-width: 10rem;
+      color: transparent;
+      border-color: transparent;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+      animation-delay: 4s;
+    }
+
+    .button-learn:hover {
+      color: #fff;
+      border-color: #fff;
+      text-shadow: 0 0 6px #fff;
+      box-shadow: 0 0 6px #fff;
+    }
+
+    .github-icon {
+      width: 1.8rem;
+      filter: invert(1);
+      padding-right: .8rem;
+      opacity: 0;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+      animation-delay: 4s;
+    }
+
+
+    .videoWrapper {
+      position: relative;
+      width: 65%;
+    }
+
+    .videoWrapper iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .button-touch,
+    .button-up {
+      justify-self: flex-end;
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+
+    .button-touch:hover,
+    .button-up:hover {
+      color: #fff;
+      border-color: #fff;
+      text-shadow: 0 0 6px #fff;
+      box-shadow: 0 0 6px #fff;
+    }
+
+    /* BRANDS */
+
+    .brands-grid {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      padding-right: 40px;
+      padding-bottom: 50px;
+      filter: brightness(0) invert(1);
+    }
+
+    .fade-image {
+      width: 100% !important;
+      height: 598px !important;
+      background-image:
+        linear-gradient(to bottom, transparent 90%, black 100%),
+        url("img/donald-giannatti-Wj1D-qiOseE-unsplash.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    /* MEDIA */
+
+
+    @media (max-width: 1080px) {
+      .page {
+        min-height: 100vh;
+      }
+
+      .adv-section .section-wrapper {
+        background-color: unset;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+      .header-icon-mars {
+        display: none;
+      }
+
+      .footer {
+        flex-wrap: wrap;
+      }
+
+      .footer-column-logo {
+        width: 100%;
+        padding-bottom: 1.5rem;
+      }
+
+      .section-wrapper,
+      .section-wrapper.reverse {
+        flex-direction: column !important;
+      }
+
+      .section-wrapper p,
+      .section-wrapper.reverse p {}
+
+      .section-text {
+        padding-top: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .section-text p {
+        KKKtext-align: justify;
+        text-justify: distribute;
+        hyphens: auto;
+        padding-bottom: 2.5rem;
+        text-wrap: wrap;
+        overflow-wrap: break-word;
+      }
+
+      .videoWrapper {
+        width: 100% !important;
+        padding-bottom: 56.25%;
+        /* 16:9 aspect ratio (9/16 = 0.5625) */
+        height: 0;
+        /* important! */
+        overflow: hidden;
+      }
+
+      .side-img {
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+
+      .mars {
+        display: none;
+      }
+
+      .fade-image {
+        max-height: 200px !important;
+      }
+
+      .boxed {
+        width: 100%;
+      }
+
+      .page-buttons {
+        align-self: center;
+        padding-right: 0;
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 24rem;
+      }
+
+      .button-learn {
+        min-width: 59.2cqw;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .tag-cloud-keywords {
+      font-family: RobotoRegular;
+      font-weight: bold;
+      text-wrap-mode: nowrap;
+      width: 100%;
+      min-height: 400px;
+    }
+
+    .tag-cloud-langs {
+      font-family: RobotoThin;
+      font-weight: bold;
+      width: 100%;
+      min-height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <img class="bg-img" src="img/icons/glucose_8205747.svg" />
+    <!--
+    <img src="img/icons/glucose_8205747.svg">
+    <img src="img/icons/mars_11829841.png">
+    -->
+    <div class="product-header">
+      <div class="product-name product-name-0">Open<wbr>Universe</div>
+      <div class="slogan slogan-0">There are no boundaries</div>
+      <div class="slogan slogan-1">
+        An ultralight, security-first open source UaC (Universe as
+        Code) platform that unifies your environment
+      </div>
+    </div>
+    <div class="page-buttons">
+      <a class="button button-learn" role="button" target="_blank" href="https://github.com/ou-org/OpenUniverse">
+        <img src="img/icons/github-icon.svg" class="github-icon">Get Started
+      </a>
+      <a class="button button-learn" role="button" target="_blank"
+        onclick="document.querySelector('#target1').scrollIntoView({ behavior: 'smooth' });">
+        Learn More…
+      </a>
+    </div>
+  </div>
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <a id="target1"></a>
+      <img style="width: 0;" class="side-img">
+      <div class="section-text">
+        <p>
+        <h2>What is <span class="product-name">Universe</span>?</h2>
+        <p>
+          A <b>Universe</b> is a complete digital environment that connects data, information, and knowledge across
+          diverse domains. It extends beyond IT infrastructure to include <b>ALL</b> data sources like physical assets,
+          business processes, regulatory constraints, data lifecycles, and knowledge flows. A Universe can be
+          understood
+          through different perspectives:
+          </p>
+        <ul>
+          <li>Structural (composition, ownership, hierarchy).</li>
+          <li>Functional (usage, control, data flow).</li>
+          <li>Historical (lineage, evolution, journals and immutable traces of changes).</li>
+          <li>Regulatory (compliance obligations, contractual bindings, access constraints).</li>
+          <li>Protocols (standards, interoperability, communication rules).</li>
+        </ul>
+        <p>
+        It also encompasses events, transactions, state changes, and lifecycle transitions, thereby enabling reasoning
+        about system evolution. In this sense, a Universe is a living ecosystem where raw data flows into information,
+        and information evolves into knowledge, shaping how people, machines, and structures interact securely and
+        intelligently.
+        <br><br>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
+      <img class="side-img" src="img/thisisengineering-zdBOU0faYK4-unsplash.jpg" alt="As Code" />
+      <div class="section-text">
+        <h2>Universe as Code</h2>
+        <p>
+          <b>UaC (Universe as Code)</b> is the forward-thinking extension of the well-known IaC (Infrastructure as
+          Code)
+          paradigm. While IaC focuses on describing and automating IT infrastructure such as servers, networks, and
+          software stacks, UaC embraces a much broader and more complex scope.
+          In UaC, the principle of declarative,
+          code-driven definition extends not only to infrastructure but also to physical assets, business processes,
+          regulatory constraints, data lifecycles, and knowledge flows.<br><br>
+          Just as IaC transformed system
+          administration into programmable workflows, UaC envisions an environment where entire digital-physical
+          ecosystems can be described, evolved, and reasoned about through code. This approach anticipates future
+          needs
+          where interoperability, compliance, intelligence, and evolution of systems are orchestrated holistically,
+          making UaC a natural evolution beyond IaC.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
+      <img class="side-img" src="img/shubham-dhage-JNKgOlj4OBs-unsplash.jpg" alt="Connect" />
+      <div class="section-text">
+        <br>
+        <h2>Why <span class="product-name">Open<wbr>Universe</span>?</h2>
+        <p>
+          <span class="product-name">Open<wbr>Universe</span> is an ultralight, security-first open source <b>UaC (Universe as
+            Code)</b> platform that unifies your environment.<br><br>
+          Empower your infrastructure with a code-first approach to event-driven cross-system workflows.
+          Define triggers and responses as code, connect with diverse technologies, and support language-agnostic
+          event
+          sources and actions. Built for real-time coordination across modern distributed architecture.
+          <br><br>
+          Define triggers, workflows, and conditions declaratively. Write, version, and audit your entire
+          orchestration
+          logic using standard development tools. From simple alerts to complex multi-step responses, everything is
+          stored and deployed as code — enabling consistent, automated, and reviewable operations.
+        </p>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <img class="side-img" src="img/umberto-FewHpO4VC9Y-unsplash.jpg" />
+      <div class="section-text">
+        <div class="tag-cloud-keywords"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <img style="width: 0;" class="side-img" />
+      <div class="section-text">
+        <p>
+          <br>
+        </p>
+        <h2>How it works</h2>
+        <p>
+          OpenUniverse operates in several stages to transform static documents definitions into a dynamic,
+          event-driven
+          infrastructure.
+          <br><br>
+          First, the repository working directory is scanned for documents. Each document is represented as a JSON
+          object. A single JSON file may contain a single document or an array of documents. During this scan,
+          OpenUniverse automatically skips any documents with unsupported specification versions or those explicitly
+          marked as disabled.
+          <br><br>
+          Next, each discovered document is passed through an optional chain of pre-run constraints, if declared.
+          Constraints ensure that documents meet structural, logical, and environmental requirements before execution.
+          Processing does not starts if any constraint reports invalid requirements.
+          <br><br>
+          Once validation is complete, OpenUniverse enters the discovery phase. Here, the system analyzes declared
+          search queries, resolves cross-references between documents, and maps their relationships.
+          <br><br>
+          After discovery, OpenUniverse loads the resolved document instances and begins execution. At this point, the
+          runtime becomes active:
+        <ul>
+          <li><b>Triggers</b> fire events based on conditions, calendars, or schedules</li>
+          <li><b>Processors</b> consume event messages and execute the appropriate activities across <b>systems</b> defined
+            in
+            <b>jobs</b>
+          </li>
+          <li><b>Export targets</b> deliver data to external backends for storage or further processing</li>
+          <li><b>DMQ</b> intercepts undeliverable or failed messages, routing them into a dedicated dead-message queue
+            for later inspection, retries, or manual handling</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <img style="width: 0;" class="side-img" />
+      <div class="section-text">
+        <p>
+          <br>
+        </p>
+        <h2>Core components</h2>
+        <p>
+          The architecture is based on documents as the primary abstraction. Each component—events, jobs, triggers,
+          systems, and processors—is described as a structured document, with the RootDocument serving as the central
+          blueprint. This model makes the environment self-describing, auditable, and easy to evolve.
+          Execution is fully event-driven. Events from calendars, schedulers, or publishers activate jobs, which
+          process
+          them through defined processors and then act on target systems. Instead of static configuration,
+          relationships
+          between jobs, events, and systems are discovered dynamically at runtime, creating adaptive orchestration
+          flows.
+          <br><br>
+        <h3 style="">Documents:</h3><br>
+        <div class="flowchart">
+          <div class="boxed">
+            <b>AbstractDocument</b> (Abstract)
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            └ <b>Properties (Map)</b>
+          </div>
+          <div class="boxed">
+            <b>RootDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            ├ Triggers (List&lt;TriggerDocument&gt;)<br>
+            ├ Jobs (List&lt;JobDocument&gt;)<br>
+            ├ SignSettings (SignSettingsObject)<br>
+            ├ HashAlgorithm (String)<br>
+            ├ UnprotectPlugin (PluginObject)<br>
+            ├ ExportTargets (List&lt;ExportTargetObject&gt;)<br>
+            └ <abbr title="Dead Message Queue">DMQ</abbr>Plugin (PluginObject)
+          </div>
+          <div class="boxed">
+            <b>EventDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            └ Processable (Boolean)
+          </div>
+          <div class="boxed">
+            <b>Triggers/CalendarDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            └ Calendars (List&lt;CalendarObject&gt;)
+          </div>
+          <div class="boxed">
+            <b>Triggers/SchedulerDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            └ Schedulers (List&lt;SchedulerObject&gt;)
+          </div>
+          <div class="boxed">
+            <b>Triggers/EventPublisherDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            └ EventPublisherPlugin (PluginObject)
+          </div>
+          <div class="boxed">
+            <b>JobDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            ├ Systems (List&lt;SystemDocument&gt;)<br>
+            └ EventProcessors (List&lt;ProcessorDocument&gt;)
+          </div>
+          <div class="boxed">
+            <b>SystemDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            └ AbstractSystemDefinition (Object)
+          </div>
+          <div class="boxed">
+            <b>EventProcessorDocument</b><br>
+            extends <b>AbstractDocument</b>
+            <br><br>
+            ┌ <b>Header (HeaderObject)</b><br>
+            ├ <b>Properties (Map)</b><br>
+            └ EventProcessorPlugin (PluginObject)
+          </div>
+        </div>
+        <br><br>
+        <h3>Objects:</h3><br>
+        <div class="flowchart">
+          <div class="boxed">
+            <b>HeaderObject</b>
+            <br><br>
+            ┌ SpecVer (String)<br>
+            ├ Type (String)<br>
+            ├ Name (String)<br>
+            ├ Description (String)<br>
+            ├ Disabled (Boolean)<br>
+            ├ Tags (List)<br>
+            ├ Attributes (Map)<br>
+            └ PreRunConstraints (List&lt;PluginObject&gt;)
+          </div>
+          <div class="boxed">
+            <b>PluginObject</b>
+            <br><br>
+            ┌ Command (String)<br>
+            ├ Arguments (List)<br>
+            ├ EnvironmentVariables (Map)<br>
+            ├ WorkingDirectory (String)<br>
+            ├ ErrorLogFile (String)<br>
+            └ InstancesCount (Integer)
+          </div>
+          <div class="boxed">
+            <b>CalendarObject</b>
+            <br><br>
+            ┌ EventType (String)<br>
+            ├ ScheduledFor (Time)<br>
+            └ user-defined fields...
+          </div>
+          <div class="boxed">
+            <b>SchedulerObject</b>
+            <br><br>
+            ┌ EventType (String)<br>
+            ├ CronExpression (String)<br>
+            └ user-defined fields...
+          </div>
+
+          <div class="boxed">
+            <b>SignSettingsObject</b>
+            <br><br>
+            ┌ KeyStoreType (String)<br>
+            ├ KeyStoreFile (String)<br>
+            ├ KeyStorePassword (String)<br>
+            ├ KeyAlias (String)<br>
+            ├ KeyPassword (String)<br>
+            └ SignatureAlgorithm (String)
+          </div>
+
+          <div class="boxed">
+            <b>ExportTargetObject</b>
+            <br><br>
+            ┌ Id (String)<br>
+            ├ StoreAsArray (Boolean)<br>
+            ├ EnableCompression (Boolean)<br>
+            ├ СompresionLevel (Integer)<br>
+            └ ExportTargetPlugin (PluginObject)<br>
+          </div>
+        </div>
+        <br><br>
+        <h3>Plugins:</h3><br>
+        <div class="flowchart">
+          <div class="boxed">
+            <b>Event Publisher Plugin</b>
+            <br><br>
+            Generates and publishes event messages
+            <br><br>
+            Required in:
+            <ul>
+              <li>Triggers/EventPublisherDocument</li>
+            </ul>
+          </div>
+          <div class="boxed">
+            <b>Event Processor Plugin</b>
+            <br><br>
+            Consumes events, applies processing logic, and emits the result
+            <br><br>
+            Required in:
+            <ul>
+              <li>EventProcessorDocument</li>
+            </ul>
+          </div>
+          <div class="boxed">
+            <b>Pre-Run Validator Plugin</b>
+            <br><br>
+            Validates OpenUniverse documents before execution starts
+            <br><br>
+            Optional in:
+            <ul>
+              <li>RootDocument</li>
+              <li>EventDocument</li>
+              <li>JobDocument</li>
+              <li>Triggers/EventPublisherDocument</li>
+              <li>Triggers/CalendarDocument</li>
+              <li>Triggers/SchedulerDocument</li>
+              <li>EventProcessorDocument</li>
+              <li>SystemDocument</li>
+            </ul>
+          </div>
+          <div class="boxed">
+            <b>Secret Extractor Plugin</b>
+            <br><br>
+            Decrypts or extracts protected values for runtime usage.
+            <br><br>
+            Optional in:
+            <ul>
+              <li>RootDocument</li>
+            </ul>
+          </div>
+          <div class="boxed">
+            <b>Export Target Plugin</b>
+            <br><br>
+            Delivers JSON messages to external backend(s)
+            <br><br>
+            Optional in:
+            <ul>
+              <li>RootDocument</li>
+            </ul>
+          </div>
+          <div class="boxed">
+            <b>Dead Message Queue (<abbr title="Dead Message Queue">DMQ</abbr>) Plugin</b>
+            <br><br>
+            Safely stores undeliverable messages in the Dead Message Queue (<abbr title="Dead Message Queue">DMQ</abbr>)
+            for later inspection or reprocessing
+            <br><br>
+            Optional in:
+            <ul>
+              <li>RootDocument</li>
+            </ul>
+          </div>
+        </div>
+        </p>
+      </div>
+      <br>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <img style="width: 0;" class="side-img">
+      <div class="section-text">
+        <p>
+          <br>
+        </p>
+        <h2>Key Features</h2>
+        <p>
+          <br>
+        </p>
+        <h3>Client-side by Design</h3>
+        <p>
+          Runs as a lightweight client, <b>not a server</b> — easy to integrate into existing environments without
+          adding
+          infrastructure overhead.
+        <ul>
+          <li>No exposed server endpoints</li>
+          <li>Data stays local — sensitive information is processed on the client</li>
+          <li>Aligns with strict data residency and regulatory requirements</li>
+        </ul>
+        </p>
+
+        <h3>Flexible Document Formats</h3>
+        <p>
+          Documents can be authored in <strong>JSON</strong>, <strong>YAML</strong>, or <strong>JavaScript</strong>.<br>
+          When JSON saved with a .js extension, JavaScript-style comments are allowed.
+          In addition, the MD (Markdown) format is supported, which, along with text, can include JSON/YAML documents and plugins.
+          At startup, OpenUniverse transforms all MD documents into JSON/YAML and extracts plugins from the Markdown.
+          <br><br><br>
+        </p>
+
+        <h3>Integrated Version Control</h3>
+        <p>
+          Version control is built directly into the platform, ensuring that every
+          change to systems, jobs, events, and relationships is tracked and managed.
+          This makes history, auditing, and rollback an integral part of how the
+          platform operates, not an external add-on.
+        <ul>
+          <li>Native tracking of changes across all core components</li>
+          <li>Enables reproducibility and reliable rollbacks</li>
+          <li>Improves collaboration with transparent history</li>
+          <li>Supports compliance and audit requirements out of the box</li>
+        </ul>
+        </p>
+
+        <h3>Ontology-driven Component Discovery</h3>
+        <p>
+          Components are discovered dynamically based on their tags, attributes, etc.,
+          rather than relying on hard-coded lists.
+          Relationships describe how core components interact with each other.
+          They are established through search queries over tags and attributes,
+          allowing systems, jobs, events, and processors to be linked in a
+          flexible and adaptive way.
+        <ul>
+          <li>Emphasizes interactions rather than static connections</li>
+          <li>Dynamic discovery based on component tags and attributes</li>
+          <li>Reduces configuration complexity by avoiding hard-coded links</li>
+          <li>Adapts naturally as environments evolve</li>
+        </ul>
+        </p>
+
+        <h3>Pre-Run Constraints</h3>
+        <p>
+          Each document can define pre-run constraints that validate conditions
+          before a processing loop begins. These checks act as safeguards,
+          ensuring that jobs and processes only start when prerequisites are met.
+        <ul>
+          <li>Prevents faulty or unsafe executions</li>
+          <li>Ensures environments and dependencies are ready</li>
+          <li>Provides a clear and declarative way to enforce policies</li>
+        </ul>
+        </p>
+
+        <h3>Continuous Native Processing</h3>
+        <p>
+          Employs continuous, parallel, native processes that stream data directly:
+          Input: read from stdin. Output: write to stdout
+          This ensures seamless composition with other tools and pipelines, staying true to the UNIX philosophy.
+        <ul>
+          <li>Native, continuous data processing</li>
+          <li>Naturally parallel for efficiency</li>
+          <li>Works smoothly with existing shell tools and pipelines</li>
+          <li>Efficient, real-time data handling</li>
+          <li>Supports both synchronous and asynchronous operations</li>
+        </ul>
+        </p>
+
+        <h3>Programming Language Agnostic</h3>
+        <p>
+          The platform is fully independent of programming languages. It can orchestrate
+          jobs, processes, and events regardless of whether systems use Java, Python,
+          JavaScript, C++, or any other language.
+        <ul>
+          <li>Works with any programming language</li>
+          <li>Integrates heterogeneous systems without language constraints</li>
+          <li>Enables mixed-language workflows</li>
+          <li>Future-proof for evolving development stacks</li>
+        </ul>
+        </p>
+
+        <h3>Universal “System” Abstraction</h3>
+        <p>
+          Everything is modeled as a system — from hardware such as IoT devices, robots and CNC machines to enterprise
+          databases and <abbr title="Next Generation Firewall">NGFW</abbr>s.
+          This flexible concept makes it possible to orchestrate and observe heterogeneous environments with a single
+          approach.
+        <ul>
+          <li>Unified model for diverse systems</li>
+          <li>Reduces complexity of integration</li>
+          <li>Scales from small devices to enterprise infrastructure</li>
+        </ul>
+        </p>
+        <h3>Event Triggers</h3>
+        <p>
+          Jobs and processes can be activated by events &mdash; such as calendars and schedules timepoints,
+          or triggered from external signals.
+          Triggers define when and why execution starts.
+        <ul>
+          <li>Enables automation with or without manual intervention</li>
+          <li>Supports time-based (schedulers, calendars) and data-driven triggers</li>
+          <li>Reactive design for real-time responsiveness</li>
+          <li>Unifies multiple event sources under one model</li>
+        </ul>
+        </p>
+        <h3>Event Processors</h3>
+        <p>
+          Event processors transform, filter, route and response on events across affected systems.
+        <ul>
+          <li>Decouples event producers from event consumers</li>
+          <li>Flexible filtering and transformation of event data</li>
+          <li>Scales from simple notifications to complex event-driven pipelines</li>
+          <li>Bridges real-time signals with system orchestration</li>
+        </ul>
+        </p>
+
+        <h3>Job as a Core Unit</h3>
+        <p>
+          A job executes a set of processes across one or many systems.
+          Jobs define what to run, where to run it, and which results to collect.
+          They provide a consistent way to express distributed execution.
+        <ul>
+          <li>Core abstraction for orchestrating work</li>
+          <li>Distributed execution across heterogeneous systems</li>
+          <li>Parallelism for speed and efficiency</li>
+          <li>Simplifies complex workflows into a single unit</li>
+        </ul>
+        </p>
+
+        <h3>Vendor-neutral Real-time Streaming</h3>
+        <p>
+          You’re not locked into a single backend tool.
+          Export messages asynchronously to any backend in real-time:
+        <ul>
+          <li>Message brokers (Kafka, RabbitMQ, Redis Streams, etc.)</li>
+          <li>Time series (Prometheus, VictoriaMetrics, Graphite, etc.)</li>
+          <li>Search engines (Solr, OpenSearch, ElasticSearch, etc.)</li>
+          <li>Relational databases (Oracle, Db2, Postgree, MS-SQL, MySql, etc.)</li>
+          <li>Query and visualize your data using tools like Grafana, Perses, Datadog, Tableau, etc.</li>
+        </ul>
+        </p>
+
+        <h3>Abstract <abbr title="Dead Message Queue">DMQ</abbr></h3>
+        <p>
+          Abstract <abbr title="Dead Message Queue">DMQ</abbr> ensures that no message is ever lost — automatically
+          capturing and preserving undeliverable
+          (“dead”) messages across the universe for recovery, analysis, and compliance.
+          It can use any backend for storage and management of dead messages.
+        <ul>
+          <li>Backend-agnostic — supports any storage system (files, databases, object stores, queues)</li>
+          <li>Message safety net — guarantees visibility into all undeliverable events</li>
+          <li>Actionable management — inspect, triage, and reprocess messages after fixes</li>
+          <li>Compliance-ready — maintains audit trails for regulatory and operational needs</li>
+        </ul>
+        </p>
+
+        <h3>MIT License</h3>
+        <p>
+          The platform is released under the MIT License, one of the most widely
+          adopted open-source licenses. It grants broad freedom to use, modify,
+          and distribute the software with minimal restrictions.
+        <ul>
+          <li>Permissive and business-friendly</li>
+          <li>Encourages adoption and community contributions</li>
+          <li>Compatible with both open-source and commercial projects</li>
+          <li>Simple, clear terms with no hidden limitations</li>
+        </ul>
+        </p>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <img class="side-img" src="img/lesha-tuman-2qjPlJKnZ6M-unsplash.jpg" alt="Connect" />
+      <div class="section-text">
+        <br>
+        <h2>Constructor for Your Next Startup</h2>
+        <p>
+          Turn your MVP into a scalable, production-ready reality from day one. OpenUniverse lets you focus on
+          building
+          your core product — while it takes care of integration, orchestration, and automation. Go from prototype to
+          global scale without rewriting your architecture. Embrace a platform that’s flexible, language-agnostic, and
+          built to adapt as your vision grows.
+        <h2 style="text-align: end;">...MVP in action</h2>
+        </p>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <div class="videoWrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/QmaNucXFYd8?si=-WHmDu-Ivm2fs1uA"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="section-text">
+        <br>
+        <h2>EIP on Steroids</h2>
+        <p>
+          Today’s IT landscape is complex, with diverse protocols, multi-cloud services, and growing use of
+          asynchronous
+          communication. Enterprise Integration Patterns (EIP) offer proven solutions and a shared vocabulary to
+          design
+          reliable, adaptable integrations that handle complexity and failures gracefully.
+        </p>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
+      <img class="side-img" src="img/kseniia-ilinykh-ni1NYB6nXjo-unsplash.jpg" alt="Connect" />
+      <div class="section-text">
+        <br>
+        <h2>Access Anything</h2>
+        <p>
+          Works seamlessly across platforms, clouds, and systems. Connect to cloud services, on-prem systems, APIs,
+          message queues, databases, or custom endpoints. The platform speaks your language and adapts to your
+          ecosystem
+          — no need to conform to a rigid stack.
+        </p>
+        <h2 style="text-align: end;">...connect them all</h2>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
+      <img class="side-img" src="img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg" alt="Reactive" />
+      <div class="section-text">
+        <br>
+        <h2>Reactive by Design</h2>
+        <p>
+          Engineered for real-time execution and scalable throughput. Event flows are processed as they happen. The
+          platform supports asynchronous triggers, backpressure handling, and distributed execution to meet the
+          demands
+          of fast-moving systems.
+        </p>
+        <br>
+      </div>
+    </div>
+  </section>
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@umby">Umberto</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
+      <img class="side-img" src="img/umberto-FewHpO4VC9Y-unsplash.jpg" style="filter: grayscale(80%);" />
+      <div class="section-text">
+        <br>
+        <h2>Built for DevOps & Platform Teams</h2>
+        <p>
+          Empower your engineers to automate safely and consistently. With built-in support for version-controlled
+          workflows, audit trails, policy integration, and modular architecture, teams can build reliable automation
+          without sacrificing control or visibility.
+        </p>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <img class="side-img" src="img/galina-nelyubova-h-Ij-IDnc00-unsplash.jpg" alt="Extensible" />
+      <div class="section-text">
+        <br>
+        <h2>True Language-Agnostic</h2>
+        <p>
+          Bring your own tools, scripts, and runtimes. Use any language or executable interface to build event
+          sources,
+          processors, or responders. Whether it's a shell script, Python program, or compiled binary — if it runs, it
+          integrates.
+        </p>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <img class="side-img" src="img/alexandre-debieve-FO7JIlwjOtU-unsplash.jpg" alt="Extensible" />
+      <div class="section-text">
+        <br>
+        <h2>Composable Infrastructure</h2>
+        <p>
+          Design your infrastructure like building with blocks — intuitive, modular, and endlessly flexible. Define
+          every component as code, integrate any system at any scale, and use your preferred tools and languages.
+          Build
+          fast, evolve freely, and stay in control.
+        </p>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <img class="side-img" src="img/jere-barcebal-uqb68Xbxhik-unsplash.jpg" alt="Extensible" />
+      <div class="section-text">
+        <br>
+        <h2>AI - FREE, Verifiable by Design</h2>
+        <p>
+          Every outcome is deterministic, transparent, and cryptographically verifiable.
+          No AI-driven ambiguity—just open logic, signed data, and reproducible processes.
+          Designed for those who demand proof over promises.
+        <h2 style="text-align: end;">...security first</h2>
+        </p>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@choys_">Conny Schneider</a> on <a href="https://unsplash.com/">Unsplash</a>.-->
+      <img class="side-img" src="img/conny-schneider-xuTJZ7uD7PI-unsplash.jpg" alt="Extensible" />
+      <div class="section-text">
+        <br>
+        <h2>Behind the Insights</h2>
+        <p>
+          <a href="https://doi.org/10.1016/j.infsof.2019.01.006" target="_blank">
+            <i>1. A Scalable, event-driven
+              architecture for designing interactions across heterogeneous devices in
+              smart environments</i></a><br>
+          Ovidiu-Andrei Schipor, Radu-Daniel Vatavu, Jean Vanderdonckt.
+          Information and Software Technology, Vol. 109 (2019), 43–59, <nobr>ISSN: 0950-5849</nobr>
+          <br><br>
+          <a href="https://doi.org/10.61841/turcomat.v11i1.14928" target="_blank"><i>2. The Power of Event-Driven
+              Architecture: Enabling RealTime Systems and Scalable Solutions</i></a><br>
+          Adisheshu Reddy Kommera.
+          Turkish Journal of Computer and Mathematics Education, Vol. 11 (2020), 1740-1751, <nobr>ISSN:
+            3048-4855</nobr>
+          <br><br>
+          <a href="https://doi.org/10.30574/ijsra.2021.4.1.0166" target="_blank"><i>3. Exploring event-driven
+              architecture
+              in microservices- patterns, pitfalls and best practices</i></a><br>
+          Chavan, Ashwin.
+          International Journal of Science and Research Archive, Vol. 4 (2021), 229-249, <nobr>ISSN: 2582-8185</nobr>
+          <br>
+        <h2 style="text-align: right;">...more refs in the docs</span>
+          </p>
+          <br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <img style="min-width: 48%;" class="side-img" src="img/kabiur-rahman-riyad-YzZJUXjb9aw-unsplash.jpg"
+        alt="Extensible" />
+      <div class="section-text">
+        <br>
+        <h2>Vendor-neutral Real-time Streaming</h2>
+        <p>
+          Export messages asynchronously to any backend in real-time:
+        <ul>
+          <li>Message brokers</li>
+          <li>Time series</li>
+          <li>Search engines</li>
+          <li>Relational databases,</li>
+        </ul>
+        Query and visualize your data using tools like Grafana, Perses, Datadog, Tableau, etc.
+        <br>
+        This gives flexibility—you’re not locked into a single backend tool.
+        <br><br>
+        <h2 style="text-align: right;">...fit to your case</h2>
+        </p>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham Dhage</a> on <a href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.-->
+      <img class="side-img" src="img/rayyan-df6PWKUJwcw-unsplash.jpg" alt="Extensible" />
+      <div class="section-text brands" style="color: #fff;">
+        <br>
+        <h2>Plays well with…</h2>
+        <p>
+        <div class="brands-grid">
+          <img class="brand" src="img/brands/kafka.svg" alt="Kafka" style="width: 100px;" />
+          <img class="brand" src="img/brands/prometheus.svg" alt="Prometheus" title="Prometheus"
+            style="width: 120px;" />
+          <img class="brand" src="img/brands/grafana.svg" alt="Grafana" style="width: 120px;" />
+          <img class="brand" src="img/brands/perses.svg" alt="Perses" title="Perses" style="width: 80px;" />
+          <img class="brand" src="img/brands/apache-Solr.svg" alt="Apache Solr" title="Apache Solr"
+            style="width: 120px; margin-left: -10px" />
+          <img class="brand" src="img/brands/OpenTelemetry.svg" alt="Open Telemetry" title="Open Telemetry"
+            style="width: 40px;" />
+          <img class="brand" src="img/brands/apache-nifi.svg" alt="Apache nifi" title="Apache nifi"
+            style="width: 80px;" />
+          <img class="brand" src="img/brands/fluentd.png" alt="fluentd" title="fluentd" style="width: 100px;" />
+          <img class="brand" src="img/brands/OpenSearch.svg" alt="OpenSearch" title="OpenSearch"
+            style="width: 150px;" />
+        </div>
+        <h2 style="text-align: end;">...and others</h2>
+        </p>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham Dhage</a> on <a href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.-->
+      <img class="side-img" src="img/markus-spiske-1LLh8k2_YFk-unsplash.jpg" alt="Extensible" />
+      <div class="section-text">
+        <br><br>
+        <h2>"code-lang": "ANY"</h2>
+        <div class="tag-cloud-langs">
+        </div>
+        <h2 style="text-align: end;">...Language Agnostic</h2>
+        <br><br>
+      </div>
+    </div>
+  </section>
+
+  <section class="adv-section">
+    <div class="section-wrapper">
+      <!--Photo by <a href="https://unsplash.com/@shubhudi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Shubham Dhage</a> on <a href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.-->
+      <img class="side-img" src="img/shubham-dhage-5ZHsI64p-Ws-unsplash.jpg" alt="Extensible" />
+      <div class="section-text">
+        <br>
+        <h2>MIT License</h2>
+        <p>
+          The <a href="https://github.com/ou-org/OpenUniverse/blob/main/LICENSE" target="_blank">MIT License</a>
+          provides freedom to use, modify, and integrate the software in any project — open source or
+          commercial. With no copyleft, legal barriers, or hidden constraints, it enables building, scaling, and
+          innovation on flexible terms.
+        <h2 style="text-align: end;">...hack it forward</h2>
+        </p>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-wrapper fade-image"></div>
+    <div class="section-wrapper">
+      <div class="bottom-content section-wrapper-bottom">
+        <div class="footer-row-1">
+          <!--<a href="https://www.freepik.com/icon/mars_11829841#fromView=family&page=1&position=7&uuid=323f4209-ab6b-4dec-a6be-c691a9b26257">Mars Icon by Mayor Icons</a>. <a href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.-->
+          <img src="img/icons/mars_11829841.png" class="mars">
+          <footer class="footer">
+            <div class="footer-column footer-column-logo">
+              <div class="product-name ou-row-top">OpenUniverse</div>
+              <div class="ou-row-bottom">From chaos to harmony</div>
+            </div>
+
+            <div class="footer-column">
+              <div class="footer-column-header">Product</div>
+              <ul>
+                <li><a href="/features">Features</a></li>
+                <li><a href="https://github.com/ou-org/OpenUniverse/doc/build-guide.md">Build Guide</a></li>
+                <li><a href="/roadmap">Roadmap</a></li>
+                <li><a href="/changelog">Changelog</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <div class="footer-column-header">Developers</div>
+              <ul>
+                <li><a href="https://github.com/ou-org/OpenUniverse/README.md">Documentation</a></li>
+                <li><a href="https://github.com/ou-org/OpenUniverse">GitHub</a></li>
+                <li><a href="/https://github.com/ou-org/OpenUniverse/SUPPORT.md">Support</a></li>
+                <li><a href="/status">System Status</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <div class="footer-column-header">Community</div>
+              <ul>
+                <li><a href="/community">Get Involved</a></li>
+                <li><a href="https://discord.gg/yourproject">Discord</a></li>
+                <li><a href="https://twitter.com/yourproject">Twitter</a></li>
+                <li><a href="https://github.com/ou-org/OpenUniverse//CONTRIBUTING.md">Contributing</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <div class="footer-column-header">Legal</div>
+              <ul>
+                <li><a href="/terms">Terms of Service</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="https://github.com/ou-org/OpenUniverse/blob/main/LICENSE">License</a></li>
+                <li><a href="https://github.com/ou-org/OpenUniverse/SECURITY.md">Security</a></li>
+              </ul>
+            </div>
+        </div>
+        </footer>
+        <div class="footer-buttons">
+          <a class="button button-touch" role="button" target="_blank"
+            href="mailto:pocsrv@proton.me&subject=From%20OpenUniverse%20Website">
+            Get in Touch
+          </a>
+          <a class="button button-up" role="button" href="#"
+            onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
+            Up <span style="font-size: 2rem; font-family: Arial;">↑</span>
+          </a>
+        </div>
+        <div class="footer-row-1">
+          <div class="acknowledgments">
+            <b>Acknowledgments and Attributions:</b>
+            <a target="_blank" href="https://www.freepik.com/icon/glucose_8205747">Glucose Icon by Freepik</a>. <a target="_blank" href="https://www.freepik.com/author/freepik/icons">Icon by Freepik</a>.
+            <a target="_blank" href="https://www.freepik.com/icon/mars_11829841">Mars Icon by Mayor Icons</a>. <a target="_blank" href="https://www.freepik.com/author/mayoricons">Icon by Mayor Icons</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@sizzzikova">Kseniia Ilinykh</a> on <a target="_blank" href="https://unsplash.com/photos/white-clouds-over-the-city-ni1NYB6nXjo">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@umby">Umberto</a> on <a target="_blank" href="https://unsplash.com/photos/green-bokeh-lights-FewHpO4VC9Y">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@choys_">Conny Schneider</a> on <a target="_blank" href="https://unsplash.com/photos/a-blue-background-with-lines-and-dots-xuTJZ7uD7PI">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@qrenep">Rene Böhmer</a> on <a target="_blank" href="https://unsplash.com/photos/a-very-long-line-of-yellow-lines-on-a-black-background-YeUVDKZWSZ4">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@shubhudi">Shubham Dhage</a> on <a target="_blank" href="https://unsplash.com/photos/a-tall-tower-with-a-cell-phone-on-top-of-it-5ZHsI64p-Ws">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@theshubhamdhage">Shubham Dhage</a> on <a target="_blank" href="https://unsplash.com/photos/shubham-dhage-JNKgOlj4OBs">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@thisisengineering">ThisisEngineering</a> on <a target="_blank" href="https://unsplash.com/photos/thisisengineering-zdBOU0faYK4">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@leshatuman">lesha tuman</a> on <a target="_blank" href="https://unsplash.com/photos/lesha-tuman-2qjPlJKnZ6M">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@galka_nz">Galina Nelyubova</a> on <a target="_blank" href="https://unsplash.com/photos/galina-nelyubova-h-Ij-IDnc00">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@alexkixa">Alexandre Debiève</a> on <a target="_blank" href="https://unsplash.com/photos/alexandre-debieve-FO7JIlwjOtU">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@drkctyy">Jere Barcebal</a> on <a target="_blank" href="https://unsplash.com/photos/jere-barcebal-uqb68Xbxhik">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@riiyad">Kabiur Rahman Riyad</a> on <a target="_blank" href="https://unsplash.com/photos/kabiur-rahman-riyad-YzZJUXjb9aw">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@rayyanbrh">Rayyân</a> on <a target="_blank" href="https://unsplash.com/photos/rayyan-df6PWKUJwcw">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@markusspiske">Markus Spiske</a> on <a target="_blank" href="https://unsplash.com/photos/markus-spiske-1LLh8k2_YFk">Unsplash</a>.
+            Photo by <a target="_blank" href="https://unsplash.com/@wizwow">Donald Giannatti</a> on <a target="_blank" href="https://unsplash.com/photos/donald-giannatti-Wj1D-qiOseE">Unsplash</a>.
+            Fog Animaton by <a target="_blank" href="https://www.vantajs.com/?effect=fog">Vanta.js</a>.
+            Net Animaton by <a target="_blank" href="https://www.vantajs.com/?effect=net">Vanta.js</a>.
+            <a target="_blank" href="https://github.com/cong-min/TagCloud">TagCloud</a> by <a target="_blank" href="https://github.com/cong-min">Cong Min</a>.
+            <br><br>
+            All trademarks, logos, and brand names are the property of their respective owners. All company, product, and service names used on this website are for identification purposes only. The use of these names, trademarks, and brands does not imply any endorsement, affiliation, or sponsorship by the trademark owners.
+            <br><br>
+            &copy; OpenUniverse 2025
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+<script>
+
+  function isWebGLAvailable() {
+    try {
+      const canvas = document.createElement("canvas");
+      return !!(
+        window.WebGLRenderingContext &&
+        (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
+      );
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  const webgl = isWebGLAvailable();
+
+
+  // Ensure the page is hidden until everything is loaded
+  document.documentElement.style.visibility = 'hidden';
+
+  // Add reverse class to every second section-wrapper
+
+
+  const sectionWrappers = Array.from(document.querySelectorAll(".section-wrapper"));
+  for (let i = 0; i < sectionWrappers.length; i++) {
+    if (i % 2 === 0) {
+      sectionWrappers[i].classList.add('reverse');
+    }
+  }
+
+  const classes = ['color-red', 'color-black', 'color-turquoise', 'color-red-super', 'color-black-super', 'color-turquoise-super'];
+  const sections = document.querySelectorAll('.adv-section');
+
+  sections.forEach((section, index) => {
+    const classToAdd = classes[index % classes.length];
+    section.classList.add(classToAdd);
+  });
+
+  Promise.all([
+    document.fonts.ready,
+    new Promise(resolve => {
+      if (document.readyState === 'complete') return resolve();
+      window.addEventListener('load', resolve);
+    })
+  ])
+    .then(() => {
+      const tagCloudKeywordsContainer = document.querySelector('.tag-cloud-keywords');
+      const tagKeywordsTexts = [
+        'Future-Proof Infrastructure',
+        'Real-Time Messaging',
+        'Smart Event Processing',
+        'Unified Data Collection',
+        'Vertical / Horizontal Scalability',
+        'Trusted Compliance',
+        'Infrastructure as Code',
+        'Ontology-Driven',
+        'Language-Agnostic',
+        'Secure and Verifiable',
+        'Ultralight Runtime',
+        'Vendor-Neutral',
+        'Open Source',
+        'Extensible',
+        'Distributed',
+        'Event-Driven Design',
+        '100% Decentralized',
+        'Asynchronous',
+      ];
+      const tagCloudKeywordsOptions = {
+
+        // radius in px
+        radius: 120,
+
+        // animation speed
+        // slow, normal, fast
+        maxSpeed: 'normal',
+        initSpeed: 'normal',
+
+        // 0 = top
+        // 90 = left
+        // 135 = right-bottom
+        direction: 90,
+
+        // interact with cursor move on mouse out
+        keep: false
+
+      };
+      let widthKeywords = parseInt(window.getComputedStyle(tagCloudKeywordsContainer).width.replace('px', ''));
+      tagCloudKeywordsContainer.style.fontSize = (widthKeywords / 40) + 'px';
+      tagCloudKeywordsOptions.radius = widthKeywords / 2;
+
+      TagCloud(tagCloudKeywordsContainer, tagKeywordsTexts, tagCloudKeywordsOptions);
+
+      const tagCloudLangsContainer = document.querySelector('.tag-cloud-langs');
+      const tagCloudLangsTexts = [
+        'Java',
+        'C++',
+        'JavaScript',
+        'Python',
+        'Ada',
+        'Lisp',
+        'Assembler',
+        'C',
+        'Clojure',
+        'Rust',
+        'Scala',
+        'bash',
+        'COBOL',
+        'R',
+        'FORTRAN',
+        'Lua',
+        'Haskell',
+        'PHP',
+        'Julia',
+        'Go',
+        'Kotlin',
+        'Nim',
+        'TypeScript',
+        'Tcl',
+        'Webassembly',
+        'Perl'
+      ];
+
+      const tagCloudLangsOptions = {
+
+        // radius in px
+        radius: 150,
+
+        // animation speed
+        // slow, normal, fast
+        maxSpeed: 'normal',
+        initSpeed: 'normal',
+
+        // 0 = top
+        // 90 = left
+        // 135 = right-bottom
+        direction: 135,
+
+        // interact with cursor move on mouse out
+        keep: false
+
+      };
+
+      const widthLangs = parseInt(window.getComputedStyle(tagCloudLangsContainer).width.replace('px', ''));
+      tagCloudLangsContainer.style.fontSize = (widthLangs / 20) + 'px';
+      tagCloudLangsOptions.radius = widthLangs / 2;
+
+      TagCloud(tagCloudLangsContainer, tagCloudLangsTexts, tagCloudLangsOptions);
+
+
+      if (webgl) {
+        VANTA.NET({
+          el: ".brands",
+          mouseControls: false,
+          touchControls: false,
+          gyroControls: false,
+          minHeight: 0.00,
+          minWidth: 0.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x333333,
+          backgroundColor: 0x000000,
+          points: 10.00,
+          maxDistance: 20.00,
+          spacing: 27.00,
+          showDots: true
+        })
+
+        VANTA.FOG({
+          el: ".page",
+          mouseControls: false,
+          touchControls: false,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          highlightColor: 0xffffff,
+          midtoneColor: 0xFD3F84,
+          lowlightColor: 0x000000,
+          baseColor: 0x000000,
+          blurFactor: 0.70,
+          speed: 1.00,
+          zoom: 0.40
+        });
+      }
+      document.documentElement.style.visibility = 'visible';
+    });
+</script>
+
+</html>

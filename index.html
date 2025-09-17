@@ -252,6 +252,8 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .product-header {
+      display: flex;
+      flex-direction: column;
       user-select: none;
       margin: auto;
       z-index: 1000;
@@ -267,7 +269,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     .product-name {
       font-family: 'TiltWarp-Regular';
-      KKKfont-weight: bold;
+      font-weight: bold;
       user-select: none;
     }
 
@@ -306,11 +308,12 @@ https://www.pexels.com/video/officers-investigating-7253660/
     }
 
     .slogan-1 {
-      padding-top: 2cqw;
+      padding-top: 3cqw;
       text-rendering: optimizeLegibility;
       letter-spacing: .024cqw !important;
-      font-size: 1.327cqw;
-      font-family: RobotoRegular;
+      font-size: 6.327cqw;
+      font-family: RobotoThin;
+      align-self: center;
     }
 
     .bottom-content {
@@ -535,6 +538,11 @@ https://www.pexels.com/video/officers-investigating-7253660/
 
     /* MEDIA */
 
+    @media print {
+      .button {
+        display: none !important;
+      }
+    }
 
     @media (max-width: 1080px) {
       .page {
@@ -576,7 +584,6 @@ https://www.pexels.com/video/officers-investigating-7253660/
       }
 
       .section-text p {
-        KKKtext-align: justify;
         text-justify: distribute;
         hyphens: auto;
         padding-bottom: 2.5rem;
@@ -653,8 +660,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
       <div class="product-name product-name-0">Open<wbr>Universe</div>
       <div class="slogan slogan-0">There are no boundaries</div>
       <div class="slogan slogan-1">
-        An ultralight, security-first open source UaC (Universe as
-        Code) platform that unifies your environment
+        Let's Create
       </div>
     </div>
     <div class="page-buttons">
@@ -1795,7 +1801,7 @@ https://www.pexels.com/video/officers-investigating-7253660/
           gyroControls: false,
           minHeight: 200.00,
           minWidth: 200.00,
-          highlightColor: 0xffffff,
+          highlightColor: 0xFFFFFF,
           midtoneColor: 0xFD3F84,
           lowlightColor: 0x000000,
           baseColor: 0x000000,
